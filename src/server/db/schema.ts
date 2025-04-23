@@ -24,6 +24,7 @@ export const question = createTable("questions", (d) => ({
   prompt: d.text("prompt").notNull(),
   explanation: d.text("explanation").notNull(),
   expectedNumAnswers: d.integer().notNull(),
+  language: d.text().notNull().default("en"),
   createdAt: d
     .timestamp({ withTimezone: true })
     .default(sql`CURRENT_TIMESTAMP`)
@@ -44,6 +45,7 @@ export const answer = createTable(
       .references(() => question.id, { onDelete: "cascade" }), // Foreign key reference
     text: d.text().notNull(),
     isCorrect: d.boolean().notNull(),
+    language: d.text().notNull().default("en"),
   }),
   (table) => [
     index("question_id_idx").on(table.questionId), // Index on questionId
@@ -54,6 +56,7 @@ export const tag = createTable("tags", (d) => ({
   id: d.uuid().defaultRandom().primaryKey(),
   name: d.text("name").notNull().unique(),
   description: d.text("description"),
+  language: d.text().notNull().default("en"),
   createdAt: d
     .timestamp({ withTimezone: true })
     .default(sql`CURRENT_TIMESTAMP`)
@@ -95,6 +98,10 @@ export const relatedQuestion = createTable(
   (table) => [
     index("question_id_idx").on(table.questionId), // Index on questionId
     index("related_question_id_idx").on(table.relatedQuestionId), // Index on relatedQuestionId
+    unique("related_question_pair").on(
+      table.questionId,
+      table.relatedQuestionId
+    ),
   ]
 );
 
@@ -139,7 +146,9 @@ export const attempt = createTable("attempts", (d) => ({
     .timestamp({ withTimezone: true })
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull(),
-  completedAt: d.timestamp({ withTimezone: true }),
+  completedAt: d
+    .timestamp({ withTimezone: true })
+    .default(sql`CURRENT_TIMESTAMP`),
 }));
 
 export const resource = createTable("resources", (d) => ({
@@ -148,7 +157,11 @@ export const resource = createTable("resources", (d) => ({
   url: d.text().notNull(),
   tagId: d.uuid().references(() => tag.id, { onDelete: "set null" }),
   questionId: d.uuid().references(() => question.id, { onDelete: "set null" }),
-  createdAt: d.timestamp({ withTimezone: true }).defaultNow().notNull(),
+  language: d.text().notNull().default("en"),
+  createdAt: d
+    .timestamp({ withTimezone: true })
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
 }));
 
 export const feedback = createTable("feedback", (d) => ({
@@ -159,5 +172,9 @@ export const feedback = createTable("feedback", (d) => ({
     .references(() => question.id, { onDelete: "cascade" }),
   userId: d.uuid().references(() => user.id, { onDelete: "cascade" }),
   message: d.text().notNull(),
-  createdAt: d.timestamp({ withTimezone: true }).defaultNow().notNull(),
+  language: d.text().notNull().default("en"),
+  createdAt: d
+    .timestamp({ withTimezone: true })
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
 }));
