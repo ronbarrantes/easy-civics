@@ -40,7 +40,7 @@ export const question = createTable("questions", (d) => ({
 export const answer = createTable(
   "answers",
   (d) => {
-    const length = 6;
+    const length = 4;
     return {
       id: d.varchar({ length }).primaryKey().default(generateId(length)),
       questionId: d
@@ -166,7 +166,7 @@ export const attempt = createTable("attempts", (d) => ({
 }));
 
 export const resource = createTable("resources", (d) => {
-  const length = 6;
+  const length = 4;
   return {
     id: d.varchar({ length }).primaryKey().default(generateId(length)),
     title: d.varchar({ length: 255 }).notNull(),
