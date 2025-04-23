@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "🚧 Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Next.js Backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"],
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/.next/**/*.js"]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug Next.js Frontend",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true
+    }
+  ]
+}
