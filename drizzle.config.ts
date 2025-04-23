@@ -15,5 +15,4 @@ export default defineConfig({
     url: process.env.DATABASE_URL!,
   },
   tablesFilter: ["easy_civics_*"],
-  // tablesFilter: ["social_stats_*"],
 });
