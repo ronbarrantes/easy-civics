@@ -19,28 +19,6 @@ export const user = createTable("users", (d) => ({
     .notNull(),
 }));
 
-export const social_account = createTable(
-  "social_accounts",
-  (d) => ({
-    id: d.uuid().defaultRandom().primaryKey(),
-    userId: d
-      .uuid()
-      .notNull()
-      .references(() => user.id, { onDelete: "cascade" }),
-    platform: d.varchar({ length: 50 }).notNull(),
-    accountUserName: d.varchar({ length: 255 }).notNull(),
-    accountId: d.varchar({ length: 255 }).notNull().unique(),
-    createdAt: d
-      .timestamp({ withTimezone: true })
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-  }),
-  (table) => [
-    index("user_id_social_idx").on(table.userId),
-    index("platform_idx").on(table.platform),
-  ]
-);
-
 export const question = createTable("questions", (d) => ({
   id: d.uuid().defaultRandom().primaryKey(),
   prompt: d.text("prompt").notNull(),
