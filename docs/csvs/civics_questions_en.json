@@ -336,7 +336,9 @@
     "prompt": "How many justices are on the Supreme Court?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": []
+    "answers": [
+      "Visit uscis.gov/citizenship/testupdates for the number of justices on the Supreme Court."
+    ]
   },
   {
     "questionNumber": 40,
@@ -934,9 +936,9 @@
     "expectedNumAnswers": 2,
     "language": "en",
     "answers": [
-      "New Year’s Day",
+      "New Year's Day",
       "Martin Luther King, Jr. Day",
-      "Presidents’ Day",
+      "Presidents' Day",
       "Memorial Day",
       "Independence Day",
       "Labor Day",
