@@ -1,0 +1,607 @@
+[
+  {
+    "questionNumber": "1",
+    "prompt": "What is the supreme law of the land?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+
+  {
+    "questionNumber": "2",
+    "prompt": "What does the Constitution do?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "3",
+    "prompt": "The idea of self-government is in the first three words of the Constitution. What are these words?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "4",
+    "prompt": "What is an amendment?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "5",
+    "prompt": "What do we call the first ten amendments to the Constitution?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "6",
+    "prompt": "What is one right or freedom from the First Amendment?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "7",
+    "prompt": "How many amendments does the Constitution have?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "8",
+    "prompt": "What did the Declaration of Independence do?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "9",
+    "prompt": "What are two rights in the Declaration of Independence?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "10",
+    "prompt": "What is freedom of religion?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "11",
+    "prompt": "What is the economic system in the United States?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "12",
+    "prompt": "What is the “rule of law”?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "13",
+    "prompt": "Name one branch or part of the government.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "14",
+    "prompt": "What stops one branch of government from becoming too powerful?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "15",
+    "prompt": "Who is in charge of the executive branch?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "16",
+    "prompt": "Who makes federal laws?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "17",
+    "prompt": "What are the two parts of the U.S. Congress?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "18",
+    "prompt": "How many U.S. Senators are there?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "19",
+    "prompt": "We elect a U.S. Senator for how many years?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "20",
+    "prompt": "Who is one of your state's U.S. Senators now?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "21",
+    "prompt": "The House of Representatives has how many voting members?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "22",
+    "prompt": "We elect a U.S. Representative for how many years?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "23",
+    "prompt": "Name your U.S. Representative.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "24",
+    "prompt": "Who does a U.S. Senator represent?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "25",
+    "prompt": "Why do some states have more Representatives than other states?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "26",
+    "prompt": "We elect a President for how many years?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "27",
+    "prompt": "In what month do we vote for President?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "28",
+    "prompt": "What is the name of the President of the United States now?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "29",
+    "prompt": "What is the name of the Vice President of the United States now?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "30",
+    "prompt": "If the President can no longer serve, who becomes President?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "31",
+    "prompt": "If both the President and the Vice President can no longer serve, who becomes President?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "32",
+    "prompt": "Who is the Commander in Chief of the military?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "33",
+    "prompt": "Who signs bills to become laws?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "34",
+    "prompt": "Who vetoes bills?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "35",
+    "prompt": "What does the President's Cabinet do?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "36",
+    "prompt": "What are two Cabinet-level positions?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "37",
+    "prompt": "What does the judicial branch do?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "38",
+    "prompt": "What is the highest court in the United States?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "39",
+    "prompt": "How many justices are on the Supreme Court?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "40",
+    "prompt": "Who is the Chief Justice of the United States now?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "41",
+    "prompt": "Under our Constitution, some powers belong to the federal government. What is one power of the federal government?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "42",
+    "prompt": "Under our Constitution, some powers belong to the states. What is one power of the states?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "43",
+    "prompt": "Who is the Governor of your state now?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "44",
+    "prompt": "What is the capital of your state?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "45",
+    "prompt": "What are the two major political parties in the United States?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "46",
+    "prompt": "What is the political party of the President now?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "47",
+    "prompt": "What is the name of the Speaker of the House of Representatives now?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "48",
+    "prompt": "There are four amendments to the Constitution about who can vote. Describe one of them.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "49",
+    "prompt": "What is one responsibility that is only for United States citizens?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "50",
+    "prompt": "Name one right only for United States citizens.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "51",
+    "prompt": "What are two rights of everyone living in the United States?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "52",
+    "prompt": "What do we show loyalty to when we say the Pledge of Allegiance?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "53",
+    "prompt": "What is one promise you make when you become a United States citizen?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "54",
+    "prompt": "How old do citizens have to be to vote for President?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "55",
+    "prompt": "What are two ways that Americans can participate in their democracy?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "56",
+    "prompt": "When is the last day you can send in federal income tax forms?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "57",
+    "prompt": "When must all men register for the Selective Service?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "58",
+    "prompt": "What is one reason colonists came to America?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "59",
+    "prompt": "Who lived in America before the Europeans arrived?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "60",
+    "prompt": "What group of people was taken to America and sold as slaves?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "61",
+    "prompt": "Why did the colonists fight the British?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "62",
+    "prompt": "Who wrote the Declaration of Independence?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "63",
+    "prompt": "When was the Declaration of Independence adopted?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "64",
+    "prompt": "There were 13 original states. Name three.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "65",
+    "prompt": "What happened at the Constitutional Convention?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "66",
+    "prompt": "When was the Constitution written?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "67",
+    "prompt": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "68",
+    "prompt": "What is one thing Benjamin Franklin is famous for?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "69",
+    "prompt": "Who is the “Father of Our Country”?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "70",
+    "prompt": "Who was the first President?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "71",
+    "prompt": "What territory did the United States buy from France in 1803?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "72",
+    "prompt": "Name one war fought by the United States in the 1800s.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "73",
+    "prompt": "Name the U.S. war between the North and the South.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "74",
+    "prompt": "Name one problem that led to the Civil War.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "75",
+    "prompt": "What was one important thing that Abraham Lincoln did?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "76",
+    "prompt": "What did the Emancipation Proclamation do?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "77",
+    "prompt": "What did Susan B. Anthony do?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "78",
+    "prompt": "Name one war fought by the United States in the 1900s.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "79",
+    "prompt": "Who was President during World War I?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "80",
+    "prompt": "Who was President during the Great Depression and World War II?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "81",
+    "prompt": "Who did the United States fight in World War II?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+
+  {
+    "questionNumber": "82",
+    "prompt": "Before he was President, Eisenhower was a general. What war was he in?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+
+  {
+    "questionNumber": "83",
+    "prompt": "During the Cold War, what was the main concern of the United States?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "84",
+    "prompt": "What movement tried to end racial discrimination?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "85",
+    "prompt": "What did Martin Luther King, Jr. do?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+
+  {
+    "questionNumber": "86",
+    "prompt": "What major event happened on September 11,2001, in the United States?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "87",
+    "prompt": "Name one American Indian tribe in the United States.",
+    "expectedNumAnswers": 1,
+    "language": "en",
+    "explanation": "USCIS Officers will be supplied with a list of federally recognized American Indian tribes."
+  },
+  {
+    "questionNumber": "88",
+    "prompt": "Name one of the two longest rivers in the United States.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "89",
+    "prompt": "What ocean is on the West Coast of the United States?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "90",
+    "prompt": "What ocean is on the East Coast of the United States?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "91",
+    "prompt": "Name one U.S. territory.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "92",
+    "prompt": "Name one state that borders Canada.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "93",
+    "prompt": "Name one state that borders Mexico.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "94",
+    "prompt": "What is the capital of the United States?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "95",
+    "prompt": "Where is the Statue of Liberty?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "96",
+    "prompt": "Why does the flag have 13 stripes?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "97",
+    "prompt": "Why does the flag have 50 stars?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "98",
+    "prompt": "What is the name of the national anthem?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "99",
+    "prompt": "When do we celebrate Independence Day?",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  },
+  {
+    "questionNumber": "100",
+    "prompt": "Name two national U.S. holidays.",
+    "expectedNumAnswers": 1,
+    "language": "en"
+  }
+]
