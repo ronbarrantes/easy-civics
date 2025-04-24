@@ -1,6 +1,6 @@
 {
-  "id": "3010f16b-852b-4b74-99e4-d4a765806ce0",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "91f3b2b9-6704-484d-aed1-bfef250534c5",
+  "prevId": "3010f16b-852b-4b74-99e4-d4a765806ce0",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -13,11 +13,11 @@
           "type": "varchar(6)",
           "primaryKey": true,
           "notNull": true,
-          "default": "'34hpU4'"
+          "default": "'0vYXUf'"
         },
         "questionId": {
           "name": "questionId",
-          "type": "varchar",
+          "type": "varchar(6)",
           "primaryKey": false,
           "notNull": true
         },
@@ -221,7 +221,7 @@
           "type": "varchar(6)",
           "primaryKey": true,
           "notNull": true,
-          "default": "'C6N6E8'"
+          "default": "'p9RNFk'"
         },
         "questionNumber": {
           "name": "questionNumber",
@@ -382,7 +382,7 @@
           "type": "varchar(6)",
           "primaryKey": true,
           "notNull": true,
-          "default": "'g19j7t'"
+          "default": "'JfuTxV'"
         },
         "questionId": {
           "name": "questionId",
@@ -441,7 +441,7 @@
           "type": "varchar(6)",
           "primaryKey": true,
           "notNull": true,
-          "default": "'DHGWc5'"
+          "default": "'hrJQrR'"
         },
         "questionId": {
           "name": "questionId",
@@ -487,7 +487,7 @@
           "type": "varchar(6)",
           "primaryKey": true,
           "notNull": true,
-          "default": "'pVUe4D'"
+          "default": "'wk2w7j'"
         },
         "title": {
           "name": "title",
@@ -572,7 +572,7 @@
           "type": "varchar(6)",
           "primaryKey": true,
           "notNull": true,
-          "default": "'7E6Jk0'"
+          "default": "'WcgamN'"
         },
         "name": {
           "name": "name",

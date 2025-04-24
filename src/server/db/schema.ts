@@ -11,6 +11,8 @@ import { generateId } from "@/lib/id";
  */
 export const createTable = pgTableCreator((name) => `easy_civics_${name}`);
 
+const length = 6;
+
 export const user = createTable("users", (d) => ({
   id: d.uuid().defaultRandom().primaryKey(),
   clerkUserId: d.varchar({ length: 255 }).notNull().unique(),
@@ -22,10 +24,11 @@ export const user = createTable("users", (d) => ({
 }));
 
 export const question = createTable("questions", (d) => ({
-  id: d.serial().primaryKey(),
-  prompt: d.text("prompt").notNull(),
-  explanation: d.text("explanation").notNull(),
-  expectedNumAnswers: d.integer().notNull(),
+  id: d.varchar({ length }).primaryKey().default(generateId(length)),
+  questionNumber: d.integer().notNull(),
+  prompt: d.text().notNull(),
+  explanation: d.text(),
+  expectedNumAnswers: d.integer().notNull().default(1),
   language: d.text().notNull().default("en"),
   createdAt: d
     .timestamp({ withTimezone: true })
@@ -40,26 +43,24 @@ export const question = createTable("questions", (d) => ({
 export const answer = createTable(
   "answers",
   (d) => {
-    const length = 4;
     return {
       id: d.varchar({ length }).primaryKey().default(generateId(length)),
       questionId: d
-        .uuid()
+        .varchar({ length })
         .notNull()
-        .references(() => question.id, { onDelete: "cascade" }), // Foreign key reference
+        .references(() => question.id, { onDelete: "cascade" }),
       text: d.text().notNull(),
       language: d.text().notNull().default("en"),
     };
   },
-  (table) => [index("answers_question_id_idx").on(table.questionId)]
+  (table) => [index("ans_qt_id_idx").on(table.questionId)]
 );
 
 export const tag = createTable("tags", (d) => {
-  const length = 4;
   return {
     id: d.varchar({ length }).primaryKey().default(generateId(length)),
-    name: d.text("name").notNull().unique(),
-    description: d.text("description"),
+    name: d.text().notNull().unique(),
+    description: d.text(),
     language: d.text().notNull().default("en"),
     createdAt: d
       .timestamp({ withTimezone: true })
@@ -67,80 +68,56 @@ export const tag = createTable("tags", (d) => {
       .notNull(),
   };
 });
+export const question_tag = createTable("question_tags", (d) => {
+  return {
+    id: d.varchar({ length }).primaryKey().default(generateId(length)),
+    questionId: d
+      .varchar({ length })
+      .notNull()
+      .references(() => question.id, { onDelete: "cascade" }),
+    tagId: d
+      .varchar({ length })
+      .notNull()
+      .references(() => tag.id, { onDelete: "cascade" }),
+  };
+});
 
-export const question_tag = createTable(
-  "question_tags",
-  (d) => {
-    const length = 6;
-    return {
-      id: d.varchar({ length }).primaryKey().default(generateId(length)),
-      questionId: d
-        .uuid()
-        .notNull()
-        .references(() => question.id, { onDelete: "cascade" }),
-      tagId: d
-        .uuid()
-        .notNull()
-        .references(() => tag.id, { onDelete: "cascade" }),
-    };
-  },
-  (table) => [
-    unique("question_tag_unique_idx").on(table.questionId, table.tagId),
-  ]
-);
-
-export const relatedQuestion = createTable(
-  "related_questions",
-  (d) => {
-    const length = 6;
-    return {
-      id: d.varchar({ length }).primaryKey().default(generateId(length)),
-      questionId: d
-        .uuid()
-        .notNull()
-        .references(() => question.id, { onDelete: "cascade" }), // Foreign key references
-      relatedQuestionId: d
-        .uuid()
-        .notNull()
-        .references(() => question.id, { onDelete: "cascade" }), // Foreign key references
-      relationshipType: d.text("relationship_type"),
-    };
-  },
-  (table) => [
-    index("related_questions_question_id_idx").on(table.questionId),
-    index("related_questions_related_question_id_idx").on(
-      table.relatedQuestionId
-    ),
-    unique("related_question_pair").on(
-      table.questionId,
-      table.relatedQuestionId
-    ),
-  ]
-);
+export const relatedQuestion = createTable("related_questions", (d) => {
+  return {
+    id: d.varchar({ length }).primaryKey().default(generateId(length)),
+    questionId: d
+      .varchar({ length })
+      .notNull()
+      .references(() => question.id, { onDelete: "cascade" }),
+    relationshipType: d.text("relationship_type"),
+  };
+});
 
 export const question_answer = createTable(
   "question_answers",
-  (d) => ({
-    id: d.uuid().defaultRandom().primaryKey(),
-    questionId: d
-      .uuid()
-      .notNull()
-      .references(() => question.id, { onDelete: "cascade" }), // Foreign key reference
-    answerId: d
-      .uuid()
-      .notNull()
-      .references(() => answer.id, { onDelete: "cascade" }), // Foreign key reference
-    userId: d
-      .uuid()
-      .notNull()
-      .references(() => user.id, { onDelete: "cascade" }), // Foreign key reference
-    createdAt: d
-      .timestamp({ withTimezone: true })
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-  }),
+  (d) => {
+    return {
+      id: d.uuid().defaultRandom().primaryKey(),
+      questionId: d
+        .varchar({ length })
+        .notNull()
+        .references(() => question.id, { onDelete: "cascade" }),
+      answerId: d
+        .varchar({ length })
+        .notNull()
+        .references(() => answer.id, { onDelete: "cascade" }),
+      userId: d
+        .uuid()
+        .notNull()
+        .references(() => user.id, { onDelete: "cascade" }),
+      createdAt: d
+        .timestamp({ withTimezone: true })
+        .default(sql`CURRENT_TIMESTAMP`)
+        .notNull(),
+    };
+  },
   (table) => [
-    unique("question_answer_unique_idx").on(
+    unique("qt_ans_unique_idx").on(
       table.questionId,
       table.answerId,
       table.userId
@@ -165,14 +142,15 @@ export const attempt = createTable("attempts", (d) => ({
 }));
 
 export const resource = createTable("resources", (d) => {
-  const length = 4;
   return {
     id: d.varchar({ length }).primaryKey().default(generateId(length)),
     title: d.varchar({ length: 255 }).notNull(),
     url: d.text().notNull(),
-    tagId: d.uuid().references(() => tag.id, { onDelete: "set null" }),
+    tagId: d
+      .varchar({ length })
+      .references(() => tag.id, { onDelete: "set null" }),
     questionId: d
-      .uuid()
+      .varchar({ length })
       .references(() => question.id, { onDelete: "set null" }),
     language: d.text().notNull().default("en"),
     createdAt: d
@@ -185,7 +163,7 @@ export const resource = createTable("resources", (d) => {
 export const feedback = createTable("feedback", (d) => ({
   id: d.uuid().defaultRandom().primaryKey(),
   questionId: d
-    .uuid()
+    .varchar({ length })
     .notNull()
     .references(() => question.id, { onDelete: "cascade" }),
   userId: d.uuid().references(() => user.id, { onDelete: "cascade" }),
