@@ -51,9 +51,7 @@ export const answer = createTable(
       language: d.text().notNull().default("en"),
     };
   },
-  (table) => [
-    index("question_id_idx").on(table.questionId), // Index on questionId
-  ]
+  (table) => [index("answers_question_id_idx").on(table.questionId)]
 );
 
 export const tag = createTable("tags", (d) => {
@@ -109,8 +107,10 @@ export const relatedQuestion = createTable(
     };
   },
   (table) => [
-    index("question_id_idx").on(table.questionId), // Index on questionId
-    index("related_question_id_idx").on(table.relatedQuestionId), // Index on relatedQuestionId
+    index("related_questions_question_id_idx").on(table.questionId),
+    index("related_questions_related_question_id_idx").on(
+      table.relatedQuestionId
+    ),
     unique("related_question_pair").on(
       table.questionId,
       table.relatedQuestionId
