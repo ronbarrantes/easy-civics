@@ -68,7 +68,7 @@
   },
   {
     "questionNumber": "12",
-    "prompt": "What is the “rule of law”?",
+    "prompt": "What is the \"rule of law\"?",
     "expectedNumAnswers": 1,
     "language": "en"
   },
@@ -410,7 +410,7 @@
   },
   {
     "questionNumber": "69",
-    "prompt": "Who is the “Father of Our Country”?",
+    "prompt": "Who is the \"Father of Our Country\"?",
     "expectedNumAnswers": 1,
     "language": "en"
   },
