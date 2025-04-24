@@ -25,11 +25,11 @@ export const user = createTable("users", (d) => ({
 
 export const question = createTable("questions", (d) => ({
   id: d.varchar({ length }).primaryKey().default(generateId(length)),
-  questionNumber: d.integer().notNull(),
-  prompt: d.text().notNull(),
+  questionNumber: d.integer().notNull(), // needed
+  prompt: d.text().notNull(), // needed
   explanation: d.text(),
-  expectedNumAnswers: d.integer().notNull().default(1),
-  language: d.text().notNull().default("en"),
+  expectedNumAnswers: d.integer().notNull().default(1), // needed
+  language: d.text().notNull().default("en"), // needed
   createdAt: d
     .timestamp({ withTimezone: true })
     .default(sql`CURRENT_TIMESTAMP`)
