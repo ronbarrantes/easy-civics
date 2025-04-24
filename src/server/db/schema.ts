@@ -48,7 +48,6 @@ export const answer = createTable(
         .notNull()
         .references(() => question.id, { onDelete: "cascade" }), // Foreign key reference
       text: d.text().notNull(),
-      isCorrect: d.boolean().notNull(),
       language: d.text().notNull().default("en"),
     };
   },
