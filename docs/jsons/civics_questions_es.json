@@ -3,14 +3,14 @@
     "questionNumber": 1,
     "prompt": "¿Cuál es la ley suprema de la nación?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["la Constitución"]
   },
   {
     "questionNumber": 2,
     "prompt": "¿Qué hace la Constitución?",
-    "expectedNumAnswers": 3,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "establece el gobierno",
       "define el gobierno",
@@ -21,14 +21,14 @@
     "questionNumber": 3,
     "prompt": "Las primeras tres palabras de la Constitución contienen la idea del autogobierno (de que el pueblo se gobierna a sí mismo). ¿Cuáles son estas palabras?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["Nosotros, el pueblo"]
   },
   {
     "questionNumber": 4,
     "prompt": "¿Qué es una enmienda?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "un cambio (a la Constitución)",
       "una adición (a la Constitución)"
@@ -38,14 +38,14 @@
     "questionNumber": 5,
     "prompt": "¿Con qué nombre se conocen las primeras diez enmiendas a la Constitución?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["la Carta de Derechos"]
   },
   {
     "questionNumber": 6,
     "prompt": "¿Cuál es un derecho o libertad que la Primera Enmienda garantiza?",
-    "expectedNumAnswers": 5,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "expresión",
       "religión",
@@ -58,14 +58,14 @@
     "questionNumber": 7,
     "prompt": "¿Cuántas enmiendas tiene la Constitución?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["veintisiete (27)"]
   },
   {
     "questionNumber": 8,
     "prompt": "¿Qué hizo la Declaración de Independencia?",
-    "expectedNumAnswers": 3,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "anunció nuestra independencia (de Gran Bretaña)",
       "declaró nuestra independencia (de Gran Bretaña)",
@@ -75,29 +75,29 @@
   {
     "questionNumber": 9,
     "prompt": "¿Cuáles son dos derechos en la Declaración de la Independencia?",
-    "expectedNumAnswers": 3,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": ["la vida", "la libertad", "la búsqueda de la felicidad"]
   },
   {
     "questionNumber": 10,
     "prompt": "¿En qué consiste la libertad de religión?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["Se puede practicar cualquier religión o no practicar ninguna."]
   },
   {
     "questionNumber": 11,
     "prompt": "¿Cuál es el sistema económico de los Estados Unidos?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": ["economía capitalista", "economía de mercado"]
   },
   {
     "questionNumber": 12,
     "prompt": "¿En qué consiste el “estado de derecho” (ley y orden)?",
-    "expectedNumAnswers": 4,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "Todos deben obedecer la ley",
       "Los líderes deben obedecer la ley",
@@ -109,8 +109,8 @@
   {
     "questionNumber": 13,
     "prompt": "Nombre una rama o parte del gobierno.",
-    "expectedNumAnswers": 6,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "Congreso",
       "Poder legislativo",
@@ -124,21 +124,21 @@
     "questionNumber": 14,
     "prompt": "¿Qué es lo que evita que una rama del gobierno se vuelva demasiado poderosa?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["pesos y contrapesos", "separación de poderes"]
   },
   {
     "questionNumber": 15,
     "prompt": "¿Quién está a cargo de la rama ejecutiva?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el Presidente"]
   },
   {
     "questionNumber": 16,
     "prompt": "¿Quién crea las leyes federales?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "el Congreso",
       "el Senado y la Cámara (de Representantes)",
@@ -149,28 +149,28 @@
     "questionNumber": 17,
     "prompt": "¿Cuáles son las dos partes que integran el Congreso de los Estados Unidos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el Senado y la Cámara (de Representantes)"]
   },
   {
     "questionNumber": 18,
     "prompt": "¿Cuántos senadores de los Estados Unidos hay?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["cien (100)"]
   },
   {
     "questionNumber": 19,
     "prompt": "¿De cuántos años es el término de elección de un senador de los Estados Unidos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["seis (6)"]
   },
   {
     "questionNumber": 20,
     "prompt": "Nombre a uno de los senadores actuales del estado donde usted vive.",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Las respuestas variarán. Los residentes del Distrito de Columbia y los territorios de los Estados Unidos deberán contestar que D.C. (o territorio en donde vive el solicitante) no cuenta con senadores a nivel nacional.]"
     ]
@@ -179,21 +179,21 @@
     "questionNumber": 21,
     "prompt": "¿Cuántos miembros votantes tiene la Cámara de Representantes?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["cuatrocientos treinta y cinco (435)"]
   },
   {
     "questionNumber": 22,
     "prompt": "¿De cuántos años es el término de elección de un representante de los Estados Unidos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["dos (2)"]
   },
   {
     "questionNumber": 23,
     "prompt": "Dé el nombre de su representante a nivel nacional.",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Las respuestas variarán. Los residentes de territorios con delegados no votantes o los comisionados residentes pueden decir el nombre de dicho delegado o comisionado. Una respuesta que indica que el territorio no tiene representantes votantes en el Congreso también es aceptable.]"
     ]
@@ -202,14 +202,14 @@
     "questionNumber": 24,
     "prompt": "¿A quiénes representa un senador de los Estados Unidos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["a todas las personas del estado"]
   },
   {
     "questionNumber": 25,
     "prompt": "¿Por qué tienen algunos estados más representantes que otros?",
-    "expectedNumAnswers": 3,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(debido a) la población del estado",
       "(debido a que) tienen más gente",
@@ -220,21 +220,21 @@
     "questionNumber": 26,
     "prompt": "¿De cuántos años es el término de elección de un presidente?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["cuatro (4)"]
   },
   {
     "questionNumber": 27,
     "prompt": "¿En qué mes votamos por un nuevo presidente?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["noviembre"]
   },
   {
     "questionNumber": 28,
     "prompt": "¿Cómo se llama el actual Presidente de los Estados Unidos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Visite uscis.gov/es/ciudadania/actualizacionesalexamen para saber el nombre del Presidente de Estados Unidos.]"
     ]
@@ -243,7 +243,7 @@
     "questionNumber": 29,
     "prompt": "¿Cómo se llama el actual Vicepresidente de los Estados Unidos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Visite uscis.gov/es/ciudadania/actualizacionesalexamen para saber el nombre del Vice Presidente de Estados Unidos.]"
     ]
@@ -252,49 +252,49 @@
     "questionNumber": 30,
     "prompt": "Si el Presidente ya no puede cumplir sus funciones, ¿quién se convierte en Presidente?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el Vicepresidente"]
   },
   {
     "questionNumber": 31,
     "prompt": "Si tanto el Presidente como el Vicepresidente ya no pueden cumplir sus funciones, ¿quién se convierte en Presidente?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el Presidente de la Cámara de Representantes"]
   },
   {
     "questionNumber": 32,
     "prompt": "¿Quién es el Comandante en Jefe de las Fuerzas Armadas?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el Presidente"]
   },
   {
     "questionNumber": 33,
     "prompt": "¿Quién firma los proyectos de ley para convertirlos en ley?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el Presidente"]
   },
   {
     "questionNumber": 34,
     "prompt": "¿Quién veta los proyectos de ley?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el Presidente"]
   },
   {
     "questionNumber": 35,
     "prompt": "¿Qué hace el Gabinete del Presidente?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["asesora al Presidente"]
   },
   {
     "questionNumber": 36,
     "prompt": "¿Cuáles son dos puestos a nivel de gabinete?",
-    "expectedNumAnswers": 14,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "Secretario de Agricultura",
       "Secretario de Comercio",
@@ -315,8 +315,8 @@
   {
     "questionNumber": 37,
     "prompt": "¿Qué hace la rama judicial?",
-    "expectedNumAnswers": 4,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(revisa) las leyes",
       "(explica) las leyes",
@@ -328,14 +328,14 @@
     "questionNumber": 38,
     "prompt": "¿Cuál es el tribunal más alto de los Estados Unidos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["la Corte Suprema"]
   },
   {
     "questionNumber": 39,
     "prompt": "¿Cuántos jueces hay en la Corte Suprema?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Visite uscis.gov/es/ciudadania/actualizacionesalexamen para saber el número de jueces en la Corte Suprema.]"
     ]
@@ -344,7 +344,7 @@
     "questionNumber": 40,
     "prompt": "¿Quién es el presidente actual de la Corte Suprema de los Estados Unidos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Visite uscis.gov/es/ciudadania/actualizacionesalexamen para saber el nombre del Presidente del Tribunal Supremo de Estados Unidos.]"
     ]
@@ -352,8 +352,8 @@
   {
     "questionNumber": 41,
     "prompt": "De acuerdo a nuestra Constitución, algunos poderes pertenecen al gobierno federal. ¿Cuál es un poder del gobierno federal?",
-    "expectedNumAnswers": 4,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "imprimir dinero",
       "declarar la guerra",
@@ -364,8 +364,8 @@
   {
     "questionNumber": 42,
     "prompt": "De acuerdo a nuestra Constitución, algunos poderes pertenecen a los estados. ¿Cuál es un poder de los estados?",
-    "expectedNumAnswers": 5,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "proveer escuelas y educación",
       "proveer protección (policía)",
@@ -378,7 +378,7 @@
     "questionNumber": 43,
     "prompt": "¿Quién es el gobernador actual de su estado?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Las respuestas variarán. Los residentes del Distrito de Columbia deben decir “no tenemos gobernador”.]"
     ]
@@ -387,7 +387,7 @@
     "questionNumber": 44,
     "prompt": "¿Cuál es la capital de su estado?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Las respuestas variarán. Los residentes del Distrito de Columbia deben contestar que el D.C. no es estado y que no tiene capital. Los residentes de los territorios de los Estados Unidos deben dar el nombre de la capital del territorio.]"
     ]
@@ -395,15 +395,15 @@
   {
     "questionNumber": 45,
     "prompt": "¿Cuáles son los dos principales partidos políticos de los Estados Unidos?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": ["Demócrata y Republicano"]
   },
   {
     "questionNumber": 46,
     "prompt": "¿Cuál es el partido político del Presidente actual?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Visite uscis.gov/es/ciudadania/actualizacionesalexamen para saber el partido político al que pertenece el Presidente de Estados Unidos.]"
     ]
@@ -412,7 +412,7 @@
     "questionNumber": 47,
     "prompt": "¿Cómo se llama el Presidente actual de la Cámara de Representantes?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "[Visite uscis.gov/es/ciudadania/actualizacionesalexamen para saber el nombre del Portavoz de la Cámara de Representantes.]"
     ]
@@ -420,8 +420,8 @@
   {
     "questionNumber": 48,
     "prompt": "Existen cuatro enmiendas a la Constitución sobre quién puede votar. Describa una de ellas.",
-    "expectedNumAnswers": 4,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "Ciudadanos de dieciocho (18) años en adelante (pueden votar).",
       "No se exige pagar un impuesto para votar (el impuesto para acudir a las urnas o “poll tax” en inglés).",
@@ -432,8 +432,8 @@
   {
     "questionNumber": 49,
     "prompt": "¿Cuál es una responsabilidad que corresponde sólo a los ciudadanos de los Estados Unidos?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "prestar servicio en un jurado",
       "votar en una elección federal"
@@ -442,8 +442,8 @@
   {
     "questionNumber": 50,
     "prompt": "¿Cuál es un derecho que pueden ejercer sólo los ciudadanos de los Estados Unidos?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "votar en una elección federal",
       "postularse a un cargo político federal"
@@ -452,8 +452,8 @@
   {
     "questionNumber": 51,
     "prompt": "¿Cuáles son dos derechos que pueden ejercer todas las personas que viven en los Estados Unidos?",
-    "expectedNumAnswers": 6,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(libertad de) expresión",
       "(libertad de) la palabra",
@@ -466,16 +466,16 @@
   {
     "questionNumber": 52,
     "prompt": "¿A qué demostramos nuestra lealtad cuando decimos el Juramento de Lealtad (Pledge of Allegiance)?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": ["a los Estados Unidos", "(a la) bandera"]
   },
 
   {
     "questionNumber": 48,
     "prompt": "Existen cuatro enmiendas a la Constitución sobre quién puede votar. Describa una de ellas.",
-    "expectedNumAnswers": 4,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "Ciudadanos de dieciocho (18) años en adelante (pueden votar).",
       "No se exige pagar un impuesto para votar (el impuesto para acudir a las urnas o “poll tax” en inglés).",
@@ -486,8 +486,8 @@
   {
     "questionNumber": 49,
     "prompt": "¿Cuál es una responsabilidad que corresponde sólo a los ciudadanos de los Estados Unidos?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "prestar servicio en un jurado",
       "votar en una elección federal"
@@ -496,8 +496,8 @@
   {
     "questionNumber": 50,
     "prompt": "¿Cuál es un derecho que pueden ejercer sólo los ciudadanos de los Estados Unidos?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "votar en una elección federal",
       "postularse a un cargo político federal"
@@ -506,8 +506,8 @@
   {
     "questionNumber": 51,
     "prompt": "¿Cuáles son dos derechos que pueden ejercer todas las personas que viven en los Estados Unidos?",
-    "expectedNumAnswers": 6,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(libertad de) expresión",
       "(libertad de) la palabra",
@@ -520,15 +520,15 @@
   {
     "questionNumber": 52,
     "prompt": "¿A qué demostramos nuestra lealtad cuando decimos el Juramento de Lealtad (Pledge of Allegiance)?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": ["a los Estados Unidos", "a la bandera"]
   },
   {
     "questionNumber": 53,
     "prompt": "¿Cuál es una promesa que usted hace cuando se convierte en ciudadano de los Estados Unidos?",
-    "expectedNumAnswers": 6,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "renunciar a la lealtad a otros países",
       "defender la Constitución y las leyes de los Estados Unidos",
@@ -542,14 +542,14 @@
     "questionNumber": 54,
     "prompt": "¿Cuántos años tienen que tener los ciudadanos para votar por el Presidente?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["dieciocho (18) años en adelante"]
   },
   {
     "questionNumber": 55,
     "prompt": "¿Cuáles son dos maneras mediante las cuales los ciudadanos americanos pueden participar en su democracia?",
-    "expectedNumAnswers": 8,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(pueden) votar",
       "(pueden) afiliarse a un partido político",
@@ -567,14 +567,14 @@
     "questionNumber": 56,
     "prompt": "¿Cuál es la fecha límite para enviar la declaración federal de impuestos sobre ingresos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el 15 de abril"]
   },
   {
     "questionNumber": 57,
     "prompt": "¿Cuándo deben inscribirse todos los hombres en el Servicio Selectivo?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "a la edad de dieciocho (18) años",
       "entre los dieciocho (18) y veintiséis (26) años de edad"
@@ -583,8 +583,8 @@
   {
     "questionNumber": 58,
     "prompt": "¿Cuál es una razón por la que los colonos vinieron a América?",
-    "expectedNumAnswers": 5,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "libertad",
       "libertad política",
@@ -598,21 +598,21 @@
     "questionNumber": 59,
     "prompt": "¿Quiénes vivían en lo que hoy conocemos como los Estados Unidos antes de la llegada de los europeos?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["Indios americanos", "(los) nativos americanos"]
   },
   {
     "questionNumber": 60,
     "prompt": "¿Qué grupo de personas fue traído a los Estados Unidos y vendidos como esclavos?",
-    "expectedNumAnswers": 2,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": ["africanos", "gente de África"]
   },
   {
     "questionNumber": 61,
     "prompt": "¿Por qué lucharon los colonos contra los británicos?",
-    "expectedNumAnswers": 3,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "debido a los impuestos altos (impuestos sin representación)",
       "el ejército británico estaba en sus casas (alojándose, acuartelándose)",
@@ -623,21 +623,21 @@
     "questionNumber": 62,
     "prompt": "¿Quién escribió la Declaración de Independencia?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["(Thomas) Jefferson"]
   },
   {
     "questionNumber": 63,
     "prompt": "¿Cuándo fue adoptada la Declaración de Independencia?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el 4 de julio de 1776"]
   },
   {
     "questionNumber": 64,
     "prompt": "Había 13 estados originales. Nombre tres.",
-    "expectedNumAnswers": 13,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(Nueva) Hampshire",
       "(Massachusetts)",
@@ -659,7 +659,7 @@
     "questionNumber": 65,
     "prompt": "¿Qué ocurrió en la Convención Constitucional?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "Se redactó la Constitución.",
       "Los Padres Fundadores redactaron la Constitución."
@@ -669,14 +669,14 @@
     "questionNumber": 66,
     "prompt": "¿Cuándo fue redactada la Constitución?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["1787"]
   },
   {
     "questionNumber": 67,
     "prompt": "Los escritos conocidos como “Los Documentos Federalistas” respaldaron la aprobación de la Constitución de los Estados Unidos. Nombre uno de sus autores.",
-    "expectedNumAnswers": 4,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(James) Madison",
       "(Alexander) Hamilton",
@@ -687,8 +687,8 @@
   {
     "questionNumber": 68,
     "prompt": "Mencione una razón por la que es famoso Benjamin Franklin.",
-    "expectedNumAnswers": 5,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(es un) diplomático americano",
       "(es el) miembro de mayor edad de la Convención Constitucional",
@@ -701,14 +701,14 @@
     "questionNumber": 69,
     "prompt": "¿Quién se conoce como el “Padre de Nuestra Nación”?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["(George) Washington"]
   },
   {
     "questionNumber": 70,
     "prompt": "¿Quién fue el primer Presidente?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["(George) Washington"]
   },
 
@@ -716,14 +716,14 @@
     "questionNumber": 71,
     "prompt": "¿Qué territorio compró Estados Unidos a Francia en 1803?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el territorio de Louisiana", "Louisiana"]
   },
   {
     "questionNumber": 72,
     "prompt": "Mencione una guerra en la que peleó los Estados Unidos durante los años 1800.",
-    "expectedNumAnswers": 4,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "la Guerra de 1812",
       "la Guerra entre México y los Estados Unidos",
@@ -735,14 +735,14 @@
     "questionNumber": 73,
     "prompt": "Dé el nombre de la guerra entre el Norte y el Sur de los Estados Unidos.",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["la Guerra Civil", "(la) Guerra entre los Estados"]
   },
   {
     "questionNumber": 74,
     "prompt": "Mencione un problema que condujo a la Guerra Civil.",
-    "expectedNumAnswers": 3,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "esclavitud",
       "(razones) económicas",
@@ -753,14 +753,14 @@
     "questionNumber": 75,
     "prompt": "¿Qué movimiento intentó acabar con la esclavitud?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el movimiento abolicionista"]
   },
   {
     "questionNumber": 76,
     "prompt": "¿Qué hizo Abraham Lincoln?",
-    "expectedNumAnswers": 4,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(liberó) a los esclavos (en los estados rebeldes)",
       "(salvó) la Unión",
@@ -772,7 +772,7 @@
     "questionNumber": 77,
     "prompt": "¿Qué es la Proclamación de Emancipación?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": [
       "(es un documento que) liberó a los esclavos (en los estados rebeldes)"
     ]
@@ -781,21 +781,21 @@
     "questionNumber": 78,
     "prompt": "¿Quién fue el presidente durante la Primera Guerra Mundial?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["(Woodrow) Wilson"]
   },
   {
     "questionNumber": 79,
     "prompt": "¿Qué movimiento social trató de acabar con la discriminación racial?",
     "expectedNumAnswers": 1,
-    "language": "en",
+    "language": "es",
     "answers": ["el movimiento por los derechos civiles"]
   },
   {
     "questionNumber": 80,
     "prompt": "¿Qué hizo Martin Luther King, Jr.?",
-    "expectedNumAnswers": 3,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "(luchó por los) derechos civiles",
       "(hizo) un discurso famoso (I Have a Dream)",
@@ -805,8 +805,8 @@
   {
     "questionNumber": 81,
     "prompt": "¿Cuál es una razón por la que los colonos vinieron a América?",
-    "expectedNumAnswers": 5,
-    "language": "en",
+    "expectedNumAnswers": 1,
+    "language": "es",
     "answers": [
       "libertad",
       "libertad política",
@@ -842,7 +842,7 @@
   {
     "questionNumber": 85,
     "prompt": "¿Qué hizo Martin Luther King, Jr.?",
-    "expectedNumAnswers": 2,
+    "expectedNumAnswers": 1,
     "language": "es",
     "answers": [
       "luchó por los derechos civiles",
@@ -889,7 +889,7 @@
   {
     "questionNumber": 88,
     "prompt": "Mencione uno de los dos ríos más largos en los Estados Unidos.",
-    "expectedNumAnswers": 2,
+    "expectedNumAnswers": 1,
     "language": "es",
     "answers": ["(el Río) Misisipi", "(el Río) Misuri"]
   },
@@ -910,7 +910,7 @@
   {
     "questionNumber": 91,
     "prompt": "Dé el nombre de un territorio de los Estados Unidos.",
-    "expectedNumAnswers": 5,
+    "expectedNumAnswers": 1,
     "language": "es",
     "answers": [
       "(el) Puerto Rico",
@@ -923,7 +923,7 @@
   {
     "questionNumber": 92,
     "prompt": "Mencione un estado que tiene frontera con Canadá.",
-    "expectedNumAnswers": 12,
+    "expectedNumAnswers": 1,
     "language": "es",
     "answers": [
       "(el) Maine",
@@ -944,7 +944,7 @@
   {
     "questionNumber": 93,
     "prompt": "Mencione un estado que tiene frontera con México.",
-    "expectedNumAnswers": 4,
+    "expectedNumAnswers": 1,
     "language": "es",
     "answers": [
       "(la) California",
@@ -1001,7 +1001,7 @@
   {
     "questionNumber": 100,
     "prompt": "Mencione dos días feriados nacionales de los Estados Unidos.",
-    "expectedNumAnswers": 10,
+    "expectedNumAnswers": 1,
     "language": "es",
     "answers": [
       "el Día de Año Nuevo",
