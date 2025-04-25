@@ -105,7 +105,6 @@
       "Nadie está por encima de la ley"
     ]
   },
-
   {
     "questionNumber": 13,
     "prompt": "Nombre una rama o parte del gobierno.",
@@ -417,60 +416,6 @@
       "[Visite uscis.gov/es/ciudadania/actualizacionesalexamen para saber el nombre del Portavoz de la Cámara de Representantes.]"
     ]
   },
-  {
-    "questionNumber": 48,
-    "prompt": "Existen cuatro enmiendas a la Constitución sobre quién puede votar. Describa una de ellas.",
-    "expectedNumAnswers": 1,
-    "language": "es",
-    "answers": [
-      "Ciudadanos de dieciocho (18) años en adelante (pueden votar).",
-      "No se exige pagar un impuesto para votar (el impuesto para acudir a las urnas o “poll tax” en inglés).",
-      "Cualquier ciudadano puede votar. (Tanto mujeres como hombres pueden votar).",
-      "Un hombre ciudadano de cualquier raza (puede votar)."
-    ]
-  },
-  {
-    "questionNumber": 49,
-    "prompt": "¿Cuál es una responsabilidad que corresponde sólo a los ciudadanos de los Estados Unidos?",
-    "expectedNumAnswers": 1,
-    "language": "es",
-    "answers": [
-      "prestar servicio en un jurado",
-      "votar en una elección federal"
-    ]
-  },
-  {
-    "questionNumber": 50,
-    "prompt": "¿Cuál es un derecho que pueden ejercer sólo los ciudadanos de los Estados Unidos?",
-    "expectedNumAnswers": 1,
-    "language": "es",
-    "answers": [
-      "votar en una elección federal",
-      "postularse a un cargo político federal"
-    ]
-  },
-  {
-    "questionNumber": 51,
-    "prompt": "¿Cuáles son dos derechos que pueden ejercer todas las personas que viven en los Estados Unidos?",
-    "expectedNumAnswers": 1,
-    "language": "es",
-    "answers": [
-      "(libertad de) expresión",
-      "(libertad de) la palabra",
-      "(libertad de) reunión",
-      "(libertad para) peticionar al gobierno",
-      "(libertad de) religión",
-      "(derecho a portar) armas"
-    ]
-  },
-  {
-    "questionNumber": 52,
-    "prompt": "¿A qué demostramos nuestra lealtad cuando decimos el Juramento de Lealtad (Pledge of Allegiance)?",
-    "expectedNumAnswers": 1,
-    "language": "es",
-    "answers": ["a los Estados Unidos", "(a la) bandera"]
-  },
-
   {
     "questionNumber": 48,
     "prompt": "Existen cuatro enmiendas a la Constitución sobre quién puede votar. Describa una de ellas.",
