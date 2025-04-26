@@ -83,7 +83,7 @@
   {
     "questionNumber": 9,
     "prompt": "¿Cuáles son dos derechos en la Declaración de la Independencia?",
-    "expectedNumAnswers": 1,
+    "expectedNumAnswers": 2,
     "language": "es",
     "answers": ["la vida", "la libertad", "la búsqueda de la felicidad"]
   },
@@ -327,7 +327,7 @@
   {
     "questionNumber": 36,
     "prompt": "¿Cuáles son dos puestos a nivel de gabinete?",
-    "expectedNumAnswers": 1,
+    "expectedNumAnswers": 2,
     "language": "es",
     "answers": [
       "Secretario de Agricultura",
@@ -501,7 +501,7 @@
   {
     "questionNumber": 51,
     "prompt": "¿Cuáles son dos derechos que pueden ejercer todas las personas que viven en los Estados Unidos?",
-    "expectedNumAnswers": 1,
+    "expectedNumAnswers": 2,
     "language": "es",
     "answers": [
       "(libertad de) expresión",
@@ -547,7 +547,7 @@
   {
     "questionNumber": 55,
     "prompt": "¿Cuáles son dos maneras mediante las cuales los ciudadanos americanos pueden participar en su democracia?",
-    "expectedNumAnswers": 1,
+    "expectedNumAnswers": 2,
     "language": "es",
     "answers": [
       "votar",
@@ -644,7 +644,7 @@
   {
     "questionNumber": 64,
     "prompt": "Había 13 estados originales. Nombre tres.",
-    "expectedNumAnswers": 1,
+    "expectedNumAnswers": 3,
     "language": "es",
     "answers": [
       "Nueva Hampshire",
@@ -1040,7 +1040,7 @@
   {
     "questionNumber": 100,
     "prompt": "Mencione dos días feriados nacionales de los Estados Unidos.",
-    "expectedNumAnswers": 1,
+    "expectedNumAnswers": 2,
     "language": "es",
     "answers": [
       "el Día de Año Nuevo",
