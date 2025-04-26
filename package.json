@@ -8,6 +8,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "vercel:env": "vercel env pull .env.local",
+    "db:seed": "node -r esbuild-register scripts/seed.ts",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
