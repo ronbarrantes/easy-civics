@@ -1,5 +1,5 @@
 {
-  "id": "3010f16b-852b-4b74-99e4-d4a765806ce0",
+  "id": "a3d02aa1-7c61-416b-bd02-5c85d01e6203",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -10,14 +10,14 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "'34hpU4'"
+          "default": "gen_random_uuid()"
         },
         "questionId": {
           "name": "questionId",
-          "type": "varchar",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         },
@@ -73,155 +73,16 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.easy_civics_attempts": {
-      "name": "easy_civics_attempts",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "uuid",
-          "primaryKey": true,
-          "notNull": true,
-          "default": "gen_random_uuid()"
-        },
-        "userId": {
-          "name": "userId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "score": {
-          "name": "score",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "startedAt": {
-          "name": "startedAt",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": true,
-          "default": "CURRENT_TIMESTAMP"
-        },
-        "completedAt": {
-          "name": "completedAt",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "CURRENT_TIMESTAMP"
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "easy_civics_attempts_userId_easy_civics_users_id_fk": {
-          "name": "easy_civics_attempts_userId_easy_civics_users_id_fk",
-          "tableFrom": "easy_civics_attempts",
-          "tableTo": "easy_civics_users",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
-    "public.easy_civics_feedback": {
-      "name": "easy_civics_feedback",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "uuid",
-          "primaryKey": true,
-          "notNull": true,
-          "default": "gen_random_uuid()"
-        },
-        "questionId": {
-          "name": "questionId",
-          "type": "varchar(6)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "userId": {
-          "name": "userId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "message": {
-          "name": "message",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "language": {
-          "name": "language",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "default": "'en'"
-        },
-        "createdAt": {
-          "name": "createdAt",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": true,
-          "default": "CURRENT_TIMESTAMP"
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "easy_civics_feedback_questionId_easy_civics_questions_id_fk": {
-          "name": "easy_civics_feedback_questionId_easy_civics_questions_id_fk",
-          "tableFrom": "easy_civics_feedback",
-          "tableTo": "easy_civics_questions",
-          "columnsFrom": [
-            "questionId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        },
-        "easy_civics_feedback_userId_easy_civics_users_id_fk": {
-          "name": "easy_civics_feedback_userId_easy_civics_users_id_fk",
-          "tableFrom": "easy_civics_feedback",
-          "tableTo": "easy_civics_users",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
     "public.easy_civics_questions": {
       "name": "easy_civics_questions",
       "schema": "",
       "columns": {
         "id": {
           "name": "id",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "'C6N6E8'"
+          "default": "gen_random_uuid()"
         },
         "questionNumber": {
           "name": "questionNumber",
@@ -273,7 +134,16 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
+      "uniqueConstraints": {
+        "ques_lan_idx": {
+          "name": "ques_lan_idx",
+          "nullsNotDistinct": false,
+          "columns": [
+            "language",
+            "questionNumber"
+          ]
+        }
+      },
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
@@ -291,13 +161,13 @@
         },
         "questionId": {
           "name": "questionId",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         },
         "answerId": {
           "name": "answerId",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         },
@@ -379,20 +249,20 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "'g19j7t'"
+          "default": "gen_random_uuid()"
         },
         "questionId": {
           "name": "questionId",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         },
         "tagId": {
           "name": "tagId",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         }
@@ -438,14 +308,14 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "'DHGWc5'"
+          "default": "gen_random_uuid()"
         },
         "questionId": {
           "name": "questionId",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         },
@@ -484,10 +354,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "'pVUe4D'"
+          "default": "gen_random_uuid()"
         },
         "title": {
           "name": "title",
@@ -503,13 +373,13 @@
         },
         "tagId": {
           "name": "tagId",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": false
         },
         "questionId": {
           "name": "questionId",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": false
         },
@@ -569,10 +439,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "varchar(6)",
+          "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "'7E6Jk0'"
+          "default": "gen_random_uuid()"
         },
         "name": {
           "name": "name",

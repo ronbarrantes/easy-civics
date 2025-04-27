@@ -25,7 +25,6 @@ async function seed() {
   const questions: QuestionSeed[] = await loadJson("civics_questions_es.json");
 
   for (const q of questions) {
-    console.log({ q });
     const [createdQuestion] = await db
       .insert(question)
       .values({

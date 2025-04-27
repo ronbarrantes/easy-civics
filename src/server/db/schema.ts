@@ -1,8 +1,6 @@
 import { sql } from "drizzle-orm";
 import { index, pgTableCreator, unique } from "drizzle-orm/pg-core";
 
-import { generateId } from "@/lib/id";
-
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
  * database instance for multiple projects.
@@ -10,8 +8,6 @@ import { generateId } from "@/lib/id";
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
 export const createTable = pgTableCreator((name) => `easy_civics_${name}`);
-
-const length = 6;
 
 export const user = createTable("users", (d) => ({
   id: d.uuid().defaultRandom().primaryKey(),
@@ -26,19 +22,8 @@ export const user = createTable("users", (d) => ({
 export const question = createTable(
   "questions",
   (d) => {
-    const generatedId = generateId(length);
-    console.log("GENERATED ID --->>", generatedId);
-    const myUuid = d.uuid().defaultRandom().primaryKey();
-
-    console.log("GENERATED UUID ----->>>>", myUuid);
-
     return {
       id: d.uuid().defaultRandom().primaryKey(),
-
-      // id: d
-      //   .varchar({ length })
-      //   .primaryKey()
-      //   .$defaultFn(() => generatedId),
       questionNumber: d.integer().notNull(),
       prompt: d.text().notNull(),
       explanation: d.text(),
