@@ -23,30 +23,47 @@ export const user = createTable("users", (d) => ({
     .notNull(),
 }));
 
-export const question = createTable("questions", (d) => ({
-  id: d.varchar({ length }).primaryKey().default(generateId(length)),
-  questionNumber: d.integer().notNull(), // needed
-  prompt: d.text().notNull(), // needed
-  explanation: d.text(),
-  expectedNumAnswers: d.integer().notNull().default(1), // needed
-  language: d.text().notNull().default("en"), // needed
-  createdAt: d
-    .timestamp({ withTimezone: true })
-    .default(sql`CURRENT_TIMESTAMP`)
-    .notNull(),
-  updatedAt: d
-    .timestamp({ withTimezone: true })
-    .default(sql`CURRENT_TIMESTAMP`)
-    .notNull(),
-}));
+export const question = createTable(
+  "questions",
+  (d) => {
+    const generatedId = generateId(length);
+    console.log("GENERATED ID --->>", generatedId);
+    const myUuid = d.uuid().defaultRandom().primaryKey();
+
+    console.log("GENERATED UUID ----->>>>", myUuid);
+
+    return {
+      id: d.uuid().defaultRandom().primaryKey(),
+
+      // id: d
+      //   .varchar({ length })
+      //   .primaryKey()
+      //   .$defaultFn(() => generatedId),
+      questionNumber: d.integer().notNull(),
+      prompt: d.text().notNull(),
+      explanation: d.text(),
+      expectedNumAnswers: d.integer().notNull().default(1),
+      language: d.text().notNull().default("en"),
+      createdAt: d
+        .timestamp({ withTimezone: true })
+        .default(sql`CURRENT_TIMESTAMP`)
+        .notNull(),
+      updatedAt: d
+        .timestamp({ withTimezone: true })
+        .default(sql`CURRENT_TIMESTAMP`)
+        .notNull(),
+    };
+  },
+  (table) => [unique("ques_lan_idx").on(table.language, table.questionNumber)]
+);
 
 export const answer = createTable(
   "answers",
   (d) => {
     return {
-      id: d.varchar({ length }).primaryKey().default(generateId(length)),
+      id: d.uuid().defaultRandom().primaryKey(),
       questionId: d
-        .varchar({ length })
+        .uuid()
         .notNull()
         .references(() => question.id, { onDelete: "cascade" }),
       text: d.text().notNull(),
@@ -58,7 +75,7 @@ export const answer = createTable(
 
 export const tag = createTable("tags", (d) => {
   return {
-    id: d.varchar({ length }).primaryKey().default(generateId(length)),
+    id: d.uuid().defaultRandom().primaryKey(),
     name: d.text().notNull().unique(),
     description: d.text(),
     language: d.text().notNull().default("en"),
@@ -68,15 +85,16 @@ export const tag = createTable("tags", (d) => {
       .notNull(),
   };
 });
+
 export const question_tag = createTable("question_tags", (d) => {
   return {
-    id: d.varchar({ length }).primaryKey().default(generateId(length)),
+    id: d.uuid().defaultRandom().primaryKey(),
     questionId: d
-      .varchar({ length })
+      .uuid()
       .notNull()
       .references(() => question.id, { onDelete: "cascade" }),
     tagId: d
-      .varchar({ length })
+      .uuid()
       .notNull()
       .references(() => tag.id, { onDelete: "cascade" }),
   };
@@ -84,9 +102,9 @@ export const question_tag = createTable("question_tags", (d) => {
 
 export const relatedQuestion = createTable("related_questions", (d) => {
   return {
-    id: d.varchar({ length }).primaryKey().default(generateId(length)),
+    id: d.uuid().defaultRandom().primaryKey(),
     questionId: d
-      .varchar({ length })
+      .uuid()
       .notNull()
       .references(() => question.id, { onDelete: "cascade" }),
     relationshipType: d.text("relationship_type"),
@@ -99,11 +117,11 @@ export const question_answer = createTable(
     return {
       id: d.uuid().defaultRandom().primaryKey(),
       questionId: d
-        .varchar({ length })
+        .uuid()
         .notNull()
         .references(() => question.id, { onDelete: "cascade" }),
       answerId: d
-        .varchar({ length })
+        .uuid()
         .notNull()
         .references(() => answer.id, { onDelete: "cascade" }),
       userId: d
@@ -125,6 +143,23 @@ export const question_answer = createTable(
   ]
 );
 
+export const resource = createTable("resources", (d) => {
+  return {
+    id: d.uuid().defaultRandom().primaryKey(),
+    title: d.varchar({ length: 255 }).notNull(),
+    url: d.text().notNull(),
+    tagId: d.uuid().references(() => tag.id, { onDelete: "set null" }),
+    questionId: d
+      .uuid()
+      .references(() => question.id, { onDelete: "set null" }),
+    language: d.text().notNull().default("en"),
+    createdAt: d
+      .timestamp({ withTimezone: true })
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
+  };
+});
+
 export const attempt = createTable("attempts", (d) => ({
   id: d.uuid().defaultRandom().primaryKey(),
   userId: d
@@ -141,29 +176,10 @@ export const attempt = createTable("attempts", (d) => ({
     .default(sql`CURRENT_TIMESTAMP`),
 }));
 
-export const resource = createTable("resources", (d) => {
-  return {
-    id: d.varchar({ length }).primaryKey().default(generateId(length)),
-    title: d.varchar({ length: 255 }).notNull(),
-    url: d.text().notNull(),
-    tagId: d
-      .varchar({ length })
-      .references(() => tag.id, { onDelete: "set null" }),
-    questionId: d
-      .varchar({ length })
-      .references(() => question.id, { onDelete: "set null" }),
-    language: d.text().notNull().default("en"),
-    createdAt: d
-      .timestamp({ withTimezone: true })
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-  };
-});
-
 export const feedback = createTable("feedback", (d) => ({
   id: d.uuid().defaultRandom().primaryKey(),
   questionId: d
-    .varchar({ length })
+    .uuid()
     .notNull()
     .references(() => question.id, { onDelete: "cascade" }),
   userId: d.uuid().references(() => user.id, { onDelete: "cascade" }),
