@@ -160,33 +160,33 @@ export const resource = createTable("resources", (d) => {
   };
 });
 
-export const attempt = createTable("attempts", (d) => ({
-  id: d.uuid().defaultRandom().primaryKey(),
-  userId: d
-    .uuid()
-    .notNull()
-    .references(() => user.id, { onDelete: "cascade" }),
-  score: d.integer(),
-  startedAt: d
-    .timestamp({ withTimezone: true })
-    .default(sql`CURRENT_TIMESTAMP`)
-    .notNull(),
-  completedAt: d
-    .timestamp({ withTimezone: true })
-    .default(sql`CURRENT_TIMESTAMP`),
-}));
+// export const attempt = createTable("attempts", (d) => ({
+//   id: d.uuid().defaultRandom().primaryKey(),
+//   userId: d
+//     .uuid()
+//     .notNull()
+//     .references(() => user.id, { onDelete: "cascade" }),
+//   score: d.integer(),
+//   startedAt: d
+//     .timestamp({ withTimezone: true })
+//     .default(sql`CURRENT_TIMESTAMP`)
+//     .notNull(),
+//   completedAt: d
+//     .timestamp({ withTimezone: true })
+//     .default(sql`CURRENT_TIMESTAMP`),
+// }));
 
-export const feedback = createTable("feedback", (d) => ({
-  id: d.uuid().defaultRandom().primaryKey(),
-  questionId: d
-    .uuid()
-    .notNull()
-    .references(() => question.id, { onDelete: "cascade" }),
-  userId: d.uuid().references(() => user.id, { onDelete: "cascade" }),
-  message: d.text().notNull(),
-  language: d.text().notNull().default("en"),
-  createdAt: d
-    .timestamp({ withTimezone: true })
-    .default(sql`CURRENT_TIMESTAMP`)
-    .notNull(),
-}));
+// export const feedback = createTable("feedback", (d) => ({
+//   id: d.uuid().defaultRandom().primaryKey(),
+//   questionId: d
+//     .uuid()
+//     .notNull()
+//     .references(() => question.id, { onDelete: "cascade" }),
+//   userId: d.uuid().references(() => user.id, { onDelete: "cascade" }),
+//   message: d.text().notNull(),
+//   language: d.text().notNull().default("en"),
+//   createdAt: d
+//     .timestamp({ withTimezone: true })
+//     .default(sql`CURRENT_TIMESTAMP`)
+//     .notNull(),
+// }));
