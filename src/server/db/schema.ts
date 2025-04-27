@@ -1,4 +1,4 @@
-import { sql } from "drizzle-orm";
+import { relations, sql } from "drizzle-orm";
 import { index, pgTableCreator, unique } from "drizzle-orm/pg-core";
 
 /**
@@ -57,6 +57,17 @@ export const answer = createTable(
   },
   (table) => [index("ans_qt_id_idx").on(table.questionId)]
 );
+
+export const questionRelations = relations(question, ({ many }) => ({
+  answers: many(answer), // <-- NOTICE: this is plural, and matches later
+}));
+
+export const answerRelations = relations(answer, ({ one }) => ({
+  question: one(question, {
+    fields: [answer.questionId],
+    references: [question.id],
+  }),
+}));
 
 export const tag = createTable("tags", (d) => {
   return {

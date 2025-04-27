@@ -1,14 +1,17 @@
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 
-import {
-  // api,
-  HydrateClient,
-} from "@/trpc/server";
+import { api, HydrateClient } from "@/trpc/server";
+
+const Questions = async () => {
+  const questions = await api.questionAnswer.get10();
+  console.log("THE QUESTIONS --->>", questions);
+  return <div>THE QUESTIONS</div>;
+};
 
 export default function Home() {
   // TODO: remove the todos once I have some real data to add here
   // in the mean time this is just a reminder of what needs to happen
-  // api.todos.getAll.prefetch();
+  // api.questionAnswer.get10.prefetch();
 
   return (
     <HydrateClient>
@@ -21,6 +24,7 @@ export default function Home() {
           <p>everything that happens here is for a signed in user :) </p>
         </div>
       </SignedIn>
+      <Questions />
     </HydrateClient>
   );
 }

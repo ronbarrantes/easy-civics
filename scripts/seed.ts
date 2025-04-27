@@ -22,9 +22,12 @@ async function loadJson<T>(filename: string): Promise<T> {
 }
 
 async function seed() {
-  const questions: QuestionSeed[] = await loadJson("civics_questions_es.json");
+  const qEn: QuestionSeed[] = await loadJson("civics_questions_en.json");
+  const qEs: QuestionSeed[] = await loadJson("civics_questions_es.json");
 
-  for (const q of questions) {
+  console.log("WRITING TO DATABASE...");
+
+  for (const q of [...qEn, ...qEs]) {
     const [createdQuestion] = await db
       .insert(question)
       .values({
@@ -57,6 +60,8 @@ async function seed() {
   // }
 
   console.log("✅ Seeded questions and tags");
+
+  return;
 }
 
 seed();
