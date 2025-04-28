@@ -1176,7 +1176,7 @@
     "prompt": "What ocean is on the West Coast of the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["Atlantic Ocean", "Gulf of Mexico", "Arctic Ocean"],
     "correctAnswers": ["Pacific (Ocean)"]
   },
   {
@@ -1184,7 +1184,7 @@
     "prompt": "What ocean is on the East Coast of the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["Pacific Ocean", "Indian Ocean", "Arctic Ocean"],
     "correctAnswers": ["Atlantic (Ocean)"]
   },
   {
@@ -1192,7 +1192,7 @@
     "prompt": "Name one U.S. territory.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["Hawaii", "Alaska", "Florida"],
     "correctAnswers": [
       "Puerto Rico",
       "U.S. Virgin Islands",
@@ -1206,7 +1206,7 @@
     "prompt": "Name one state that borders Canada.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["California", "Texas", "Florida", "Hawaii", "Alaska"],
     "correctAnswers": [
       "Maine",
       "New Hampshire",
@@ -1228,7 +1228,7 @@
     "prompt": "Name one state that borders Mexico.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["Florida", "Texas", "California"],
     "correctAnswers": ["California", "Arizona", "New Mexico", "Texas"]
   },
   {
@@ -1236,7 +1236,12 @@
     "prompt": "What is the capital of the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "New York City",
+      "Los Angeles",
+      "Chicago",
+      "Philadelphia"
+    ],
     "correctAnswers": ["Washington, D.C."]
   },
   {
@@ -1244,7 +1249,12 @@
     "prompt": "Where is the Statue of Liberty?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "New York City",
+      "Washington, D.C.",
+      "Boston",
+      "Philadelphia"
+    ],
     "correctAnswers": [
       "New York (Harbor)",
       "Liberty Island [Also acceptable are New Jersey, near New York City, and on the Hudson (River).]"
@@ -1255,7 +1265,11 @@
     "prompt": "Why does the flag have 13 stripes?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "to represent the states in Congress",
+      "to honor the Founding Fathers",
+      "to symbolize freedom"
+    ],
     "correctAnswers": [
       "because there were 13 original colonies",
       "because the stripes represent the original colonies"
@@ -1266,7 +1280,11 @@
     "prompt": "Why does the flag have 50 stars?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "for the original 13 colonies",
+      "for the 13 amendments",
+      "for the founding fathers"
+    ],
     "correctAnswers": [
       "because there is one star for each state",
       "because each star represents a state",
@@ -1278,7 +1296,11 @@
     "prompt": "What is the name of the national anthem?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "America the Beautiful",
+      "God Bless America",
+      "My Country 'Tis of Thee"
+    ],
     "correctAnswers": ["The Star-Spangled Banner"]
   },
   {
@@ -1286,7 +1308,13 @@
     "prompt": "When do we celebrate Independence Day?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "January 1",
+      "February 14",
+      "December 25",
+      "July 1",
+      "July 14"
+    ],
     "correctAnswers": ["July 4"]
   },
   {
@@ -1294,7 +1322,13 @@
     "prompt": "Name two national U.S. holidays.",
     "expectedNumAnswers": 2,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "Halloween",
+      "Valentine's Day",
+      "Thanksgiving",
+      "Labor Day",
+      "New Year's Eve"
+    ],
     "correctAnswers": [
       "New Year's Day",
       "Martin Luther King, Jr. Day",
