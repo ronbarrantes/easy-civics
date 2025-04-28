@@ -1,5 +1,5 @@
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
-import { pickUniqueRandomNumbers } from "@/utils/randomNumbers";
+import { pickUniqueRandomNumbers } from "@/utils/random-numbers";
 import { tryCatch } from "@/utils/try-catch";
 
 export const qaRouter = createTRPCRouter({
@@ -10,7 +10,7 @@ export const qaRouter = createTRPCRouter({
         limit: 10,
         where: (quesh, { inArray, eq, and }) =>
           and(
-            eq(quesh.language, "es"),
+            eq(quesh.language, "en"),
             inArray(quesh.questionNumber, randomNumbers)
           ),
         columns: {
