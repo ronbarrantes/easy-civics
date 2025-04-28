@@ -4,7 +4,11 @@
     "prompt": "What is the supreme law of the land?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "The Bill of Rights",
+      "The Declaration of Independence",
+      "The Emancipation Proclamation"
+    ],
     "correctAnswers": ["The Constitution"]
   },
   {
@@ -12,7 +16,11 @@
     "prompt": "What does the Constitution do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "Declares war",
+      "Elects the President",
+      "Controls state governments"
+    ],
     "correctAnswers": [
       "sets up the government",
       "defines the government",
@@ -24,7 +32,11 @@
     "prompt": "The idea of self-government is in the first three words of the Constitution. What are these words?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "In God We Trust",
+      "Life, Liberty, Happiness",
+      "We the Citizens"
+    ],
     "correctAnswers": ["We the People"]
   },
   {
@@ -32,7 +44,11 @@
     "prompt": "What is an amendment?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "A new state",
+      "A treaty with another country",
+      "An executive order"
+    ],
     "correctAnswers": [
       "a change (to the Constitution)",
       "an addition (to the Constitution)"
@@ -43,7 +59,11 @@
     "prompt": "What do we call the first ten amendments to the Constitution?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "The Articles of Confederation",
+      "The Gettysburg Address",
+      "The Federalist Papers"
+    ],
     "correctAnswers": ["the Bill of Rights"]
   },
   {
@@ -51,7 +71,11 @@
     "prompt": "What is one right or freedom from the First Amendment?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the right to bear arms",
+      "the right to vote",
+      "the right to a fair trial"
+    ],
     "correctAnswers": [
       "speech",
       "religion",
@@ -65,7 +89,7 @@
     "prompt": "How many amendments does the Constitution have?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["twenty-six (26)", "twenty-eight (28)", "thirty (30)"],
     "correctAnswers": ["twenty-seven (27)"]
   },
   {
@@ -73,7 +97,11 @@
     "prompt": "What did the Declaration of Independence do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "Announced our independence from France",
+      "Declared our independence from Spain",
+      "Said that the United States is a democracy"
+    ],
     "correctAnswers": [
       "announced our independence (from Great Britain)",
       "declared our independence (from Great Britain)",
@@ -85,7 +113,11 @@
     "prompt": "What are two rights in the Declaration of Independence?",
     "expectedNumAnswers": 2,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "freedom of speech",
+      "freedom of the press",
+      "freedom of assembly"
+    ],
     "correctAnswers": ["life", "liberty", "the pursuit of happiness"]
   },
   {
@@ -93,7 +125,11 @@
     "prompt": "What is freedom of religion?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "You can practice any religion, or not practice a religion.",
+      "You can only practice Christianity.",
+      "You can only practice one religion."
+    ],
     "correctAnswers": [
       "You can practice any religion, or not practice a religion."
     ]
@@ -103,7 +139,7 @@
     "prompt": "What is the economic system in the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["Communist economy", "Feudal system", "Barter system"],
     "correctAnswers": ["capitalist economy", "market economy"]
   },
   {
@@ -111,7 +147,12 @@
     "prompt": "What is the \"rule of law\"?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "The President makes all laws",
+      "Only Congress must obey the law",
+      "Citizens are not bound by laws"
+    ],
+
     "correctAnswers": [
       "Everyone must follow the law.",
       "Leaders must obey the law.",
@@ -124,7 +165,12 @@
     "prompt": "Name one branch or part of the government.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the President",
+      "the Senate",
+      "the House of Representatives",
+      "the Supreme Court"
+    ],
     "correctAnswers": [
       "Congress",
       "legislative",
@@ -139,7 +185,11 @@
     "prompt": "What stops one branch of government from becoming too powerful?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "The President's power",
+      "The people's votes",
+      "The court's opinions"
+    ],
     "correctAnswers": ["checks and balances", "separation of powers"]
   },
   {
@@ -147,7 +197,11 @@
     "prompt": "Who is in charge of the executive branch?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "The Speaker of the House",
+      "The Chief Justice",
+      "The Vice President"
+    ],
     "correctAnswers": ["the President"]
   },
   {
@@ -155,7 +209,7 @@
     "prompt": "Who makes federal laws?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["the President", "the Supreme Court", "the Cabinet"],
     "correctAnswers": [
       "Congress",
       "Senate and House (of Representatives)",
@@ -167,7 +221,11 @@
     "prompt": "What are the two parts of the U.S. Congress?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Senate and the Supreme Court",
+      "the House of Representatives and the President",
+      "the Senate and the Cabinet"
+    ],
     "correctAnswers": ["the Senate and the House (of Representatives)"]
   },
   {
@@ -175,7 +233,11 @@
     "prompt": "How many U.S. Senators are there?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "fifty (50)",
+      "two hundred (200)",
+      "four hundred thirty-five (435)"
+    ],
     "correctAnswers": ["one hundred (100)"]
   },
   {
@@ -183,7 +245,7 @@
     "prompt": "We elect a U.S. Senator for how many years?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["four (4)", "two (2)", "eight (8)"],
     "correctAnswers": ["six (6)"]
   },
   {
@@ -201,7 +263,11 @@
     "prompt": "The House of Representatives has how many voting members?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "one hundred (100)",
+      "two hundred (200)",
+      "four hundred (400)"
+    ],
     "correctAnswers": ["four hundred thirty-five (435)"]
   },
   {
@@ -209,7 +275,7 @@
     "prompt": "We elect a U.S. Representative for how many years?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["four (4)", "two (6)", "eight (8)"],
     "correctAnswers": ["two (2)"]
   },
   {
@@ -227,7 +293,11 @@
     "prompt": "Who does a U.S. Senator represent?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "all citizens of the United States",
+      "only the people who voted for him/her",
+      "the President"
+    ],
     "correctAnswers": ["all people of the state"]
   },
   {
@@ -235,7 +305,11 @@
     "prompt": "Why do some states have more Representatives than other states?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "Because of the state's geography",
+      "Because of the state's economy",
+      "Because of the state's history"
+    ],
     "correctAnswers": [
       "(because of) the state's population",
       "(because) they have more people",
@@ -255,7 +329,19 @@
     "prompt": "In what month do we vote for President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "December"
+    ],
     "correctAnswers": ["November"]
   },
   {
@@ -283,7 +369,11 @@
     "prompt": "If the President can no longer serve, who becomes President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Speaker of the House",
+      "the Chief Justice",
+      "the Secretary of State"
+    ],
     "correctAnswers": ["the Vice President"]
   },
   {
@@ -291,7 +381,11 @@
     "prompt": "If both the President and the Vice President can no longer serve, who becomes President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Secretary of State",
+      "the Chief Justice",
+      "the Speaker of the House"
+    ],
     "correctAnswers": ["the Speaker of the House"]
   },
   {
@@ -299,7 +393,11 @@
     "prompt": "Who is the Commander in Chief of the military?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Chief Justice",
+      "the Secretary of Defense",
+      "the Vice President"
+    ],
     "correctAnswers": ["the President"]
   },
   {
@@ -307,7 +405,11 @@
     "prompt": "Who signs bills to become laws?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Chief Justice",
+      "the Speaker of the House",
+      "the Secretary of State"
+    ],
     "correctAnswers": ["the President"]
   },
   {
@@ -315,7 +417,11 @@
     "prompt": "Who vetoes bills?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Chief Justice",
+      "the Speaker of the House",
+      "the Secretary of State"
+    ],
     "correctAnswers": ["the President"]
   },
   {
@@ -323,7 +429,11 @@
     "prompt": "What does the President's Cabinet do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "advises Congress",
+      "advises the Supreme Court",
+      "advises the military"
+    ],
     "correctAnswers": ["advises the President"]
   },
   {
@@ -331,7 +441,11 @@
     "prompt": "What are two Cabinet-level positions?",
     "expectedNumAnswers": 2,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "Chief Justice",
+      "Senate Majority Leader",
+      "Director of the FBI"
+    ],
     "correctAnswers": [
       "Secretary of Agriculture",
       "Secretary of Commerce",
@@ -355,7 +469,12 @@
     "prompt": "What does the judicial branch do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "makes laws",
+      "enforces laws",
+      "interprets laws",
+      "decides if a law is constitutional"
+    ],
     "correctAnswers": [
       "reviews laws",
       "explains laws",
@@ -368,7 +487,11 @@
     "prompt": "What is the highest court in the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Court of Appeals",
+      "the District Court",
+      "the International Court"
+    ],
     "correctAnswers": ["the Supreme Court"]
   },
   {
@@ -376,10 +499,8 @@
     "prompt": "How many justices are on the Supreme Court?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
-    "correctAnswers": [
-      "Visit uscis.gov/citizenship/testupdates for the number of justices on the Supreme Court."
-    ]
+    "incorrectAnswers": ["eleven (11)", "thirteen (13)", "fifteen (15)"],
+    "correctAnswers": ["nine (9)"]
   },
   {
     "questionNumber": 40,
