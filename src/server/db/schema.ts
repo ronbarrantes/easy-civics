@@ -52,6 +52,7 @@ export const answer = createTable(
         .notNull()
         .references(() => question.id, { onDelete: "cascade" }),
       text: d.text().notNull(),
+      isCorrect: d.boolean().notNull().default(false),
       language: d.text().notNull().default("en"),
     };
   },
@@ -59,7 +60,7 @@ export const answer = createTable(
 );
 
 export const questionRelations = relations(question, ({ many }) => ({
-  answers: many(answer), // <-- NOTICE: this is plural, and matches later
+  answers: many(answer),
 }));
 
 export const answerRelations = relations(answer, ({ one }) => ({
