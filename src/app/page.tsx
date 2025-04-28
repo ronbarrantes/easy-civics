@@ -18,10 +18,6 @@ const Questions = async () => {
 };
 
 export default function Home() {
-  // TODO: remove the todos once I have some real data to add here
-  // in the mean time this is just a reminder of what needs to happen
-  // api.questionAnswer.get10.prefetch();
-
   return (
     <HydrateClient>
       <SignedOut>
