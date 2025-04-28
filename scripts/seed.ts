@@ -12,56 +12,79 @@ type QuestionSeed = {
   expectedNumAnswers: number;
   language: string;
   explanation?: string;
-  answers: Array<string>;
+  incorrectAnswers: Array<string>;
+  correctAnswers: Array<string>;
 };
 
 async function loadJson<T>(filename: string): Promise<T> {
   const filePath = path.join(seedsDir, filename);
   const raw = await fs.readFile(filePath, "utf-8");
-  return JSON.parse(raw);
+  return JSON.parse(raw) as T;
 }
 
 async function seed() {
-  const qEn: QuestionSeed[] = await loadJson("civics_questions_en.json");
-  const qEs: QuestionSeed[] = await loadJson("civics_questions_es.json");
+  try {
+    console.log("🚀 Starting seeding...");
 
-  console.log("WRITING TO DATABASE...");
+    const qEn = await loadJson<QuestionSeed[]>("civics_questions_en.json");
+    const qEs = await loadJson<QuestionSeed[]>("civics_questions_es.json");
 
-  for (const q of [...qEn, ...qEs]) {
-    const [createdQuestion] = await db
-      .insert(question)
-      .values({
-        questionNumber: q.questionNumber,
-        prompt: q.prompt,
-        expectedNumAnswers: q.expectedNumAnswers,
-        language: q.language,
-        explanation: q.explanation,
-      })
-      .returning();
+    const allQuestions = [...qEn, ...qEs];
 
-    if (createdQuestion) {
-      await db.insert(answer).values(
-        q.answers.map((text) => ({
-          questionId: createdQuestion.id,
-          text,
+    const total = allQuestions.length;
+
+    for (let i = 0; i < total; i++) {
+      const q = allQuestions[i];
+
+      // Spinner output
+      process.stdout.write(`\r🌱 Seeding question ${i + 1}/${total}...`);
+
+      const [createdQuestion] = await db
+        .insert(question)
+        .values({
+          questionNumber: q.questionNumber,
+          prompt: q.prompt,
+          expectedNumAnswers: q.expectedNumAnswers,
           language: q.language,
-        }))
-      );
+          explanation: q.explanation,
+        })
+        .returning();
+
+      if (!createdQuestion) {
+        console.warn(
+          `\n⚠️ Failed to create question ${q.questionNumber} (${q.language})`
+        );
+        continue;
+      }
+
+      const correctAnswersData = q.correctAnswers.map((text) => ({
+        questionId: createdQuestion.id,
+        text,
+        language: q.language,
+        isCorrect: true,
+      }));
+
+      const incorrectAnswersData = q.incorrectAnswers.map((text) => ({
+        questionId: createdQuestion.id,
+        text,
+        language: q.language,
+        isCorrect: false,
+      }));
+
+      await db
+        .insert(answer)
+        .values([...correctAnswersData, ...incorrectAnswersData]);
     }
+
+    // Done
+    process.stdout.write(
+      `\r✅ Successfully seeded ${total} questions and answers!\n`
+    );
+    process.exit(0);
+  } catch (error) {
+    console.error("\n❌ Seeding failed:", error);
+    process.exit(1);
   }
-
-  // const tags: TagSeed[] = await loadJson("tags.json");
-  // for (const t of tags) {
-  //   await db.insert(tag).values({
-  //     name: t.name,
-  //     description: t.description,
-  //     language: t.language ?? "en",
-  //   }).onConflictDoNothing(); // optional: prevent duplicate insertions
-  // }
-
-  console.log("✅ Seeded questions and tags");
-
-  return;
 }
 
 seed();
