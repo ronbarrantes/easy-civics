@@ -517,7 +517,11 @@
     "prompt": "Under our Constitution, some powers belong to the federal government. What is one power of the federal government?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "to create schools",
+      "to issue driver's licenses",
+      "to provide police protection"
+    ],
     "correctAnswers": [
       "to print money",
       "to declare war",
@@ -530,7 +534,11 @@
     "prompt": "Under our Constitution, some powers belong to the states. What is one power of the states?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "to declare war",
+      "to print money",
+      "to make treaties"
+    ],
     "correctAnswers": [
       "provide schooling and education",
       "provide protection (police)",
@@ -564,7 +572,11 @@
     "prompt": "What are the two major political parties in the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Green Party and the Libertarian Party",
+      "the Democratic Party and the Libertarian Party",
+      "the Republican Party and the Green Party"
+    ],
     "correctAnswers": ["Democratic and Republican"]
   },
   {
@@ -592,11 +604,15 @@
     "prompt": "There are four amendments to the Constitution about who can vote. Describe one of them.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "only citizens over twenty-one (21) can vote",
+      "only property owners can vote",
+      "only men can vote"
+    ],
     "correctAnswers": [
       "Citizens eighteen (18) and older can vote.",
       "You don't have to pay a (poll tax) to vote.",
-      "Any citizen can",
+      "Any citizen can vote",
       "A male citizen of any race (can vote)"
     ]
   },
@@ -605,7 +621,11 @@
     "prompt": "What is one responsibility that is only for United States citizens?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "paying taxes",
+      "serving in the military",
+      "attending public school"
+    ],
     "correctAnswers": ["serve on a jury", "vote in a federal election"]
   },
   {
@@ -613,7 +633,11 @@
     "prompt": "Name one right only for United States citizens.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "freedom of speech",
+      "freedom of assembly",
+      "freedom of religion"
+    ],
     "correctAnswers": ["vote in a federal election", "run for office"]
   },
   {
@@ -621,7 +645,11 @@
     "prompt": "What are two rights of everyone living in the United States?",
     "expectedNumAnswers": 2,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "right to free healthcare",
+      "right to free housing",
+      "right to a driver's license"
+    ],
     "correctAnswers": [
       "freedom of expression",
       "freedom of speech",
@@ -636,7 +664,11 @@
     "prompt": "What do we show loyalty to when we say the Pledge of Allegiance?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the President",
+      "the Constitution",
+      "the Supreme Court"
+    ],
     "correctAnswers": ["the United States", "the flag"]
   },
   {
@@ -644,7 +676,11 @@
     "prompt": "What is one promise you make when you become a United States citizen?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "promise to join the military",
+      "promise to own property",
+      "promise to serve in Congress"
+    ],
     "correctAnswers": [
       "give up loyalty to other countries",
       "defend the Constitution and laws of the United States",
@@ -659,7 +695,7 @@
     "prompt": "How old do citizens have to be to vote for President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["sixteen (16)", "twenty-one (21)", "seventeen (17)"],
     "correctAnswers": ["eighteen (18) and older"]
   },
   {
@@ -667,7 +703,11 @@
     "prompt": "What are two ways that Americans can participate in their democracy?",
     "expectedNumAnswers": 2,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "pay taxes",
+      "move to a different country",
+      "apply for a visa"
+    ],
     "correctAnswers": [
       "vote",
       "join a political party",
@@ -686,7 +726,7 @@
     "prompt": "When is the last day you can send in federal income tax forms?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["December 31", "January 1", "March 15"],
     "correctAnswers": ["April 15"]
   },
   {
@@ -694,7 +734,11 @@
     "prompt": "When must all men register for the Selective Service?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "at age sixteen (16)",
+      "at age twenty-one (21)",
+      "between twenty (20) and twenty-five (25)"
+    ],
     "correctAnswers": [
       "at age eighteen (18)",
       "between eighteen (18) and twenty-six (26)"
@@ -705,7 +749,11 @@
     "prompt": "What is one reason colonists came to America?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "to find gold in California",
+      "to avoid cold weather",
+      "to start large farms"
+    ],
     "correctAnswers": [
       "freedom",
       "political liberty",
@@ -720,7 +768,11 @@
     "prompt": "Who lived in America before the Europeans arrived?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "European settlers",
+      "Spanish missionaries",
+      "British colonists"
+    ],
     "correctAnswers": ["American Indians", "Native Americans"]
   },
   {
@@ -728,7 +780,7 @@
     "prompt": "What group of people was taken to America and sold as slaves?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["Europeans", "Asians", "Native Americans"],
     "correctAnswers": ["Africans", "people from Africa"]
   },
   {
@@ -736,7 +788,11 @@
     "prompt": "Why did the colonists fight the British?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "because they wanted to be British citizens",
+      "because they wanted to go back to England",
+      "because they wanted to be left alone"
+    ],
     "correctAnswers": [
       "because of high taxes (taxation without representation)",
       "because the British army stayed in their houses (boarding, quartering)",
@@ -748,7 +804,11 @@
     "prompt": "Who wrote the Declaration of Independence?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "(George) Washington",
+      "(Benjamin) Franklin",
+      "(John) Adams"
+    ],
     "correctAnswers": ["(Thomas) Jefferson"]
   },
   {
@@ -756,7 +816,7 @@
     "prompt": "When was the Declaration of Independence adopted?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["July 4, 1789", "September 17, 1787", "July 4, 1800"],
     "correctAnswers": ["July 4, 1776"]
   },
   {
@@ -764,7 +824,7 @@
     "prompt": "There were 13 original states. Name three.",
     "expectedNumAnswers": 3,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["California", "Texas", "Florida", "Alaska"],
     "correctAnswers": [
       "New Hampshire",
       "Massachusetts",
@@ -786,7 +846,11 @@
     "prompt": "What happened at the Constitutional Convention?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "The Declaration of Independence was written.",
+      "The Bill of Rights was written.",
+      "The Articles of Confederation were signed."
+    ],
     "correctAnswers": [
       "The Constitution was written.",
       "The Founding Fathers wrote the Constitution."
@@ -797,7 +861,7 @@
     "prompt": "When was the Constitution written?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["1776", "1800", "1791"],
     "correctAnswers": ["1787"]
   },
   {
@@ -805,7 +869,11 @@
     "prompt": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "(Thomas) Jefferson",
+      "(George) Washington",
+      "(Benjamin) Franklin"
+    ],
     "correctAnswers": [
       "(James) Madison",
       "(Alexander) Hamilton",
@@ -818,7 +886,11 @@
     "prompt": "What is one thing Benjamin Franklin is famous for?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "second President of the U.S.",
+      "wrote the Declaration of Independence",
+      "led the Continental Army"
+    ],
     "correctAnswers": [
       "U.S. diplomat",
       "oldest member of the Constitutional Convention",
@@ -832,7 +904,11 @@
     "prompt": "Who is the \"Father of Our Country\"?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "(Thomas) Jefferson",
+      "(James) Madison",
+      "(Benjamin) Franklin"
+    ],
     "correctAnswers": ["(George) Washington"]
   },
   {
@@ -840,7 +916,11 @@
     "prompt": "Who was the first President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "(Thomas) Jefferson",
+      "(John) Adams",
+      "(James) Madison"
+    ],
     "correctAnswers": ["(George) Washington"]
   },
   {
@@ -848,7 +928,11 @@
     "prompt": "What territory did the United States buy from France in 1803?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Oregon Territory",
+      "the Texas Territory",
+      "the Florida Territory"
+    ],
     "correctAnswers": ["the Louisiana Territory", "Louisiana"]
   },
   {
@@ -856,7 +940,12 @@
     "prompt": "Name one war fought by the United States in the 1800s.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "World War I",
+      "World War II",
+      "the Korean War",
+      "the Vietnam War"
+    ],
     "correctAnswers": [
       "War of 1812",
       "Mexican-American War",
@@ -869,7 +958,11 @@
     "prompt": "Name the U.S. war between the North and the South.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Revolutionary War",
+      "the War of 1812",
+      "the War of Independence"
+    ],
     "correctAnswers": ["the Civil War", "the War Between the States"]
   },
   {
@@ -877,7 +970,11 @@
     "prompt": "Name one problem that led to the Civil War.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "the Great Depression",
+      "the Dust Bowl",
+      "freedom of religion"
+    ],
     "correctAnswers": ["slavery", "economic reasons", "states' rights"]
   },
   {
@@ -885,7 +982,11 @@
     "prompt": "What was one important thing that Abraham Lincoln did?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "discovered America",
+      "wrote the Constitution",
+      "became the first President"
+    ],
     "correctAnswers": [
       "freed the slaves (Emancipation Proclamation)",
       "saved (or preserved) the Union",
@@ -897,7 +998,11 @@
     "prompt": "What did the Emancipation Proclamation do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "gave women the right to vote",
+      "ended World War I",
+      "created the Constitution"
+    ],
     "correctAnswers": [
       "freed the slaves",
       "freed slaves in the Confederacy",
@@ -910,7 +1015,11 @@
     "prompt": "What did Susan B. Anthony do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "led the American Revolution",
+      "became the first female President",
+      "discovered electricity"
+    ],
     "correctAnswers": ["fought for women's rights", "fought for civil rights"]
   },
   {
@@ -918,7 +1027,11 @@
     "prompt": "Name one war fought by the United States in the 1900s.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "Spanish-American War",
+      "Mexican-American War",
+      "Civil War"
+    ],
     "correctAnswers": [
       "World War I",
       "World War II",
@@ -932,7 +1045,11 @@
     "prompt": "Who was President during World War I?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "(Franklin) Roosevelt",
+      "(Harry) Truman",
+      "(Herbert) Hoover"
+    ],
     "correctAnswers": ["(Woodrow) Wilson"]
   },
   {
@@ -940,7 +1057,11 @@
     "prompt": "Who was President during the Great Depression and World War II?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "(Woodrow) Wilson",
+      "(Theodore) Roosevelt",
+      "(John F.) Kennedy"
+    ],
     "correctAnswers": ["(Franklin) Roosevelt"]
   },
   {
@@ -948,7 +1069,11 @@
     "prompt": "Who did the United States fight in World War II?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "Russia, China, and Cuba",
+      "Spain, France, and Mexico",
+      "Canada, Britain, and Japan"
+    ],
     "correctAnswers": ["Japan, Germany, and Italy"]
   },
   {
@@ -956,7 +1081,7 @@
     "prompt": "Before he was President, Eisenhower was a general. What war was he in?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["World War I", "Korean War", "Vietnam War"],
     "correctAnswers": ["World War II"]
   },
   {
@@ -964,7 +1089,7 @@
     "prompt": "During the Cold War, what was the main concern of the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["Democracy", "Capitalism", "Imperialism"],
     "correctAnswers": ["Communism"]
   },
   {
@@ -972,7 +1097,11 @@
     "prompt": "What movement tried to end racial discrimination?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "Women's Suffrage Movement",
+      "Abolitionist Movement",
+      "Industrial Revolution"
+    ],
     "correctAnswers": ["civil rights (movement)"]
   },
   {
@@ -980,7 +1109,11 @@
     "prompt": "What did Martin Luther King, Jr. do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "wrote the Constitution",
+      "signed the Declaration of Independence",
+      "served as President"
+    ],
     "correctAnswers": [
       "fought for civil rights",
       "worked for equality for all Americans"
@@ -991,7 +1124,11 @@
     "prompt": "What major event happened on September 11,2001, in the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": [
+      "hurricane hit New Orleans",
+      "Wall Street crashed",
+      "the U.S. declared war on Iraq"
+    ],
     "correctAnswers": ["Terrorists attacked the United State"]
   },
   {
@@ -999,7 +1136,7 @@
     "prompt": "Name one American Indian tribe in the United States.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["Vikings", "Pilgrims", "Colonists"],
     "correctAnswers": [
       "Cherokee",
       "Navajo",
@@ -1031,7 +1168,7 @@
     "prompt": "Name one of the two longest rivers in the United States.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
+    "incorrectAnswers": ["Colorado River", "Rio Grande", "Hudson River"],
     "correctAnswers": ["Missouri (River)", "Mississippi (River)"]
   },
   {
