@@ -1,0 +1,3 @@
+- [ ] Add routes to view questions
+- [ ] Add correspoding answers
+- [ ] Add a way to get 10 random questios
