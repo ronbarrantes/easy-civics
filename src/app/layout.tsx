@@ -36,6 +36,27 @@ export const metadata: Metadata = {
 const Header = () => {
   return (
     <header>
+      <SignedOut>
+        <SignInButton />
+        <SignUpButton />
+      </SignedOut>
+      <SignedIn>
+        <nav className="flex w-full justify-between">
+          <SyncUser />
+          <Link href="/">Stats</Link>
+          <ul className="flex items-center">
+            <li>
+              <Link href="dashboard">Dashboard</Link>
+            </li>
+            <li>
+              <Link href="connect">Connect</Link>
+            </li>
+            <li>
+              <UserButton />
+            </li>
+          </ul>
+        </nav>
+      </SignedIn>
       <ModeToggle />
     </header>
   );
@@ -67,34 +88,12 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <header className="flex h-16 items-center justify-end gap-4 p-4">
-                <SignedOut>
-                  <SignInButton />
-                  <SignUpButton />
-                </SignedOut>
-                <SignedIn>
-                  <nav className="flex w-full justify-between">
-                    <SyncUser />
-                    <Link href="/">Stats</Link>
-                    <ul className="flex items-center">
-                      <li>
-                        <Link href="dashboard">Dashboard</Link>
-                      </li>
-                      <li>
-                        <Link href="connect">Connect</Link>
-                      </li>
-                      <li>
-                        <UserButton />
-                      </li>
-                    </ul>
-                  </nav>
-                </SignedIn>
-              </header>
+              <header className="flex h-16 items-center justify-end gap-4 p-4"></header>
               <Header />
               {children}
+              <Footer />
             </ThemeProvider>
           </body>
-          <Footer />
         </html>
       </TRPCReactProvider>
     </ClerkProvider>

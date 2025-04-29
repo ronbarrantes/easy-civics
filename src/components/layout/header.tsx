@@ -4,8 +4,16 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 import { Flag } from "lucide-react";
 
+import { SyncUser } from "@/app/_components/SyncUser";
 import {
   Select,
   SelectContent,
@@ -35,6 +43,28 @@ export function Header() {
 
   return (
     <header className="bg-background/80 sticky top-0 z-10 w-full border-b backdrop-blur">
+      <SignedOut>
+        <SignInButton />
+        <SignUpButton />
+      </SignedOut>
+      <SignedIn>
+        <nav className="flex w-full justify-between">
+          <SyncUser />
+          <Link href="/">Stats</Link>
+          <ul className="flex items-center">
+            <li>
+              <Link href="dashboard">Dashboard</Link>
+            </li>
+            <li>
+              <Link href="connect">Connect</Link>
+            </li>
+            <li>
+              <UserButton />
+            </li>
+          </ul>
+        </nav>
+      </SignedIn>
+
       <div className="container flex h-14 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <Flag className="text-primary h-5 w-5" />
