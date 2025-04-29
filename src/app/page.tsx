@@ -1,36 +1,36 @@
 import Link from "next/link";
 
 import {
-  BookOpen,
-  CheckCircle,
+  // BookOpen,
+  // CheckCircle,
   Flag,
-  GraduationCap,
-  ListChecks,
+  // GraduationCap,
+  // ListChecks,
 } from "lucide-react";
 
-import { CategoryCard } from "@/components/citizenship/category-card";
+// import { CategoryCard } from "@/components/citizenship/category-card";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  getAllCategories,
-  getQuestionsByCategory,
-} from "@/lib/sample-questions";
+import {} from // Card,
+// CardContent,
+// CardDescription,
+// CardHeader,
+// CardTitle,
+"@/components/ui/card";
+import {} from // getAllCategories,
+// getQuestionsByCategory,
+"@/lib/sample-questions";
 import {
   // api,
   HydrateClient,
 } from "@/trpc/server";
 
+// import { useTranslation } from "@/app/i18n/client";
+
 export default function Home() {
-  const categories = getAllCategories();
+  // const categories = getAllCategories();
   return (
     <HydrateClient>
-      <div className="container mx-auto max-w-6xl px-4 py-8 md:py-12">
+      <div className="container mx-auto max-w-6xl flex-1 flex-col border border-red-600 px-4 py-8 md:py-12">
         <section className="relative mb-16 text-center">
           <div className="bg-primary/5 absolute inset-0 -z-10 rounded-3xl" />
           <div className="mb-4 flex justify-center">
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-16">
+        {/* <section className="mb-16">
           <h2 className="gradient-text mb-6 text-center text-2xl font-bold">
             Study By Category
           </h2>
@@ -68,9 +68,9 @@ export default function Home() {
               />
             ))}
           </div>
-        </section>
+        </section> */}
 
-        <section className="mb-16">
+        {/* <section className="mb-16">
           <h2 className="gradient-text mb-8 text-center text-2xl font-bold">
             How It Works
           </h2>
@@ -125,9 +125,9 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <div className="bg-primary/5 mx-auto max-w-3xl rounded-lg p-8 text-center md:p-10">
             <h2 className="gradient-text mb-4 text-2xl font-bold">
               Ready to Become a U.S. Citizen?
@@ -147,7 +147,7 @@ export default function Home() {
               </Link>
             </Button>
           </div>
-        </section>
+        </section> */}
       </div>
     </HydrateClient>
   );
