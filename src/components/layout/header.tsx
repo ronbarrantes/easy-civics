@@ -4,13 +4,7 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/nextjs";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import { Flag } from "lucide-react";
 
 import { SyncUser } from "@/app/_components/SyncUser";
@@ -42,30 +36,8 @@ export function Header() {
   };
 
   return (
-    <header className="bg-background/80 sticky top-0 z-10 w-full border-b backdrop-blur">
-      <SignedOut>
-        <SignInButton />
-        <SignUpButton />
-      </SignedOut>
-      <SignedIn>
-        <nav className="flex w-full justify-between">
-          <SyncUser />
-          <Link href="/">Stats</Link>
-          <ul className="flex items-center">
-            <li>
-              <Link href="dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link href="connect">Connect</Link>
-            </li>
-            <li>
-              <UserButton />
-            </li>
-          </ul>
-        </nav>
-      </SignedIn>
-
-      <div className="container flex h-14 items-center justify-between">
+    <header className="bg-background/80 sticky top-0 z-10 w-full border border-b border-red-500 backdrop-blur">
+      <div className="container flex h-14 items-center justify-between border-blue-500">
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <Flag className="text-primary h-5 w-5" />
           <span>US Citizenship Test</span>
@@ -85,6 +57,15 @@ export function Header() {
             </SelectContent>
           </Select>
           <ModeToggle />
+          <SignedIn>
+            <SyncUser />
+            <Link href="/">Stats</Link>
+            <ul className="flex items-center">
+              <li>
+                <UserButton />
+              </li>
+            </ul>
+          </SignedIn>
         </nav>
       </div>
     </header>
