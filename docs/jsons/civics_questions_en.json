@@ -152,7 +152,6 @@
       "Only Congress must obey the law",
       "Citizens are not bound by laws"
     ],
-
     "correctAnswers": [
       "Everyone must follow the law.",
       "Leaders must obey the law.",
@@ -349,20 +348,16 @@
     "prompt": "What is the name of the President of the United States now?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
-    "correctAnswers": [
-      "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States."
-    ]
+    "incorrectAnswers": ["Barack Obama", "George Washington", "Ronald Reagan"],
+    "correctAnswers": ["Donald Trump"]
   },
   {
     "questionNumber": 29,
     "prompt": "What is the name of the Vice President of the United States now?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "incorrectAnswers": [],
-    "correctAnswers": [
-      "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States."
-    ]
+    "incorrectAnswers": ["Joe Biden", "Barack Obama", "John Adams"],
+    "correctAnswers": ["James David Vance"]
   },
   {
     "questionNumber": 30,
