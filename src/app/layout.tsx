@@ -11,7 +11,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 
-import { ModeToggle } from "@/components/ModeToggle";
+import { ModeToggle } from "@/components/layout/ModeToggle";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TRPCReactProvider } from "@/trpc/react";
 import { SyncUser } from "./_components/SyncUser";
