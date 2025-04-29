@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { api, HydrateClient } from "@/trpc/server";
+import { ChangeLanguage } from "./_components/ChangeLanguage";
 
 const Questions = async () => {
   const questions = await api.questionAnswer.get10();
@@ -19,7 +19,7 @@ const Questions = async () => {
 export default function Home() {
   return (
     <HydrateClient>
-      <Button>click me</Button>
+      <ChangeLanguage />
       <Questions />
       <div></div>
     </HydrateClient>
