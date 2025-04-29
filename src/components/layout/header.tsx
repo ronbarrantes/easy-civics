@@ -36,8 +36,8 @@ export function Header() {
   };
 
   return (
-    <header className="bg-background/80 sticky top-0 z-10 w-full border border-b border-red-500 backdrop-blur">
-      <div className="container flex h-14 items-center justify-between border-blue-500">
+    <header className="bg-background/80 sticky top-0 z-10 w-full border-b border-dashed border-blue-950 backdrop-blur dark:border-blue-500">
+      <div className="container m-auto flex h-14 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <Flag className="text-primary h-5 w-5" />
           <span>US Citizenship Test</span>
@@ -52,7 +52,7 @@ export function Header() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="en">English</SelectItem>
-              <SelectItem value="es">Español</SelectItem>
+              {/* <SelectItem value="es">Español</SelectItem> */}
               {/* <SelectItem value="fr">Français</SelectItem> */}
             </SelectContent>
           </Select>
