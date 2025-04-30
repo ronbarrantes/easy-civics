@@ -19,43 +19,42 @@ import {} from // Card,
 import {} from // getAllCategories,
 // getQuestionsByCategory,
 "@/lib/sample-questions";
-import {
-  // api,
-  HydrateClient,
-} from "@/trpc/server";
+import {} from // api,
+// HydrateClient,
+"@/trpc/server";
 
 // import { useTranslation } from "@/app/i18n/client";
 
-export default function Home() {
+export default async function Home() {
   // const categories = getAllCategories();
-  return (
-    <HydrateClient>
-      <div className="container mx-auto max-w-6xl flex-1 flex-col border border-red-600 px-4 py-8 md:py-12">
-        <section className="relative mb-16 text-center">
-          <div className="bg-primary/5 absolute inset-0 -z-10 rounded-3xl" />
-          <div className="mb-4 flex justify-center">
-            <div className="bg-primary/10 rounded-full p-3">
-              <Flag className="text-primary h-12 w-12" />
-            </div>
-          </div>
-          <h1 className="gradient-text mb-4 text-4xl font-bold md:text-5xl">
-            U.S. Citizenship Test Practice
-          </h1>
-          <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-xl">
-            Prepare for your citizenship interview with our practice tests and
-            study materials.
-          </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="text-base">
-              <Link href="/test">Take Full Test</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="text-base">
-              <Link href="/study">Study Mode</Link>
-            </Button>
-          </div>
-        </section>
 
-        {/* <section className="mb-16">
+  return (
+    <>
+      <section className="relative mb-16 text-center">
+        <div className="bg-primary/5 absolute inset-0 -z-10 rounded-3xl" />
+        <div className="mb-4 flex justify-center">
+          <div className="bg-primary/10 rounded-full p-3">
+            <Flag className="text-primary h-12 w-12" />
+          </div>
+        </div>
+        <h1 className="gradient-text mb-4 text-4xl font-bold md:text-5xl">
+          U.S. Citizenship Test Practice
+        </h1>
+        <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-xl">
+          Prepare for your citizenship interview with our practice tests and
+          study materials.
+        </p>
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
+          <Button asChild size="lg" className="text-base">
+            <Link href="/test">Take Full Test</Link>
+          </Button>
+          <Button asChild variant="outline" size="lg" className="text-base">
+            <Link href="/study">Study Mode</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* <section className="mb-16">
           <h2 className="gradient-text mb-6 text-center text-2xl font-bold">
             Study By Category
           </h2>
@@ -70,7 +69,7 @@ export default function Home() {
           </div>
         </section> */}
 
-        {/* <section className="mb-16">
+      {/* <section className="mb-16">
           <h2 className="gradient-text mb-8 text-center text-2xl font-bold">
             How It Works
           </h2>
@@ -127,7 +126,7 @@ export default function Home() {
           </div>
         </section> */}
 
-        {/* <section>
+      {/* <section>
           <div className="bg-primary/5 mx-auto max-w-3xl rounded-lg p-8 text-center md:p-10">
             <h2 className="gradient-text mb-4 text-2xl font-bold">
               Ready to Become a U.S. Citizen?
@@ -148,7 +147,6 @@ export default function Home() {
             </Button>
           </div>
         </section> */}
-      </div>
-    </HydrateClient>
+    </>
   );
 }
