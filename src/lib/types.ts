@@ -1,16 +1,21 @@
-export interface Question {
-  id: string;
-  question: string;
-  options: string[];
-  correctAnswers: string[];
-  expectedNumAnswers: number;
-  category: Category;
-  explanation?: string;
-  language?: Language;
-}
+// export interface Question {
+//   id: string;
+//   question: string;
+//   options: string[];
+//   correctAnswers: string[];
+//   expectedNumAnswers: number;
+//   category?: Category;
+//   explanation?: string;
+//   language?: Language;
+// }
+
+import { QuestionWithAnswers } from "@/server/api/routers/qa-router";
+
+export type Question = QuestionWithAnswers;
 
 export type Language = "en" | "es";
 
+// TODO: Add the correct categories
 export type Category =
   | "American Government"
   | "American History"
@@ -32,10 +37,15 @@ export interface TestResults {
   timeEnded?: Date;
 }
 
+export interface UserAnswers {
+  questionId: string;
+  userAnswersId: Set<string>;
+}
+
 export interface TestState {
   questions: Question[];
   currentQuestionIndex: number;
-  userAnswers: string[][];
+  userAnswers: UserAnswers[];
   timeStarted: Date;
   timeEnded?: Date;
   isComplete: boolean;
