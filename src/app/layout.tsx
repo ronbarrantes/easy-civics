@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import classNames from "classnames";
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -35,7 +36,10 @@ export default function RootLayout({
       <TRPCReactProvider>
         <html lang="en" suppressHydrationWarning>
           <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            className={classNames(
+              "flex min-h-screen flex-col",
+              `${geistSans.variable} ${geistMono.variable} antialiased`
+            )}
           >
             <ThemeProvider
               attribute="class"
