@@ -1,3 +1,5 @@
+import { inferProcedureOutput } from "@trpc/server";
+
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { pickUniqueRandomNumbers } from "@/utils/random-numbers";
 import { tryCatch } from "@/utils/try-catch";
@@ -22,40 +24,19 @@ export const qaRouter = createTRPCRouter({
           answers: true,
         },
       })
-
-      // ctx.db.execute(
-      //   sql`
-      //   SELECT q.*, a.*
-      //   FROM (
-      //     SELECT *
-      //     FROM ${question}
-      //     WHERE language = 'en'
-      //     AND questionNumber IN (${sql.join(randomNumbers, sql`, `)})
-      //   ) AS q
-      //   LEFT JOIN ${answer} AS a ON q.id = a.question_id
-      //   ORDER BY q.id;
-      // `
-      // )
     );
 
-    // const
+    console.log("queshData", queshData);
 
-    // const { data: ansData, error: ansError } = await tryCatch(
-    //   ctx.db.query.answer.findMany({
-    //     // limit: 10,
-    //     where: (ans, { inArray, eq, and }) =>
-    //       and(
-    //         // eq(quesh.language, "en"),
-    //         // inArray(quesh.questionNumber, randomNumbers)
-    //       ),
-
-    //   })
-    // )
-
-    // const { data, error } = await tryCatch(ctx.db.query.question.findFirst());
     if (queshError) {
       return { error: queshError, data: null };
     }
+
     return { data: queshData, error: null };
   }),
 });
+
+export type QuestionWithAnswers = Exclude<
+  inferProcedureOutput<(typeof qaRouter)["get10"]>["data"],
+  null
+>[0];
