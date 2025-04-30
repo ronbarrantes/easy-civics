@@ -19,6 +19,8 @@ export const qaRouter = createTRPCRouter({
           id: true,
           prompt: true,
           questionNumber: true,
+          expectedNumAnswers: true,
+          explanation: true,
         },
         with: {
           answers: true,
@@ -32,6 +34,10 @@ export const qaRouter = createTRPCRouter({
       return { error: queshError, data: null };
     }
 
+    if (!queshData) {
+      return { error: "No data found", data: null };
+    }
+
     return { data: queshData, error: null };
   }),
 });
@@ -40,3 +46,6 @@ export type QuestionWithAnswers = Exclude<
   inferProcedureOutput<(typeof qaRouter)["get10"]>["data"],
   null
 >[0];
+
+// export type QuestionWithAnswers = <
+//   inferProcedureOutput<(typeof qaRouter)["get10"]>
