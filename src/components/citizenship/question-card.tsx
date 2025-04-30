@@ -14,14 +14,14 @@ import {
 } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { Question } from "@/lib/types";
+import { Question, UserAnswer } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 interface QuestionCardProps {
   question: Question;
-  onAnswer: (answers: string[]) => void;
+  onAnswer: (answers: UserAnswer) => void;
   showFeedback?: boolean;
-  userAnswers?: string[];
+  userAnswers: UserAnswer["userAnswersId"];
   isLast?: boolean;
 }
 
@@ -29,50 +29,64 @@ export function QuestionCard({
   question,
   onAnswer,
   showFeedback = false,
-  userAnswers = [],
+  userAnswers = new Set<string>(),
   isLast = false,
 }: QuestionCardProps) {
-  const [selectedAnswers, setSelectedAnswers] = useState<string[]>(userAnswers);
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(
-    userAnswers.length > 0
+  const [selectedAnswers, setSelectedAnswers] = useState<Set<string>>(
+    new Set(userAnswers)
   );
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(userAnswers.size > 0);
   const [error, setError] = useState<string>("");
 
-  const isCorrect =
-    showFeedback &&
-    selectedAnswers.length === question.correctAnswers.length &&
-    selectedAnswers.every((answer) =>
-      question.correctAnswers.includes(answer)
-    ) &&
-    question.correctAnswers.every((answer) => selectedAnswers.includes(answer));
+  // const isCorrect =
+  //   showFeedback &&
+  //   selectedAnswers.length === question.correctAnswers.length &&
+  //   selectedAnswers.every((answer) =>
+  //     question.correctAnswers.includes(answer)
+  //   ) &&
+  //   question.correctAnswers.every((answer) => selectedAnswers.includes(answer));
 
   const handleCheckboxChange = (checked: boolean, value: string) => {
     setSelectedAnswers((prev) => {
+      const updatedAnswers = new Set(prev);
+
       if (checked) {
-        if (prev.length >= question.expectedNumAnswers) {
+        if (updatedAnswers.size >= question.expectedNumAnswers) {
           setError(
-            `Please select only ${question.expectedNumAnswers} answer${question.expectedNumAnswers > 1 ? "s" : ""}`
+            `Please select only ${question.expectedNumAnswers} answer${
+              question.expectedNumAnswers > 1 ? "s" : ""
+            }`
           );
-          return prev;
+          return prev; // Do not add more answers if the limit is reached
         }
         setError("");
-        return [...prev, value];
+        updatedAnswers.add(value); // Add the selected answer
       } else {
         setError("");
-        return prev.filter((a) => a !== value);
+        updatedAnswers.delete(value); // Remove the unselected answer
       }
+
+      return updatedAnswers;
     });
   };
 
   const handleSubmit = () => {
-    if (selectedAnswers.length !== question.expectedNumAnswers) {
+    if (
+      selectedAnswers &&
+      selectedAnswers.size !== question.expectedNumAnswers
+    ) {
       setError(
         `Please select exactly ${question.expectedNumAnswers} answer${question.expectedNumAnswers > 1 ? "s" : ""}`
       );
       return;
     }
 
-    onAnswer(selectedAnswers);
+    const userAnswer: UserAnswer = {
+      questionId: question.id,
+      userAnswersId: selectedAnswers,
+    };
+
+    onAnswer(userAnswer);
     setIsSubmitted(true);
   };
 
@@ -80,10 +94,9 @@ export function QuestionCard({
     <Card className="mx-auto w-full max-w-lg">
       <CardHeader>
         <CardTitle className="text-xl leading-tight">
-          {question.question}
+          {question.prompt}
         </CardTitle>
         <CardDescription>
-          Category: {question.category}
           {question.expectedNumAnswers > 1 && (
             <div className="text-primary mt-2 flex items-center gap-2">
               <Info className="h-4 w-4" />
@@ -94,13 +107,13 @@ export function QuestionCard({
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-3">
-          {question.options.map((option) => {
-            const isOptionCorrect = question.correctAnswers.includes(option);
-            const isOptionSelected = selectedAnswers.includes(option);
+          {question.answers.map((option) => {
+            const isOptionSelected = selectedAnswers.has(option.id);
 
             let optionClassName = "border-2 p-4 rounded-md transition-all";
 
             if (isSubmitted && showFeedback) {
+              const isOptionCorrect = option.isCorrect;
               if (isOptionCorrect) {
                 optionClassName = cn(
                   optionClassName,
@@ -122,31 +135,19 @@ export function QuestionCard({
             }
 
             return (
-              <div key={option} className={optionClassName}>
+              <div key={option.id} className={optionClassName}>
                 <div className="flex items-center space-x-3">
                   <Checkbox
-                    id={`option-${question.id}-${option.replace(/\s+/g, "-").toLowerCase()}`}
-                    checked={selectedAnswers.includes(option)}
+                    id={option.id}
+                    checked={isOptionSelected}
                     onCheckedChange={(checked) =>
-                      handleCheckboxChange(checked as boolean, option)
+                      handleCheckboxChange(checked as boolean, option.id)
                     }
                     disabled={isSubmitted && showFeedback}
                   />
-                  <Label
-                    htmlFor={`option-${question.id}-${option.replace(/\s+/g, "-").toLowerCase()}`}
-                    className="flex-1 cursor-pointer"
-                  >
-                    {option}
+                  <Label htmlFor={option.id} className="flex-1 cursor-pointer">
+                    {option.text}
                   </Label>
-                  {isSubmitted && showFeedback && isOptionCorrect && (
-                    <CheckCircle className="h-5 w-5 flex-shrink-0 text-green-500" />
-                  )}
-                  {isSubmitted &&
-                    showFeedback &&
-                    isOptionSelected &&
-                    !isOptionCorrect && (
-                      <AlertCircle className="h-5 w-5 flex-shrink-0 text-red-500" />
-                    )}
                 </div>
               </div>
             );
@@ -155,40 +156,9 @@ export function QuestionCard({
 
         {error && <p className="text-destructive text-sm">{error}</p>}
 
-        {showFeedback && isSubmitted && (
-          <div
-            className={cn(
-              "mt-4 rounded-md p-4",
-              isCorrect
-                ? "bg-green-50 text-green-900 dark:bg-green-900/20 dark:text-green-50"
-                : "bg-red-50 text-red-900 dark:bg-red-900/20 dark:text-red-50"
-            )}
-          >
-            <p className="mb-2 font-medium">
-              {isCorrect
-                ? "Correct answer!"
-                : `Incorrect. The correct answers are: ${question.correctAnswers.join(", ")}`}
-            </p>
-            {question.explanation && (
-              <p className="text-sm">{question.explanation}</p>
-            )}
-          </div>
-        )}
-
         {!isSubmitted && (
-          <Button
-            onClick={handleSubmit}
-            className="w-full"
-            disabled={selectedAnswers.length !== question.expectedNumAnswers}
-          >
+          <Button onClick={handleSubmit} className="w-full">
             Submit Answer
-          </Button>
-        )}
-
-        {isSubmitted && !showFeedback && (
-          <Button onClick={() => onAnswer(selectedAnswers)} className="w-full">
-            {isLast ? "See Results" : "Next Question"}{" "}
-            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         )}
       </CardContent>

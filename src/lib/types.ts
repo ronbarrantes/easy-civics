@@ -30,14 +30,14 @@ export interface TestResults {
   passed: boolean;
   questionsWithAnswers: {
     question: Question;
-    userAnswers: string[];
+    userAnswers: UserAnswer[];
     isCorrect: boolean;
   }[];
   timeStarted: Date;
   timeEnded?: Date;
 }
 
-export interface UserAnswers {
+export interface UserAnswer {
   questionId: string;
   userAnswersId: Set<string>;
 }
@@ -45,7 +45,7 @@ export interface UserAnswers {
 export interface TestState {
   questions: Question[];
   currentQuestionIndex: number;
-  userAnswers: UserAnswers[];
+  userAnswers: UserAnswer[];
   timeStarted: Date;
   timeEnded?: Date;
   isComplete: boolean;
