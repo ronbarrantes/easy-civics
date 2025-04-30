@@ -30,7 +30,7 @@ export function QuestionCard({
   onAnswer,
   showFeedback = false,
   userAnswers = new Set<string>(),
-  isLast = false,
+  // isLast = false,
 }: QuestionCardProps) {
   const [selectedAnswers, setSelectedAnswers] = useState<Set<string>>(
     new Set(userAnswers)
