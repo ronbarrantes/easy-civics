@@ -17,16 +17,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTestStore } from "@/hooks/use-test";
 import { TestResults, TestState, UserAnswer } from "@/lib/types";
 
 export default function TestClientPage({
-  questions,
+  questions: questionsData,
 }: {
   questions: TestState["questions"];
 }) {
+  const { questions, setQuestions } = useTestStore();
+
   const router = useRouter();
-  const [testState, setTestState] = useState<TestState>({
-    questions,
+  const [testState, setTestState] = useState<Omit<TestState, "questions">>({
+    // questions,
     currentQuestionIndex: 0,
     userAnswers: [],
     timeStarted: new Date(),
@@ -35,14 +38,11 @@ export default function TestClientPage({
   const [isStarted, setIsStarted] = useState(false);
   const [timeElapsed, setTimeElapsed] = useState(0);
 
-  // Initialize test with random questions
-  // useEffect(() => {
-  //   setTestState({
-  //     ...testState,
-  //     questions,
-  //     userAnswers: new Array(questions.length).fill(""),
-  //   });
-  // }, []);
+  useEffect(() => {
+    setQuestions(questionsData);
+  }, [questionsData, setQuestions]);
+
+  console.log("questions", questions);
 
   // Timer effect for the test
   useEffect(() => {
@@ -157,6 +157,7 @@ export default function TestClientPage({
             </Button>
           </CardFooter>
         </Card>
+        <button onClick={() => increase(1)}>increase</button>
       </div>
     );
   }
