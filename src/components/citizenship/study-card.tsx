@@ -59,7 +59,10 @@ export function StudyCard({ questions, initialIndex = 0 }: StudyCardProps) {
           <div className="absolute flex h-full w-full flex-col backface-hidden">
             <CardHeader className="flex flex-grow items-center justify-center p-6 text-center">
               <h2 className="text-xl leading-relaxed font-semibold">
-                {currentQuestion.question}
+                {
+                  //TODO: fix this:
+                  //  currentQuestion.question
+                }
               </h2>
             </CardHeader>
             <CardFooter className="border-t p-4">
@@ -74,7 +77,10 @@ export function StudyCard({ questions, initialIndex = 0 }: StudyCardProps) {
               <div className="space-y-4">
                 <h3 className="text-primary text-lg font-medium">Answer:</h3>
                 <p className="text-xl font-semibold">
-                  {currentQuestion.correctAnswers.join(", ")}
+                  {
+                    //TODO: fix this:
+                    //currentQuestion.correctAnswers.join(", ")
+                  }
                 </p>
                 {currentQuestion.explanation && (
                   <div className="text-muted-foreground mt-4 border-t pt-4 text-sm">

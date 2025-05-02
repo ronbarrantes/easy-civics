@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/select";
 import { TestResults } from "@/lib/types";
 
+type SelectValueType = "all" | "correct" | "incorrect";
+
 export default function ReviewPage() {
   const router = useRouter();
   const [results, setResults] = useState<TestResults | null>(null);
@@ -68,7 +70,7 @@ export default function ReviewPage() {
         <div className="mb-8 flex justify-center">
           <Select
             value={filter}
-            onValueChange={(value) => setFilter(value as any)}
+            onValueChange={(value) => setFilter(value as SelectValueType)}
           >
             <SelectTrigger className="w-40">
               <SelectValue placeholder="Filter answers" />
@@ -96,7 +98,7 @@ export default function ReviewPage() {
         <Select
           value={filter}
           onValueChange={(value) => {
-            setFilter(value as any);
+            setFilter(value as SelectValueType);
             setCurrentIndex(0);
           }}
         >
@@ -126,12 +128,7 @@ export default function ReviewPage() {
         </span>
       </div>
 
-      <QuestionCard
-        question={currentQuestion.question}
-        onAnswer={() => {}}
-        showFeedback={true}
-        userAnswer={currentQuestion.userAnswer}
-      />
+      <QuestionCard onAnswer={() => {}} showFeedback={true} />
 
       <div className="mt-8 flex justify-between">
         <Button
@@ -161,4 +158,3 @@ export default function ReviewPage() {
     </div>
   );
 }
-
