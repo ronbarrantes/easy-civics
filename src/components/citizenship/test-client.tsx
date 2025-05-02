@@ -165,54 +165,8 @@ export default function TestClientPage({
         totalQuestions={questions.length}
       />
 
-      {userAnswers.length + 1 && (
-        <QuestionCard
-          onAnswer={handleAnswer}
-          // userAnswers={userAnswers}
-        />
-      )}
+      {userAnswers.length + 1 && <QuestionCard onAnswer={handleAnswer} />}
       <div>IS COMPLETED {`${isCompleted}`}</div>
     </div>
   );
 }
-
-// function calculateResults(
-//   testState: NewTestState & {
-//     questions: TestStore["questions"];
-//     userAnswers: TestStore["userAnswers"];
-//   }
-// ): TestResults {
-//   const correctAnswers = testState.questions.reduce((count, question) => {
-//     const expectedNumAnswers = question.expectedNumAnswers;
-//     const userAnswers = testState.userAnswers.filter(
-//       (answer) => answer.questionId === question.id
-//     );
-
-//     const correctNumAnswers = question.answers.filter((answer) =>
-//       userAnswers.some((userAnswer) => userAnswer.id === answer.id)
-//     );
-
-//     return count + (correctNumAnswers.length >= expectedNumAnswers ? 1 : 0);
-//   }, 0);
-
-//   const incorrectAnswers = testState.questions.length - correctAnswers;
-//   const passThreshold = 6; // 6 out of 10 is passing
-//   const passed = correctAnswers >= passThreshold;
-
-//   const questionsWithAnswers = testState.questions.map((question, index) => ({
-//     question,
-//     userAnswer: testState.userAnswers[index],
-//     isCorrect: correctAnswers >= question.expectedNumAnswers,
-//   }));
-
-//   return {
-//     totalQuestions: testState.questions.length,
-//     correctAnswers,
-//     incorrectAnswers,
-//     passThreshold,
-//     passed,
-//     questionsWithAnswers,
-//     timeStarted: testState.timeStarted,
-//     timeEnded: testState.timeEnded || new Date(),
-//   };
-// }
