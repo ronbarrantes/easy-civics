@@ -17,36 +17,55 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useTestStore } from "@/hooks/use-test";
-import { TestResults, TestState, UserAnswer } from "@/lib/types";
+import { TestStore, useTestStore } from "@/hooks/use-test";
+import { Question, TestResults, TestState } from "@/lib/types";
+
+type NewTestState = Omit<
+  TestState,
+  "questions" | "userAnswers" | "isComplete" | "currentQuestionIndex"
+>;
 
 export default function TestClientPage({
   questions: questionsData,
 }: {
-  questions: TestState["questions"];
+  questions: Question[];
 }) {
-  const { questions, setQuestions } = useTestStore();
+  // ZUSTAND STATE
+  const {
+    questions,
+    userAnswers,
+    currentQuestionIndex,
+    isStarted,
+    increaseQuestionIndex,
+    setQuestions,
+    setUserAnswer,
+    startTest,
+    stopTest,
+  } = useTestStore();
 
   const router = useRouter();
-  const [testState, setTestState] = useState<Omit<TestState, "questions">>({
-    // questions,
-    currentQuestionIndex: 0,
-    userAnswers: [],
+  const [testState, setTestState] = useState<NewTestState>({
     timeStarted: new Date(),
-    isComplete: false,
   });
-  const [isStarted, setIsStarted] = useState(false);
+
   const [timeElapsed, setTimeElapsed] = useState(0);
 
   useEffect(() => {
     setQuestions(questionsData);
   }, [questionsData, setQuestions]);
 
-  console.log("questions", questions);
+  const isCompleted = userAnswers.length >= questions.length;
+
+  console.log(
+    "IS COMPLETED --->>",
+    isCompleted,
+    userAnswers.length,
+    questions.length
+  );
 
   // Timer effect for the test
   useEffect(() => {
-    if (!isStarted || testState.isComplete) return;
+    if (!isStarted || isCompleted) return;
 
     const timer = setInterval(() => {
       setTimeElapsed(
@@ -57,39 +76,35 @@ export default function TestClientPage({
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [isStarted, testState.timeStarted, testState.isComplete]);
+  }, [isStarted, testState.timeStarted, isCompleted]);
 
   const handleStartTest = () => {
-    setIsStarted(true);
+    startTest();
     setTestState({
       ...testState,
       timeStarted: new Date(),
     });
   };
 
-  const handleAnswer = (answer: UserAnswer) => {
-    const newUserAnswers = [...testState.userAnswers];
-
-    newUserAnswers[testState.currentQuestionIndex] = answer;
-
-    if (testState.currentQuestionIndex < testState.questions.length - 1) {
+  const handleAnswer = (answer: Set<string>) => {
+    if (!isCompleted) {
       // Move to next question
-      setTestState({
-        ...testState,
-        userAnswers: newUserAnswers,
-        currentQuestionIndex: testState.currentQuestionIndex + 1,
-      });
+      setUserAnswer(answer);
+      increaseQuestionIndex();
     } else {
       // Test complete
+      setUserAnswer(answer);
       const timeEnded = new Date();
 
       // Calculate results
       const results: TestResults = calculateResults({
         ...testState,
-        userAnswers: newUserAnswers,
+        questions,
+        userAnswers,
         timeEnded,
-        isComplete: true,
       });
+
+      stopTest();
 
       // Save results to local storage for results page
       localStorage.setItem("testResults", JSON.stringify(results));
@@ -157,12 +172,11 @@ export default function TestClientPage({
             </Button>
           </CardFooter>
         </Card>
-        <button onClick={() => increase(1)}>increase</button>
       </div>
     );
   }
 
-  const currentQuestion = testState.questions[testState.currentQuestionIndex];
+  const currentQuestion = questionsData[currentQuestionIndex];
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-12">
@@ -175,42 +189,108 @@ export default function TestClientPage({
       </div>
 
       <ProgressBar
-        currentQuestion={testState.currentQuestionIndex + 1}
-        totalQuestions={testState.questions.length}
+        currentQuestion={userAnswers.length + 1}
+        totalQuestions={questions.length}
       />
 
-      {currentQuestion && (
+      {userAnswers.length + 1 && (
         <QuestionCard
           question={currentQuestion}
           onAnswer={handleAnswer}
-          isLast={
-            testState.currentQuestionIndex === testState.questions.length - 1
-          }
+          isLast={questions.length === userAnswers.length - 1}
+          // userAnswers={userAnswers}
         />
       )}
+      <div>IS COMPLETED {`${isCompleted}`}</div>
     </div>
   );
 }
 
-function calculateResults(testState: TestState): TestResults {
-  const correctAnswers = testState.questions.reduce(
-    (count, question, index) => {
-      return testState.userAnswers[index] === question.correctAnswer
-        ? count + 1
-        : count;
-    },
-    0
-  );
+// function calculateResults(
+//   testState: NewTestState & {
+//     questions: TestStore["questions"];
+//     userAnswers: TestStore["userAnswers"];
+//   }
+// ): TestResults {
+//   const correctAnswers = testState.questions.reduce((count, question) => {
+//     const expectedNumAnswers = question.expectedNumAnswers;
+//     const userAnswers = testState.userAnswers.filter(
+//       (answer) => answer.questionId === question.id
+//     );
+
+//     const correctNumAnswers = question.answers.filter((answer) =>
+//       userAnswers.some((userAnswer) => userAnswer.id === answer.id)
+//     );
+
+//     return count + (correctNumAnswers.length >= expectedNumAnswers ? 1 : 0);
+//   }, 0);
+
+//   const incorrectAnswers = testState.questions.length - correctAnswers;
+//   const passThreshold = 6; // 6 out of 10 is passing
+//   const passed = correctAnswers >= passThreshold;
+
+//   const questionsWithAnswers = testState.questions.map((question, index) => ({
+//     question,
+//     userAnswer: testState.userAnswers[index],
+//     isCorrect: correctAnswers >= question.expectedNumAnswers,
+//   }));
+
+//   return {
+//     totalQuestions: testState.questions.length,
+//     correctAnswers,
+//     incorrectAnswers,
+//     passThreshold,
+//     passed,
+//     questionsWithAnswers,
+//     timeStarted: testState.timeStarted,
+//     timeEnded: testState.timeEnded || new Date(),
+//   };
+// }
+
+function calculateResults(
+  testState: NewTestState & {
+    questions: TestStore["questions"];
+    userAnswers: TestStore["userAnswers"];
+  }
+): TestResults {
+  const correctAnswers = testState.questions.reduce((count, question) => {
+    const expectedNumAnswers = question.expectedNumAnswers;
+    const userAnswers = testState.userAnswers.filter(
+      (answer) => answer.questionId === question.id
+    );
+
+    const correctNumAnswers = question.answers.filter(
+      (answer) =>
+        answer.isCorrect &&
+        userAnswers.some((userAnswer) => userAnswer.id === answer.id)
+    );
+
+    return count + (correctNumAnswers.length >= expectedNumAnswers ? 1 : 0);
+  }, 0);
 
   const incorrectAnswers = testState.questions.length - correctAnswers;
   const passThreshold = 6; // 6 out of 10 is passing
   const passed = correctAnswers >= passThreshold;
 
-  const questionsWithAnswers = testState.questions.map((question, index) => ({
-    question,
-    userAnswer: testState.userAnswers[index],
-    isCorrect: testState.userAnswers[index] === question.correctAnswer,
-  }));
+  const questionsWithAnswers = testState.questions.map((question) => {
+    const userAnswers = testState.userAnswers.filter(
+      (answer) => answer.questionId === question.id
+    );
+
+    const correctNumAnswers = question.answers.filter(
+      (answer) =>
+        answer.isCorrect &&
+        userAnswers.some((userAnswer) => userAnswer.id === answer.id)
+    );
+
+    const isCorrect = correctNumAnswers.length >= question.expectedNumAnswers;
+
+    return {
+      question,
+      userAnswers,
+      isCorrect,
+    };
+  });
 
   return {
     totalQuestions: testState.questions.length,

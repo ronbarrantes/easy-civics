@@ -1,47 +1,88 @@
 import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
+import {
+  devtools,
+  // persist
+} from "zustand/middleware";
 
-import { Question, UserAnswer } from "@/lib/types";
+import { Answer, Question } from "@/lib/types";
 
 type TestState = {
   questions: Question[];
-  userAnswers: UserAnswer[];
-  currentQuestionIndex: number;
-  isCompleted: boolean;
+  userAnswers: Array<Set<string>>;
+  currentQuestionIndex: number; // maybe remove
+  isStarted: boolean;
+  selectedAnswers: Set<string>;
+  answers: Answer[];
 };
 
 type TestActions = {
   setQuestions: (questions: Question[]) => void;
-  setUserAnswer: (userAnswer: UserAnswer) => void;
-  increaseQuestionIndex: () => void;
-  resetIndex: () => void;
+  setUserAnswer: (userAnswer: Set<string>) => void;
+  increaseQuestionIndex: () => void; // maybe remove
+  startTest: () => void;
+  stopTest: () => void;
+  toggleAnswer: (selectedAnswer: string) => void;
+  singleChoiceAnswer: (selectedAnswer: string) => void;
 };
 
 export type TestStore = TestActions & TestState;
 
 export const useTestStore = create<TestStore>()(
   devtools(
-    persist(
-      (set, getState) => ({
-        currentQuestionIndex: 1,
-        questions: [],
-        userAnswers: [],
-        get isCompleted() {
-          return getState().userAnswers.length >= getState().questions.length;
-        },
-        setUserAnswer: (userAnswer) =>
-          set((state) => ({
-            userAnswers: [...state.userAnswers, userAnswer],
-          })),
-        setQuestions: (questions) => set(() => ({ questions })),
+    // persist(
+    (set) => ({
+      isStarted: false,
+      currentQuestionIndex: 0,
+      questions: [],
+      answers: [],
+      userAnswers: [],
+      selectedAnswers: new Set(),
+      toggleAnswer: (selectedAnswers) =>
+        set((state) => {
+          const newSelectedAnswers = new Set(state.selectedAnswers);
+          if (newSelectedAnswers.has(selectedAnswers)) {
+            newSelectedAnswers.delete(selectedAnswers);
+          } else {
+            newSelectedAnswers.add(selectedAnswers);
+          }
+          return { selectedAnswers: newSelectedAnswers };
+        }),
+      singleChoiceAnswer: (selectedAnswer) =>
+        set((state) => {
+          const newSelectedAnswers = new Set(state.selectedAnswers);
+          newSelectedAnswers.clear();
+          newSelectedAnswers.add(selectedAnswer);
+          return { selectedAnswers: newSelectedAnswers };
+        }),
 
-        increaseQuestionIndex: () =>
-          set((state) => ({
-            currentQuestionIndex: state.currentQuestionIndex + 1,
-          })),
-        resetIndex: () => set({ currentQuestionIndex: 1 }),
-      }),
-      { name: "bearStore" }
-    )
+      setUserAnswer: (userAnswer) =>
+        set((state) => {
+          console.log(
+            "USER ANSWER--->>",
+            userAnswer,
+            state.currentQuestionIndex
+          );
+          const newUserAnswers = [...state.userAnswers];
+          newUserAnswers[state.currentQuestionIndex] = userAnswer;
+          return { userAnswers: newUserAnswers };
+        }),
+      setQuestions: (questions) =>
+        set(() => {
+          return { questions };
+        }),
+      increaseQuestionIndex: () =>
+        set((state) => ({
+          currentQuestionIndex: state.currentQuestionIndex + 1,
+        })),
+      startTest: () =>
+        set({
+          isStarted: true,
+          userAnswers: [],
+          currentQuestionIndex: 0,
+        }),
+      stopTest: () => set({ isStarted: false }),
+    }),
+    { name: "TEST_STORE" }
   )
+  // )
 );

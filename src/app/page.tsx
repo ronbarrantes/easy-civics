@@ -30,7 +30,7 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative mb-16 text-center">
+      <section className="relative mb-16 p-6 text-center">
         <div className="bg-primary/5 absolute inset-0 -z-10 rounded-3xl" />
         <div className="mb-4 flex justify-center">
           <div className="bg-primary/10 rounded-full p-3">

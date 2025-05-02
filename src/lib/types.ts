@@ -12,6 +12,7 @@
 import { QuestionWithAnswers } from "@/server/api/routers/qa-router";
 
 export type Question = QuestionWithAnswers;
+export type Answer = QuestionWithAnswers["answers"][0];
 
 export type Language = "en" | "es";
 
@@ -30,22 +31,17 @@ export interface TestResults {
   passed: boolean;
   questionsWithAnswers: {
     question: Question;
-    userAnswers: UserAnswer[];
+    userAnswers: Set<string>;
     isCorrect: boolean;
   }[];
   timeStarted: Date;
   timeEnded?: Date;
 }
 
-export interface UserAnswer {
-  questionId: string;
-  userAnswersId: Set<string>;
-}
-
 export interface TestState {
   questions: Question[];
   currentQuestionIndex: number;
-  userAnswers: UserAnswer[];
+  userAnswers: Array<Set<string>>;
   timeStarted: Date;
   timeEnded?: Date;
   isComplete: boolean;
