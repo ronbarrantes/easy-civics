@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useRouter } from "next/navigation";
 
@@ -8,38 +8,25 @@ import { Home } from "lucide-react";
 
 import { ResultsSummary } from "@/components/citizenship/results-summary";
 import { Button } from "@/components/ui/button";
-import { TestResults } from "@/lib/types";
+import { useTestStore } from "@/hooks/use-test";
+import { calculateResults } from "@/utils/calculate-results";
 
 export default function ResultsPage() {
   const router = useRouter();
-  const [results, setResults] = useState<TestResults | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [results, setResults] = useState<TestResults | null>(null);
+  // const [isLoading, setIsLoading] = useState(false);
+  const { timeEnded, timeStarted, questions, userAnswers } = useTestStore();
 
-  useEffect(() => {
-    try {
-      const storedResults = localStorage.getItem("testResults");
-      if (storedResults) {
-        const parsedResults = JSON.parse(storedResults);
-        setResults(parsedResults);
-      } else {
-        // No results found, redirect to test page
-        router.push("/test");
-      }
-    } catch (error) {
-      console.error("Error loading test results:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [router]);
+  const results = calculateResults({
+    timeEnded,
+    timeStarted,
+    questions,
+    userAnswers,
+  });
 
-  if (isLoading) {
-    return (
-      <div className="container mx-auto max-w-md px-4 py-12 text-center">
-        <p>Loading your results...</p>
-      </div>
-    );
-  }
-
+  // TODO: add a check for when a test hasn't beend done
+  // maybe if all the answers have not been completed
+  // or checkf for "is complete"
   if (!results) {
     return (
       <div className="container mx-auto max-w-md px-4 py-12 text-center">

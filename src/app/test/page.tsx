@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import TestClientPage from "@/components/citizenship/test-client";
 import { api } from "@/trpc/server";
 
@@ -11,5 +13,9 @@ export default async function TestPage() {
     return <div>There was an error loading the questions</div>;
   }
 
-  return <TestClientPage questions={questionsData} />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TestClientPage questions={questionsData} />
+    </Suspense>
+  );
 }

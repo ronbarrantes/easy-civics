@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/card";
 import { useTestStore } from "@/hooks/use-test";
 import { Question } from "@/lib/types";
+import { formatTime } from "@/utils/time";
 
 export default function TestClientPage({
   questions: questionsData,
@@ -47,7 +48,7 @@ export default function TestClientPage({
 
   const isCompleted = userAnswers.length >= questions.length - 1;
 
-  // Timer effect for the test
+  // TIMER effect for the test
   useEffect(() => {
     if (!isStarted || isCompleted) return;
 
@@ -68,31 +69,9 @@ export default function TestClientPage({
     } else {
       // Test complete
       setUserAnswer(answer);
-      // const timeEnded = new Date();
-
-      // Calculate results
-      // const results: TestResults = calculateResults({
-      //   ...testState,
-      //   questions,
-      //   userAnswers,
-      //   timeEnded,
-      // });
-
       stopTest();
-
-      // Save results to local storage for results page
-      // localStorage.setItem("testResults", JSON.stringify(results));
-
-      // Navigate to results page
       router.push("/test/results");
     }
-  };
-
-  // Format time in MM:SS
-  const formatTime = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
   };
 
   if (!isStarted) {

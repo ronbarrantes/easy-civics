@@ -21,7 +21,7 @@ export const calculateResults = ({
   userAnswers: uA,
   timeStarted: tS,
   timeEnded: tE,
-}: TestState): TestResults => {
+}: Omit<TestState, "currentQuestionIndex" | "isComplete">): TestResults => {
   const userAnswersSet = new Set(
     uA.flatMap((userAnswer) => Array.from(userAnswer))
   );

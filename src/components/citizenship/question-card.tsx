@@ -146,10 +146,7 @@ export function QuestionCard({
 
             return (
               <div key={answer.id} className={optionClassName}>
-                <div
-                  className="flex items-center space-x-3"
-                  // onClick={}
-                >
+                <div className="flex items-center space-x-3">
                   <Checkbox
                     id={answer.id}
                     checked={selectedAnswers.has(answer.id)}
@@ -208,22 +205,26 @@ export function QuestionCard({
 
         {
           // !isSubmitted &&
-
-          <Button
-            onClick={handleSubmit}
-            className="w-full"
-            disabled={selectedAnswers.size !== question.expectedNumAnswers}
-          >
-            Submit Answer
-          </Button>
+          !showFeedback && (
+            <Button
+              onClick={handleSubmit}
+              className="w-full"
+              disabled={selectedAnswers.size !== question.expectedNumAnswers}
+            >
+              <div>{`LENGTH ${userAnswers.length}`} </div>
+              {isLast ? (
+                "See results"
+              ) : userAnswers.length === 0 ? (
+                "Submit Answer"
+              ) : (
+                <>
+                  Next Question
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </>
+              )}
+            </Button>
+          )
         }
-
-        {/* {isSubmitted && !showFeedback && (
-          <Button onClick={() => onAnswer(selectedAnswers)} className="w-full">
-            {isLast ? "See Results" : "Next Question"}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        )} */}
       </CardContent>
     </Card>
   );

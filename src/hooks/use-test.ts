@@ -63,11 +63,6 @@ export const useTestStore = create<TestStore>()(
 
       setUserAnswer: (userAnswer) =>
         set((state) => {
-          console.log(
-            "USER ANSWER--->>",
-            userAnswer,
-            state.currentQuestionIndex
-          );
           const newUserAnswers = [...state.userAnswers];
           newUserAnswers[state.currentQuestionIndex] = userAnswer;
           return { userAnswers: newUserAnswers };
