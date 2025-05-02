@@ -4,7 +4,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="container m-auto min-h-fit border border-t border-green-500 py-6 md:py-0">
+    <footer className="container m-auto min-h-fit border-t py-6 md:py-0">
       <div className="container flex flex-col items-center justify-between gap-4 md:h-14 md:flex-row">
         <p className="text-muted-foreground text-center text-sm leading-loose md:text-left">
           © {currentYear} US Citizenship Test Practice. All rights reserved.
@@ -27,4 +27,3 @@ export function Footer() {
     </footer>
   );
 }
-

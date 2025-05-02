@@ -12,7 +12,7 @@ export const qaRouter = createTRPCRouter({
         limit: 10,
         where: (quesh, { inArray, eq, and }) =>
           and(
-            eq(quesh.language, "en"),
+            eq(quesh.language, "es"),
             inArray(quesh.questionNumber, randomNumbers)
           ),
         columns: {

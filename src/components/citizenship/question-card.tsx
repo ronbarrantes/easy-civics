@@ -38,7 +38,6 @@ export function QuestionCard({
 
   const question = questions[currentQuestionIndex];
   const isLast = questions.length === userAnswers.length - 1;
-  console.log(isLast); // TODO: DELETE THIS
 
   const correctAnswers = question.answers.filter((a) => a.isCorrect);
 
@@ -84,13 +83,6 @@ export function QuestionCard({
       );
       return;
     }
-
-    // const userAnswer: UserAnswer = {
-    //   questionId: question.id,
-    //   userAnswersId: selectedAnswers,
-    // };
-
-    console.log("selectedAnswers ---->>>", selectedAnswers);
 
     onAnswer(selectedAnswers);
   };
@@ -211,7 +203,6 @@ export function QuestionCard({
               className="w-full"
               disabled={selectedAnswers.size !== question.expectedNumAnswers}
             >
-              <div>{`LENGTH ${userAnswers.length}`} </div>
               {isLast ? (
                 "See results"
               ) : userAnswers.length === 0 ? (

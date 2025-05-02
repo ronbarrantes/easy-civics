@@ -15,6 +15,7 @@ type TestState = {
   answers: Answer[];
   timeStarted: Date;
   timeEnded?: Date;
+  // isComplete: boolean;
 };
 
 type TestActions = {
@@ -94,3 +95,12 @@ export const useTestStore = create<TestStore>()(
   )
   // )
 );
+
+export function useIsComplete() {
+  return useTestStore(
+    (state) => state.userAnswers.length >= state.questions.length - 1
+  );
+}
+
+// TODO get the isCompleted from this using derrived statek
+// userAnswers.length >= questions.length - 1

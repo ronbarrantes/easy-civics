@@ -48,7 +48,7 @@ export default function RootLayout({
               disableTransitionOnChange
             >
               <Header />
-              <div className="container mx-auto max-w-6xl flex-1 flex-col border border-red-600 px-4 py-8 md:py-12">
+              <div className="container mx-auto max-w-6xl flex-1 flex-col px-4 py-8 md:py-12">
                 {children}
               </div>
               <Footer />

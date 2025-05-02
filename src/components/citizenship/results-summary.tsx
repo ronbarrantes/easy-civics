@@ -35,9 +35,9 @@ export function ResultsSummary({ results }: ResultsSummaryProps) {
     (results.correctAnswers / results.totalQuestions) * 100;
 
   return (
-    <div className="mx-auto max-w-2xl space-y-8 border border-fuchsia-500">
+    <div className="mx-auto max-w-2xl space-y-8">
       <Card
-        className="border-2 border-purple-500 shadow-lg transition-all duration-300"
+        className="border-2 shadow-lg transition-all duration-300"
         style={{
           borderColor: results.passed
             ? "hsl(var(--chart-2))"
@@ -118,17 +118,17 @@ export function ResultsSummary({ results }: ResultsSummaryProps) {
             </div>
           </div>
         </CardContent>
-        <CardFooter className="flex w-full flex-col justify-around gap-3 border border-red-500 p-2 sm:flex-row sm:gap-0">
+        <CardFooter className="flex w-full flex-col justify-around gap-3 p-2 sm:flex-row sm:gap-0">
           <Button
             variant="default"
-            className="w-full border border-green-500 transition-none sm:w-5/12"
+            className="w-full transition-none sm:w-5/12"
             onClick={() => router.push("/test/review")}
           >
             Review Answer
           </Button>
           <Button
             variant="outline"
-            className="w-full border border-blue-500 transition-none sm:w-5/12"
+            className="w-full transition-none sm:w-5/12"
             onClick={() => router.push("/test")}
           >
             <RotateCcw className="mr-2 h-4 w-4" /> Try Again
