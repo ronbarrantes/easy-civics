@@ -1,3 +1,4 @@
+import { timeEnd } from "console";
 import { create } from "zustand";
 import {
   devtools,
@@ -13,6 +14,8 @@ type TestState = {
   isStarted: boolean;
   selectedAnswers: Set<string>;
   answers: Answer[];
+  timeStarted: Date;
+  timeEnded?: Date;
 };
 
 type TestActions = {
@@ -23,6 +26,8 @@ type TestActions = {
   stopTest: () => void;
   toggleAnswer: (selectedAnswer: string) => void;
   singleChoiceAnswer: (selectedAnswer: string) => void;
+  setTimeStarted: (timeStarted: Date) => void;
+  setTimeEnded: (timeEnded: Date) => void;
 };
 
 export type TestStore = TestActions & TestState;
@@ -32,6 +37,8 @@ export const useTestStore = create<TestStore>()(
     // persist(
     (set) => ({
       isStarted: false,
+      timeStarted: new Date(),
+      timeEnded: undefined,
       currentQuestionIndex: 0,
       questions: [],
       answers: [],
@@ -77,10 +84,17 @@ export const useTestStore = create<TestStore>()(
       startTest: () =>
         set({
           isStarted: true,
+          timeEnded: undefined,
           userAnswers: [],
           currentQuestionIndex: 0,
+          timeStarted: new Date(),
+          selectedAnswers: new Set(),
         }),
-      stopTest: () => set({ isStarted: false }),
+      stopTest: () =>
+        set({
+          isStarted: false,
+          timeEnded: new Date(),
+        }),
     }),
     { name: "TEST_STORE" }
   )

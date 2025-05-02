@@ -17,25 +17,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { TestStore, useTestStore } from "@/hooks/use-test";
-import { Question, TestResults, TestState } from "@/lib/types";
-
-type NewTestState = Omit<
-  TestState,
-  "questions" | "userAnswers" | "isComplete" | "currentQuestionIndex"
->;
+import { useTestStore } from "@/hooks/use-test";
+import { Question } from "@/lib/types";
 
 export default function TestClientPage({
   questions: questionsData,
 }: {
   questions: Question[];
 }) {
-  // ZUSTAND STATE
   const {
     questions,
     userAnswers,
-    currentQuestionIndex,
     isStarted,
+    timeStarted,
     increaseQuestionIndex,
     setQuestions,
     setUserAnswer,
@@ -44,9 +38,6 @@ export default function TestClientPage({
   } = useTestStore();
 
   const router = useRouter();
-  const [testState, setTestState] = useState<NewTestState>({
-    timeStarted: new Date(),
-  });
 
   const [timeElapsed, setTimeElapsed] = useState(0);
 
@@ -54,14 +45,7 @@ export default function TestClientPage({
     setQuestions(questionsData);
   }, [questionsData, setQuestions]);
 
-  const isCompleted = userAnswers.length >= questions.length;
-
-  console.log(
-    "IS COMPLETED --->>",
-    isCompleted,
-    userAnswers.length,
-    questions.length
-  );
+  const isCompleted = userAnswers.length >= questions.length - 1;
 
   // Timer effect for the test
   useEffect(() => {
@@ -69,22 +53,12 @@ export default function TestClientPage({
 
     const timer = setInterval(() => {
       setTimeElapsed(
-        Math.floor(
-          (new Date().getTime() - testState.timeStarted.getTime()) / 1000
-        )
+        Math.floor((new Date().getTime() - timeStarted.getTime()) / 1000)
       );
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [isStarted, testState.timeStarted, isCompleted]);
-
-  const handleStartTest = () => {
-    startTest();
-    setTestState({
-      ...testState,
-      timeStarted: new Date(),
-    });
-  };
+  }, [isStarted, isCompleted, timeStarted]);
 
   const handleAnswer = (answer: Set<string>) => {
     if (!isCompleted) {
@@ -94,20 +68,20 @@ export default function TestClientPage({
     } else {
       // Test complete
       setUserAnswer(answer);
-      const timeEnded = new Date();
+      // const timeEnded = new Date();
 
       // Calculate results
-      const results: TestResults = calculateResults({
-        ...testState,
-        questions,
-        userAnswers,
-        timeEnded,
-      });
+      // const results: TestResults = calculateResults({
+      //   ...testState,
+      //   questions,
+      //   userAnswers,
+      //   timeEnded,
+      // });
 
       stopTest();
 
       // Save results to local storage for results page
-      localStorage.setItem("testResults", JSON.stringify(results));
+      // localStorage.setItem("testResults", JSON.stringify(results));
 
       // Navigate to results page
       router.push("/test/results");
@@ -166,7 +140,7 @@ export default function TestClientPage({
             </div>
           </CardContent>
           <CardFooter>
-            <Button onClick={handleStartTest} className="w-full" size="lg">
+            <Button onClick={startTest} className="w-full" size="lg">
               <Flag className="mr-2 h-5 w-5" />
               Start Practice Test
             </Button>
@@ -175,8 +149,6 @@ export default function TestClientPage({
       </div>
     );
   }
-
-  const currentQuestion = questionsData[currentQuestionIndex];
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-12">
@@ -189,15 +161,13 @@ export default function TestClientPage({
       </div>
 
       <ProgressBar
-        currentQuestion={userAnswers.length + 1}
+        currentQuestion={userAnswers.length}
         totalQuestions={questions.length}
       />
 
       {userAnswers.length + 1 && (
         <QuestionCard
-          question={currentQuestion}
           onAnswer={handleAnswer}
-          isLast={questions.length === userAnswers.length - 1}
           // userAnswers={userAnswers}
         />
       )}
@@ -246,60 +216,3 @@ export default function TestClientPage({
 //     timeEnded: testState.timeEnded || new Date(),
 //   };
 // }
-
-function calculateResults(
-  testState: NewTestState & {
-    questions: TestStore["questions"];
-    userAnswers: TestStore["userAnswers"];
-  }
-): TestResults {
-  const correctAnswers = testState.questions.reduce((count, question) => {
-    const expectedNumAnswers = question.expectedNumAnswers;
-    const userAnswers = testState.userAnswers.filter(
-      (answer) => answer.questionId === question.id
-    );
-
-    const correctNumAnswers = question.answers.filter(
-      (answer) =>
-        answer.isCorrect &&
-        userAnswers.some((userAnswer) => userAnswer.id === answer.id)
-    );
-
-    return count + (correctNumAnswers.length >= expectedNumAnswers ? 1 : 0);
-  }, 0);
-
-  const incorrectAnswers = testState.questions.length - correctAnswers;
-  const passThreshold = 6; // 6 out of 10 is passing
-  const passed = correctAnswers >= passThreshold;
-
-  const questionsWithAnswers = testState.questions.map((question) => {
-    const userAnswers = testState.userAnswers.filter(
-      (answer) => answer.questionId === question.id
-    );
-
-    const correctNumAnswers = question.answers.filter(
-      (answer) =>
-        answer.isCorrect &&
-        userAnswers.some((userAnswer) => userAnswer.id === answer.id)
-    );
-
-    const isCorrect = correctNumAnswers.length >= question.expectedNumAnswers;
-
-    return {
-      question,
-      userAnswers,
-      isCorrect,
-    };
-  });
-
-  return {
-    totalQuestions: testState.questions.length,
-    correctAnswers,
-    incorrectAnswers,
-    passThreshold,
-    passed,
-    questionsWithAnswers,
-    timeStarted: testState.timeStarted,
-    timeEnded: testState.timeEnded || new Date(),
-  };
-}

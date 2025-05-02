@@ -15,29 +15,30 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useTestStore } from "@/hooks/use-test";
-import { Question } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 interface QuestionCardProps {
-  question: Question;
   onAnswer: (answers: Set<string>) => void;
   showFeedback?: boolean;
-  // setSelectedAnswers?: (answers: Set<string>) => void;
-  isLast?: boolean;
 }
 
 export function QuestionCard({
-  question,
   onAnswer,
   showFeedback = false,
-  isLast = false,
 }: QuestionCardProps) {
-  // const [selectedAnswers, setSelectedAnswers] = useState<Set<string>>(
-  //   new Set()
-  // );
-  // const [isSubmitted, setIsSubmitted] = useState<boolean>(userAnswers.size > 0);
-  const { selectedAnswers, toggleAnswer, singleChoiceAnswer } = useTestStore();
+  const {
+    selectedAnswers,
+    questions,
+    userAnswers,
+    currentQuestionIndex,
+    toggleAnswer,
+    singleChoiceAnswer,
+  } = useTestStore();
   const [error, setError] = useState<string>("");
+
+  const question = questions[currentQuestionIndex];
+  const isLast = questions.length === userAnswers.length - 1;
+  console.log(isLast); // TODO: DELETE THIS
 
   const correctAnswers = question.answers.filter((a) => a.isCorrect);
 
@@ -55,29 +56,7 @@ export function QuestionCard({
     allCorrectAnswersSelected &&
     noIncorrectAnswersSelected;
 
-  const handleCheckboxChange = (checked: boolean, value: string) => {
-    // setSelectedAnswers((prev) => {
-    //   const updatedAnswers = new Set(prev);
-
-    //   if (checked) {
-    //     if (updatedAnswers.size >= question.expectedNumAnswers) {
-    //       setError(
-    //         `Please select only ${question.expectedNumAnswers} answer${
-    //           question.expectedNumAnswers > 1 ? "s" : ""
-    //         }`
-    //       );
-    //       return prev; // Do not add more answers if the limit is reached
-    //     }
-    //     setError("");
-    //     updatedAnswers.add(value); // Add the selected answer
-    //   } else {
-    //     setError("");
-    //     updatedAnswers.delete(value); // Remove the unselected answer
-    //   }
-
-    //   return updatedAnswers;
-    // });
-
+  const handleCheckboxChange = (value: string) => {
     if (question.expectedNumAnswers < selectedAnswers.size)
       setError(
         `Please select only ${question.expectedNumAnswers} answer${
@@ -138,7 +117,8 @@ export function QuestionCard({
             const isOptionCorrect = answer.isCorrect;
             const isOptionSelected = selectedAnswers.has(answer.id);
 
-            let optionClassName = "border-2 p-4 rounded-md transition-all";
+            let optionClassName =
+              "border-2 px-4 py-0 rounded-md transition-all";
 
             if (
               // isSubmitted &&
@@ -173,15 +153,16 @@ export function QuestionCard({
                   <Checkbox
                     id={answer.id}
                     checked={selectedAnswers.has(answer.id)}
-                    onCheckedChange={(checked) =>
-                      handleCheckboxChange(checked as boolean, answer.id)
-                    }
+                    onCheckedChange={() => handleCheckboxChange(answer.id)}
                     disabled={
                       // isSubmitted &&
                       showFeedback
                     }
                   />
-                  <Label htmlFor={answer.id} className="flex-1 cursor-pointer">
+                  <Label
+                    htmlFor={answer.id}
+                    className="flex-1 cursor-pointer px-0 py-4"
+                  >
                     {answer.text}
                   </Label>
                   {
