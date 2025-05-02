@@ -36,8 +36,7 @@ export function QuestionCard({
   //   new Set()
   // );
   // const [isSubmitted, setIsSubmitted] = useState<boolean>(userAnswers.size > 0);
-  const { selectedAnswers, userAnswers, toggleAnswer, singleChoiceAnswer } =
-    useTestStore();
+  const { selectedAnswers, toggleAnswer, singleChoiceAnswer } = useTestStore();
   const [error, setError] = useState<string>("");
 
   const correctAnswers = question.answers.filter((a) => a.isCorrect);
@@ -79,9 +78,18 @@ export function QuestionCard({
     //   return updatedAnswers;
     // });
 
+    if (question.expectedNumAnswers < selectedAnswers.size)
+      setError(
+        `Please select only ${question.expectedNumAnswers} answer${
+          question.expectedNumAnswers > 1 ? "s" : ""
+        }`
+      );
+
     if (question.expectedNumAnswers > 1) {
+      setError("");
       toggleAnswer(value);
     } else {
+      setError("");
       singleChoiceAnswer(value);
     }
     setError("");
