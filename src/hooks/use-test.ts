@@ -96,6 +96,13 @@ export const useTestStore = create<TestStore>()(
   // )
 );
 
+/**
+ * Determines whether the test is considered complete based on the number of user answers.
+ *
+ * @returns `true` if the number of user answers is at least one less than the number of questions; otherwise, `false`.
+ *
+ * @remark The completion logic may not account for all edge cases and is based on a simple length comparison.
+ */
 export function useIsComplete() {
   return useTestStore(
     (state) => state.userAnswers.length >= state.questions.length - 1

@@ -19,6 +19,13 @@ import { TestResults } from "@/lib/types";
 
 type SelectValueType = "all" | "correct" | "incorrect";
 
+/**
+ * Displays a review interface for test answers stored in local storage, allowing users to filter, navigate, and review their responses.
+ *
+ * Loads test results from local storage on mount and redirects to the test page if no results are found. Users can filter questions by correctness, view feedback for each question, and navigate between questions. If no questions match the selected filter, prompts the user to change the filter or return home.
+ *
+ * @remark Redirects to the test page if no test results are found in local storage.
+ */
 export default function ReviewPage() {
   const router = useRouter();
   const [results, setResults] = useState<TestResults | null>(null);

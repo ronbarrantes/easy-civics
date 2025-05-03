@@ -5,6 +5,14 @@ interface ProgressBarProps {
   totalQuestions: number;
 }
 
+/**
+ * Displays a progress bar indicating the user's current position within a sequence of questions.
+ *
+ * Shows the current question number, total number of questions, and a visual progress bar reflecting completion percentage.
+ *
+ * @param currentQuestion - The current question number in the sequence.
+ * @param totalQuestions - The total number of questions in the sequence.
+ */
 export function ProgressBar({
   currentQuestion,
   totalQuestions,

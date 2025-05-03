@@ -9,6 +9,11 @@ import { Button } from "@/components/ui/button";
 import { useIsComplete, useTestStore } from "@/hooks/use-test";
 import { calculateResults } from "@/utils/calculate-results";
 
+/**
+ * Displays the user's test results or prompts them to take a test if no results are available.
+ *
+ * Renders a summary of test performance when results exist, or a message with navigation options if no results are found.
+ */
 export default function ResultsPage() {
   const router = useRouter();
   // const [results, setResults] = useState<TestResults | null>(null);

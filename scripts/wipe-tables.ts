@@ -5,6 +5,12 @@ import { createInterface } from "readline/promises";
 import { db } from "@/server/db";
 import { answer, question } from "@/server/db/schema";
 
+/**
+ * Prompts the user for confirmation and truncates the `answer` and `question` database tables, resetting their identity sequences.
+ *
+ * @remark
+ * The process exits with code 0 on successful completion or user abort, and with code 1 if truncation fails.
+ */
 async function wipeTables() {
   const rl = createInterface({ input, output });
 

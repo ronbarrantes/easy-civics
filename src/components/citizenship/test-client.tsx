@@ -21,6 +21,15 @@ import { useIsComplete, useTestStore } from "@/hooks/use-test";
 import { Question } from "@/lib/types";
 import { formatTime } from "@/utils/time";
 
+/**
+ * Renders the interactive U.S. Citizenship practice test interface.
+ *
+ * Displays either an introductory screen with test information and a start button, or the active test UI with questions, progress, and elapsed time. Manages test state, timing, answer submission, and navigation to results upon completion.
+ *
+ * @param questions - The array of questions to be used in the practice test.
+ *
+ * @returns The React component for the citizenship practice test page.
+ */
 export default function TestClientPage({
   questions: questionsData,
 }: {

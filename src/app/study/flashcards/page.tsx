@@ -21,6 +21,11 @@ import {
 } from "@/lib/sample-questions";
 import { Category, Question } from "@/lib/types";
 
+/**
+ * Renders a flashcard study interface with category filtering and question shuffling.
+ *
+ * Displays a set of flashcards for citizenship test preparation, allowing users to filter questions by category, shuffle questions, and switch between study and settings modes. Initializes with 10 random questions and loads all available categories on mount.
+ */
 export default function FlashcardsPage() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);

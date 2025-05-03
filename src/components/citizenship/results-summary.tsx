@@ -27,6 +27,11 @@ interface ResultsSummaryProps {
   results: TestResults;
 }
 
+/**
+ * Displays a summary of a user's U.S. Citizenship Practice Test results, including pass/fail status, scores, answer breakdown, and test duration.
+ *
+ * Provides options to review answers, retake the test, and navigate to study materials or additional practice tests.
+ */
 export function ResultsSummary({ results }: ResultsSummaryProps) {
   const router = useRouter();
   const passingPercentage =
@@ -163,6 +168,12 @@ export function ResultsSummary({ results }: ResultsSummaryProps) {
   );
 }
 
+/**
+ * Converts a number of seconds into a formatted string of minutes and seconds.
+ *
+ * @param seconds - The total time in seconds.
+ * @returns The formatted time string in the format "Xm Ys".
+ */
 function formatTime(seconds: number): string {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = Math.floor(seconds % 60);

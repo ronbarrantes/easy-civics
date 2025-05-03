@@ -22,6 +22,14 @@ interface QuestionCardProps {
   showFeedback?: boolean;
 }
 
+/**
+ * Renders a quiz question card with selectable answers and optional feedback.
+ *
+ * Displays the current question, allows the user to select answers, and validates the selection count before submission. When feedback is enabled, highlights correct and incorrect answers and shows an explanation if available.
+ *
+ * @param onAnswer - Callback invoked with the set of selected answer IDs when the user submits their answer.
+ * @param showFeedback - If true, displays feedback on the submitted answer and disables further interaction.
+ */
 export function QuestionCard({
   onAnswer,
   showFeedback = false,

@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+/**
+ * Renders the site footer with the current year, copyright notice, and navigation links.
+ *
+ * Displays responsive layout and links to "About," "Privacy," and "Terms" pages.
+ */
 export function Footer() {
   const currentYear = new Date().getFullYear();
 

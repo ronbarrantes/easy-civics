@@ -5,6 +5,11 @@ import * as TabsPrimitive from "@radix-ui/react-tabs"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Renders a styled tab container using Radix UI Tabs, arranging its children in a vertical flex layout with spacing.
+ *
+ * @param className - Additional class names to merge with the default styling.
+ */
 function Tabs({
   className,
   ...props
@@ -18,6 +23,11 @@ function Tabs({
   )
 }
 
+/**
+ * Renders a styled container for tab triggers within a tab interface.
+ *
+ * Applies custom layout and appearance to the tab list while forwarding all props to the underlying Radix UI Tabs primitive.
+ */
 function TabsList({
   className,
   ...props
@@ -34,6 +44,11 @@ function TabsList({
   )
 }
 
+/**
+ * Renders a styled tab trigger button for switching between tab panels.
+ *
+ * Applies conditional styling based on active, focus, and disabled states, and supports custom class names.
+ */
 function TabsTrigger({
   className,
   ...props
@@ -50,6 +65,11 @@ function TabsTrigger({
   )
 }
 
+/**
+ * Renders the content area for a tab, styled as a flexible container.
+ *
+ * Combines default and custom class names, and forwards all props to the underlying Radix UI Tabs content primitive.
+ */
 function TabsContent({
   className,
   ...props

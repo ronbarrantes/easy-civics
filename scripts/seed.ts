@@ -16,12 +16,23 @@ type QuestionSeed = {
   correctAnswers: Array<string>;
 };
 
+/**
+ * Loads and parses a JSON file from the seeds directory.
+ *
+ * @param filename - The name of the JSON file to load.
+ * @returns The parsed contents of the file, typed as {@link T}.
+ */
 async function loadJson<T>(filename: string): Promise<T> {
   const filePath = path.join(seedsDir, filename);
   const raw = await fs.readFile(filePath, "utf-8");
   return JSON.parse(raw) as T;
 }
 
+/**
+ * Seeds the database with civics questions and their answers from English and Spanish JSON files.
+ *
+ * Loads question data, inserts each question and its correct and incorrect answers into the database, and outputs progress to the console. Exits the process with a success or failure code upon completion.
+ */
 async function seed() {
   try {
     console.log("🚀 Starting seeding...");

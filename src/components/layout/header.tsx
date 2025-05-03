@@ -18,6 +18,13 @@ import {
 import { Language } from "@/lib/types";
 import { ModeToggle } from "./ModeToggle";
 
+/**
+ * Renders the sticky top navigation bar for the US Citizenship Test application.
+ *
+ * Displays the app logo, a language selector, a mode toggle, and user controls when signed in. The language selector persists the user's choice in localStorage and reloads the page to apply changes.
+ *
+ * @remark Currently, only English is available in the language selector. Changing the language triggers a full page reload.
+ */
 export function Header() {
   const [language, setLanguage] = useState<Language>("en");
 

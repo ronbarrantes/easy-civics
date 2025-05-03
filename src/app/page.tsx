@@ -23,7 +23,11 @@ import {} from // api,
 // HydrateClient,
 "@/trpc/server";
 
-// import { useTranslation } from "@/app/i18n/client";
+/**
+ * Renders the homepage for the U.S. Citizenship Test Practice application.
+ *
+ * Displays a hero section with a flag icon, main heading, descriptive text, and navigation buttons for taking a full test or entering study mode.
+ */
 
 export default async function Home() {
   // const categories = getAllCategories();

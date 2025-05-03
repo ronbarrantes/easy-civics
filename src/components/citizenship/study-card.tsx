@@ -19,6 +19,16 @@ interface StudyCardProps {
   initialIndex?: number;
 }
 
+/**
+ * Displays a flashcard interface for studying a list of questions, allowing users to flip between questions and answers and navigate through the set.
+ *
+ * Renders a card with a 3D flip animation to toggle between the question and answer sides. Users can move to the next or previous card, and the component tracks the current card index and answer visibility. Returns null if there are no questions or the current index is invalid.
+ *
+ * @param questions - The array of questions to display as flashcards.
+ * @param initialIndex - (Optional) The starting index for the flashcard set.
+ *
+ * @returns The study card UI for the current question, or null if no valid question is available.
+ */
 export function StudyCard({ questions, initialIndex = 0 }: StudyCardProps) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [showAnswer, setShowAnswer] = useState(false);

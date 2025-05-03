@@ -23,6 +23,14 @@ interface CategoryCardProps {
   questionCount: number;
 }
 
+/**
+ * Renders a card displaying a quiz or study category with its name, question count, and a category-specific icon.
+ *
+ * The card includes a button that navigates to a study page for the selected category.
+ *
+ * @param category - The name of the category to display.
+ * @param questionCount - The number of questions available in the category.
+ */
 export function CategoryCard({ category, questionCount }: CategoryCardProps) {
   const getCategoryIcon = (category: Category) => {
     switch (category) {

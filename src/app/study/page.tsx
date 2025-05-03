@@ -4,6 +4,11 @@ import { getAllCategories, getQuestionsByCategory, getRandomQuestions } from "@/
 import { BookOpen, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
+/**
+ * Renders the study materials page for citizenship test preparation.
+ *
+ * Displays a header, quick navigation links, a grid of category cards with question counts, and a section with study tips and test day advice.
+ */
 export default function StudyPage() {
   const categories = getAllCategories();
 

@@ -60,10 +60,24 @@ const translations: Record<Language, Record<TranslationKey, string>> = {
   }
 };
 
+/**
+ * Retrieves the localized string for a given translation key and language.
+ *
+ * @param key - The translation key to look up.
+ * @param language - The language code to use for translation. Defaults to English.
+ * @returns The localized string corresponding to the specified {@link key} and {@link language}.
+ */
 export function getTranslation(key: TranslationKey, language: Language = 'en'): string {
   return translations[language][key];
 }
 
+/**
+ * Returns the current language setting for the application.
+ *
+ * If running outside a browser environment, defaults to English. In a browser, retrieves the language code from local storage under the key 'language', or defaults to English if not set.
+ *
+ * @returns The current language code.
+ */
 export function getCurrentLanguage(): Language {
   if (typeof window === 'undefined') return 'en';
   return (localStorage.getItem('language') as Language) || 'en';

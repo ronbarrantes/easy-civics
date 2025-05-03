@@ -3,6 +3,11 @@ import { Suspense } from "react";
 import TestClientPage from "@/components/citizenship/test-client";
 import { api } from "@/trpc/server";
 
+/**
+ * Server component that fetches 10 questions and renders the test page.
+ *
+ * Displays an error message if questions cannot be loaded, or a loading indicator while the client page is being prepared.
+ */
 export default async function TestPage() {
   const { data: questionsData, error: questionsError } =
     await api.questionAnswer.get10();
