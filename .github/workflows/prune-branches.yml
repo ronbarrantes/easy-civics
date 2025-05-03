@@ -1,0 +1,45 @@
+name: Prune Merged Branches via API
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Weekly
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to delete branches via API
+    steps:
+      - name: Prune merged branches using GitHub API
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const base = 'main';
+            const protectedBranches = ['main', 'dev', 'release', 'hotfix'];
+
+            const { data: pulls } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              base: base,
+              per_page: 100
+            });
+
+            const mergedBranches = pulls
+              .filter(pr => pr.merged_at)
+              .map(pr => pr.head.ref)
+              .filter(branch => !protectedBranches.includes(branch));
+
+            for (const branch of mergedBranches) {
+              try {
+                console.log(`Deleting branch: ${branch}`);
+                await github.rest.git.deleteRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `heads/${branch}`,
+                });
+              } catch (error) {
+                console.warn(`Could not delete branch ${branch}: ${error.message}`);
+              }
+            }
