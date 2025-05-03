@@ -1,0 +1,33 @@
+name: Increment Version
+
+on:
+  push:
+    branches:
+      - main # Replace 'main' with your default branch if different
+
+jobs:
+  increment_version:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Set up Git
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Increment version in package.json
+      - name: Increment Version
+        run: |
+          npm version patch --no-git-tag-version
+          git add package.json
+          git commit -m "chore: increment version after pruning merged branches"
+
+      # Push changes back to the repository
+      - name: Push Changes
+        run: |
+          git push origin main

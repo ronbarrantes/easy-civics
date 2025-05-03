@@ -1,0 +1,31 @@
+name: Prune Merged Branches
+
+on:
+  push:
+    branches:
+      - main # Replace 'main' with your default branch if different
+  schedule:
+    - cron: "0 0 * * 0" # Optional: Run weekly on Sundays at midnight
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Set up Git
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Fetch all branches and prune merged branches
+      - name: Prune Merged Branches
+        run: |
+          git fetch --prune origin
+          for branch in $(git branch -r --merged | grep -vE 'main|dev|HEAD|release/|hotfix/' | sed 's/origin\///'); do
+            git push origin --delete "$branch"
+          done
