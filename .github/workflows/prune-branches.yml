@@ -1,34 +1,45 @@
-name: Prune Merged Branches
+name: Prune Merged Branches via API
 
 on:
-  push:
-    branches:
-      - main # Replace with your default branch if different
   schedule:
-    - cron: "0 0 * * 0" # Weekly on Sunday at midnight
+    - cron: "0 0 * * 0" # Weekly
+  workflow_dispatch: # Manual trigger
 
 jobs:
   prune:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write # Required to delete branches via API
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Prune merged branches using GitHub API
+        uses: actions/github-script@v7
         with:
-          fetch-depth: 0 # Important: fetch all history to evaluate merged branches
+          script: |
+            const base = 'main';
+            const protectedBranches = ['main', 'dev', 'release', 'hotfix'];
 
-      - name: Set up Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+            const { data: pulls } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              base: base,
+              per_page: 100
+            });
 
-      - name: Fetch all remote branches
-        run: git fetch --prune origin
+            const mergedBranches = pulls
+              .filter(pr => pr.merged_at)
+              .map(pr => pr.head.ref)
+              .filter(branch => !protectedBranches.includes(branch));
 
-      - name: Prune Merged Branches
-        run: |
-          echo "Pruning merged branches..."
-          git branch -r --merged origin/main | grep -vE 'main|dev|HEAD|release/|hotfix/' | sed 's/origin\///' | while read branch; do
-            echo "Deleting merged branch: $branch"
-            git push origin --delete "$branch"
-          done
+            for (const branch of mergedBranches) {
+              try {
+                console.log(`Deleting branch: ${branch}`);
+                await github.rest.git.deleteRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `heads/${branch}`,
+                });
+              } catch (error) {
+                console.warn(`Could not delete branch ${branch}: ${error.message}`);
+              }
+            }
