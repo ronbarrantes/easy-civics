@@ -4,14 +4,24 @@
     "prompt": "What is the supreme law of the land?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["The Constitution"]
+    "incorrectAnswers": [
+      "The Bill of Rights",
+      "The Declaration of Independence",
+      "The Emancipation Proclamation"
+    ],
+    "correctAnswers": ["The Constitution"]
   },
   {
     "questionNumber": 2,
     "prompt": "What does the Constitution do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "Declares war",
+      "Elects the President",
+      "Controls state governments"
+    ],
+    "correctAnswers": [
       "sets up the government",
       "defines the government",
       "protects basic rights of Americans"
@@ -22,14 +32,24 @@
     "prompt": "The idea of self-government is in the first three words of the Constitution. What are these words?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["We the People"]
+    "incorrectAnswers": [
+      "In God We Trust",
+      "Life, Liberty, Happiness",
+      "We the Citizens"
+    ],
+    "correctAnswers": ["We the People"]
   },
   {
     "questionNumber": 4,
     "prompt": "What is an amendment?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "A new state",
+      "A treaty with another country",
+      "An executive order"
+    ],
+    "correctAnswers": [
       "a change (to the Constitution)",
       "an addition (to the Constitution)"
     ]
@@ -39,14 +59,24 @@
     "prompt": "What do we call the first ten amendments to the Constitution?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the Bill of Rights"]
+    "incorrectAnswers": [
+      "The Articles of Confederation",
+      "The Gettysburg Address",
+      "The Federalist Papers"
+    ],
+    "correctAnswers": ["the Bill of Rights"]
   },
   {
     "questionNumber": 6,
     "prompt": "What is one right or freedom from the First Amendment?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "the right to bear arms",
+      "the right to vote",
+      "the right to a fair trial"
+    ],
+    "correctAnswers": [
       "speech",
       "religion",
       "assembly",
@@ -59,14 +89,20 @@
     "prompt": "How many amendments does the Constitution have?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["twenty-seven (27)"]
+    "incorrectAnswers": ["twenty-six (26)", "twenty-eight (28)", "thirty (30)"],
+    "correctAnswers": ["twenty-seven (27)"]
   },
   {
     "questionNumber": 8,
     "prompt": "What did the Declaration of Independence do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "Announced our independence from France",
+      "Declared our independence from Spain",
+      "Said that the United States is a democracy"
+    ],
+    "correctAnswers": [
       "announced our independence (from Great Britain)",
       "declared our independence (from Great Britain)",
       "said that the United States is free (from Great Britain)"
@@ -77,28 +113,46 @@
     "prompt": "What are two rights in the Declaration of Independence?",
     "expectedNumAnswers": 2,
     "language": "en",
-    "answers": ["life", "liberty", "the pursuit of happiness"]
+    "incorrectAnswers": [
+      "freedom of speech",
+      "freedom of the press",
+      "freedom of assembly"
+    ],
+    "correctAnswers": ["life", "liberty", "the pursuit of happiness"]
   },
   {
     "questionNumber": 10,
     "prompt": "What is freedom of religion?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["You can practice any religion, or not practice a religion."]
+    "incorrectAnswers": [
+      "You can practice any religion, or not practice a religion.",
+      "You can only practice Christianity.",
+      "You can only practice one religion."
+    ],
+    "correctAnswers": [
+      "You can practice any religion, or not practice a religion."
+    ]
   },
   {
     "questionNumber": 11,
     "prompt": "What is the economic system in the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["capitalist economy", "market economy"]
+    "incorrectAnswers": ["Communist economy", "Feudal system", "Barter system"],
+    "correctAnswers": ["capitalist economy", "market economy"]
   },
   {
     "questionNumber": 12,
     "prompt": "What is the \"rule of law\"?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "The President makes all laws",
+      "Only Congress must obey the law",
+      "Citizens are not bound by laws"
+    ],
+    "correctAnswers": [
       "Everyone must follow the law.",
       "Leaders must obey the law.",
       "Government must obey the law.",
@@ -110,7 +164,13 @@
     "prompt": "Name one branch or part of the government.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "the President",
+      "the Senate",
+      "the House of Representatives",
+      "the Supreme Court"
+    ],
+    "correctAnswers": [
       "Congress",
       "legislative",
       "President",
@@ -124,21 +184,32 @@
     "prompt": "What stops one branch of government from becoming too powerful?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["checks and balances", "separation of powers"]
+    "incorrectAnswers": [
+      "The President's power",
+      "The people's votes",
+      "The court's opinions"
+    ],
+    "correctAnswers": ["checks and balances", "separation of powers"]
   },
   {
     "questionNumber": 15,
     "prompt": "Who is in charge of the executive branch?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the President"]
+    "incorrectAnswers": [
+      "The Speaker of the House",
+      "The Chief Justice",
+      "The Vice President"
+    ],
+    "correctAnswers": ["the President"]
   },
   {
     "questionNumber": 16,
     "prompt": "Who makes federal laws?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": ["the President", "the Supreme Court", "the Cabinet"],
+    "correctAnswers": [
       "Congress",
       "Senate and House (of Representatives)",
       "(U.S. or national) legislature"
@@ -149,28 +220,40 @@
     "prompt": "What are the two parts of the U.S. Congress?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the Senate and the House (of Representatives)"]
+    "incorrectAnswers": [
+      "the Senate and the Supreme Court",
+      "the House of Representatives and the President",
+      "the Senate and the Cabinet"
+    ],
+    "correctAnswers": ["the Senate and the House (of Representatives)"]
   },
   {
     "questionNumber": 18,
     "prompt": "How many U.S. Senators are there?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["one hundred (100)"]
+    "incorrectAnswers": [
+      "fifty (50)",
+      "two hundred (200)",
+      "four hundred thirty-five (435)"
+    ],
+    "correctAnswers": ["one hundred (100)"]
   },
   {
     "questionNumber": 19,
     "prompt": "We elect a U.S. Senator for how many years?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["six (6)"]
+    "incorrectAnswers": ["four (4)", "two (2)", "eight (8)"],
+    "correctAnswers": ["six (6)"]
   },
   {
     "questionNumber": 20,
     "prompt": "Who is one of your state's U.S. Senators now?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [],
+    "correctAnswers": [
       "answers will vary [District of Columbia residents and residents of U.S. territories should answer that D.C. (or the territory where the applicant lives) has no U.S. Senators.]"
     ]
   },
@@ -179,21 +262,28 @@
     "prompt": "The House of Representatives has how many voting members?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["four hundred thirty-five (435)"]
+    "incorrectAnswers": [
+      "one hundred (100)",
+      "two hundred (200)",
+      "four hundred (400)"
+    ],
+    "correctAnswers": ["four hundred thirty-five (435)"]
   },
   {
     "questionNumber": 22,
     "prompt": "We elect a U.S. Representative for how many years?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["two (2)"]
+    "incorrectAnswers": ["four (4)", "two (6)", "eight (8)"],
+    "correctAnswers": ["two (2)"]
   },
   {
     "questionNumber": 23,
     "prompt": "Name your U.S. Representative.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [],
+    "correctAnswers": [
       "Answers will vary. [Residents of territories with nonvoting Delegates or Resident Commissioners may provide the name of that Delegate or Commissioner. Also acceptable is any statement that the territory has no (voting) Representatives in Congress.]"
     ]
   },
@@ -202,14 +292,24 @@
     "prompt": "Who does a U.S. Senator represent?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["all people of the state"]
+    "incorrectAnswers": [
+      "all citizens of the United States",
+      "only the people who voted for him/her",
+      "the President"
+    ],
+    "correctAnswers": ["all people of the state"]
   },
   {
     "questionNumber": 25,
     "prompt": "Why do some states have more Representatives than other states?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "Because of the state's geography",
+      "Because of the state's economy",
+      "Because of the state's history"
+    ],
+    "correctAnswers": [
       "(because of) the state's population",
       "(because) they have more people",
       "(because) some states have more people"
@@ -220,81 +320,128 @@
     "prompt": "We elect a President for how many years?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["four (4)"]
+    "incorrectAnswers": [],
+    "correctAnswers": ["four (4)"]
   },
   {
     "questionNumber": 27,
     "prompt": "In what month do we vote for President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["November"]
+    "incorrectAnswers": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "December"
+    ],
+    "correctAnswers": ["November"]
   },
   {
     "questionNumber": 28,
     "prompt": "What is the name of the President of the United States now?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
-      "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States."
-    ]
+    "incorrectAnswers": ["Barack Obama", "George Washington", "Ronald Reagan"],
+    "correctAnswers": ["Donald Trump"]
   },
   {
     "questionNumber": 29,
     "prompt": "What is the name of the Vice President of the United States now?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
-      "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States."
-    ]
+    "incorrectAnswers": ["Joe Biden", "Barack Obama", "John Adams"],
+    "correctAnswers": ["James David Vance"]
   },
   {
     "questionNumber": 30,
     "prompt": "If the President can no longer serve, who becomes President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the Vice President"]
+    "incorrectAnswers": [
+      "the Speaker of the House",
+      "the Chief Justice",
+      "the Secretary of State"
+    ],
+    "correctAnswers": ["the Vice President"]
   },
   {
     "questionNumber": 31,
     "prompt": "If both the President and the Vice President can no longer serve, who becomes President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the Speaker of the House"]
+    "incorrectAnswers": [
+      "the Secretary of State",
+      "the Chief Justice",
+      "the Speaker of the House"
+    ],
+    "correctAnswers": ["the Speaker of the House"]
   },
   {
     "questionNumber": 32,
     "prompt": "Who is the Commander in Chief of the military?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the President"]
+    "incorrectAnswers": [
+      "the Chief Justice",
+      "the Secretary of Defense",
+      "the Vice President"
+    ],
+    "correctAnswers": ["the President"]
   },
   {
     "questionNumber": 33,
     "prompt": "Who signs bills to become laws?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the President"]
+    "incorrectAnswers": [
+      "the Chief Justice",
+      "the Speaker of the House",
+      "the Secretary of State"
+    ],
+    "correctAnswers": ["the President"]
   },
   {
     "questionNumber": 34,
     "prompt": "Who vetoes bills?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the President"]
+    "incorrectAnswers": [
+      "the Chief Justice",
+      "the Speaker of the House",
+      "the Secretary of State"
+    ],
+    "correctAnswers": ["the President"]
   },
   {
     "questionNumber": 35,
     "prompt": "What does the President's Cabinet do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["advises the President"]
+    "incorrectAnswers": [
+      "advises Congress",
+      "advises the Supreme Court",
+      "advises the military"
+    ],
+    "correctAnswers": ["advises the President"]
   },
   {
     "questionNumber": 36,
     "prompt": "What are two Cabinet-level positions?",
     "expectedNumAnswers": 2,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "Chief Justice",
+      "Senate Majority Leader",
+      "Director of the FBI"
+    ],
+    "correctAnswers": [
       "Secretary of Agriculture",
       "Secretary of Commerce",
       "Secretary of Defense",
@@ -317,7 +464,13 @@
     "prompt": "What does the judicial branch do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "makes laws",
+      "enforces laws",
+      "interprets laws",
+      "decides if a law is constitutional"
+    ],
+    "correctAnswers": [
       "reviews laws",
       "explains laws",
       "resolves disputes (disagreements)",
@@ -329,23 +482,28 @@
     "prompt": "What is the highest court in the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the Supreme Court"]
+    "incorrectAnswers": [
+      "the Court of Appeals",
+      "the District Court",
+      "the International Court"
+    ],
+    "correctAnswers": ["the Supreme Court"]
   },
   {
     "questionNumber": 39,
     "prompt": "How many justices are on the Supreme Court?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
-      "Visit uscis.gov/citizenship/testupdates for the number of justices on the Supreme Court."
-    ]
+    "incorrectAnswers": ["eleven (11)", "thirteen (13)", "fifteen (15)"],
+    "correctAnswers": ["nine (9)"]
   },
   {
     "questionNumber": 40,
     "prompt": "Who is the Chief Justice of the United States now?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [],
+    "correctAnswers": [
       "Visit uscis.gov/citizenship/testupdates for the number of justices on the Supreme Court."
     ]
   },
@@ -354,7 +512,12 @@
     "prompt": "Under our Constitution, some powers belong to the federal government. What is one power of the federal government?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "to create schools",
+      "to issue driver's licenses",
+      "to provide police protection"
+    ],
+    "correctAnswers": [
       "to print money",
       "to declare war",
       "to create an army",
@@ -366,7 +529,12 @@
     "prompt": "Under our Constitution, some powers belong to the states. What is one power of the states?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "to declare war",
+      "to print money",
+      "to make treaties"
+    ],
+    "correctAnswers": [
       "provide schooling and education",
       "provide protection (police)",
       "provide safety (fire departments)",
@@ -379,7 +547,8 @@
     "prompt": "Who is the Governor of your state now?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [],
+    "correctAnswers": [
       "Answers will vary. [District of Columbia residents should answer that D.C. does not have a Governor.]"
     ]
   },
@@ -388,7 +557,8 @@
     "prompt": "What is the capital of your state?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [],
+    "correctAnswers": [
       "Answers will vary. [District of Columbia residents should answer that D.C. is not a state and does not have a capital. Residents of U.S. territories should name the capital of the territory.]"
     ]
   },
@@ -397,14 +567,20 @@
     "prompt": "What are the two major political parties in the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["Democratic and Republican"]
+    "incorrectAnswers": [
+      "the Green Party and the Libertarian Party",
+      "the Democratic Party and the Libertarian Party",
+      "the Republican Party and the Green Party"
+    ],
+    "correctAnswers": ["Democratic and Republican"]
   },
   {
     "questionNumber": 46,
     "prompt": "What is the political party of the President now?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [],
+    "correctAnswers": [
       "Visit uscis.gov/citizenship/testupdates for the political party of the President."
     ]
   },
@@ -413,7 +589,8 @@
     "prompt": "What is the name of the Speaker of the House of Representatives now?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [],
+    "correctAnswers": [
       "Visit uscis.gov/citizenship/testupdates for the name of the Speaker of the House of Representatives."
     ]
   },
@@ -422,10 +599,15 @@
     "prompt": "There are four amendments to the Constitution about who can vote. Describe one of them.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "only citizens over twenty-one (21) can vote",
+      "only property owners can vote",
+      "only men can vote"
+    ],
+    "correctAnswers": [
       "Citizens eighteen (18) and older can vote.",
       "You don't have to pay a (poll tax) to vote.",
-      "Any citizen can",
+      "Any citizen can vote",
       "A male citizen of any race (can vote)"
     ]
   },
@@ -434,21 +616,36 @@
     "prompt": "What is one responsibility that is only for United States citizens?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["serve on a jury", "vote in a federal election"]
+    "incorrectAnswers": [
+      "paying taxes",
+      "serving in the military",
+      "attending public school"
+    ],
+    "correctAnswers": ["serve on a jury", "vote in a federal election"]
   },
   {
     "questionNumber": 50,
     "prompt": "Name one right only for United States citizens.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["vote in a federal election", "run for office"]
+    "incorrectAnswers": [
+      "freedom of speech",
+      "freedom of assembly",
+      "freedom of religion"
+    ],
+    "correctAnswers": ["vote in a federal election", "run for office"]
   },
   {
     "questionNumber": 51,
     "prompt": "What are two rights of everyone living in the United States?",
     "expectedNumAnswers": 2,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "right to free healthcare",
+      "right to free housing",
+      "right to a driver's license"
+    ],
+    "correctAnswers": [
       "freedom of expression",
       "freedom of speech",
       "freedom of assembly",
@@ -462,14 +659,24 @@
     "prompt": "What do we show loyalty to when we say the Pledge of Allegiance?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the United States", "the flag"]
+    "incorrectAnswers": [
+      "the President",
+      "the Constitution",
+      "the Supreme Court"
+    ],
+    "correctAnswers": ["the United States", "the flag"]
   },
   {
     "questionNumber": 53,
     "prompt": "What is one promise you make when you become a United States citizen?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "promise to join the military",
+      "promise to own property",
+      "promise to serve in Congress"
+    ],
+    "correctAnswers": [
       "give up loyalty to other countries",
       "defend the Constitution and laws of the United States",
       "obey the laws of the United States",
@@ -483,14 +690,20 @@
     "prompt": "How old do citizens have to be to vote for President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["eighteen (18) and older"]
+    "incorrectAnswers": ["sixteen (16)", "twenty-one (21)", "seventeen (17)"],
+    "correctAnswers": ["eighteen (18) and older"]
   },
   {
     "questionNumber": 55,
     "prompt": "What are two ways that Americans can participate in their democracy?",
     "expectedNumAnswers": 2,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "pay taxes",
+      "move to a different country",
+      "apply for a visa"
+    ],
+    "correctAnswers": [
       "vote",
       "join a political party",
       "help with a campaign",
@@ -508,14 +721,20 @@
     "prompt": "When is the last day you can send in federal income tax forms?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["April 15"]
+    "incorrectAnswers": ["December 31", "January 1", "March 15"],
+    "correctAnswers": ["April 15"]
   },
   {
     "questionNumber": 57,
     "prompt": "When must all men register for the Selective Service?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "at age sixteen (16)",
+      "at age twenty-one (21)",
+      "between twenty (20) and twenty-five (25)"
+    ],
+    "correctAnswers": [
       "at age eighteen (18)",
       "between eighteen (18) and twenty-six (26)"
     ]
@@ -525,7 +744,12 @@
     "prompt": "What is one reason colonists came to America?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "to find gold in California",
+      "to avoid cold weather",
+      "to start large farms"
+    ],
+    "correctAnswers": [
       "freedom",
       "political liberty",
       "religious freedom",
@@ -539,21 +763,32 @@
     "prompt": "Who lived in America before the Europeans arrived?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["American Indians", "Native Americans"]
+    "incorrectAnswers": [
+      "European settlers",
+      "Spanish missionaries",
+      "British colonists"
+    ],
+    "correctAnswers": ["American Indians", "Native Americans"]
   },
   {
     "questionNumber": 60,
     "prompt": "What group of people was taken to America and sold as slaves?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["Africans", "people from Africa"]
+    "incorrectAnswers": ["Europeans", "Asians", "Native Americans"],
+    "correctAnswers": ["Africans", "people from Africa"]
   },
   {
     "questionNumber": 61,
     "prompt": "Why did the colonists fight the British?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "because they wanted to be British citizens",
+      "because they wanted to go back to England",
+      "because they wanted to be left alone"
+    ],
+    "correctAnswers": [
       "because of high taxes (taxation without representation)",
       "because the British army stayed in their houses (boarding, quartering)",
       "because they didn't have self-government"
@@ -564,21 +799,28 @@
     "prompt": "Who wrote the Declaration of Independence?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["(Thomas) Jefferson"]
+    "incorrectAnswers": [
+      "(George) Washington",
+      "(Benjamin) Franklin",
+      "(John) Adams"
+    ],
+    "correctAnswers": ["(Thomas) Jefferson"]
   },
   {
     "questionNumber": 63,
     "prompt": "When was the Declaration of Independence adopted?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["July 4, 1776"]
+    "incorrectAnswers": ["July 4, 1789", "September 17, 1787", "July 4, 1800"],
+    "correctAnswers": ["July 4, 1776"]
   },
   {
     "questionNumber": 64,
     "prompt": "There were 13 original states. Name three.",
     "expectedNumAnswers": 3,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": ["California", "Texas", "Florida", "Alaska"],
+    "correctAnswers": [
       "New Hampshire",
       "Massachusetts",
       "Rhode Island",
@@ -599,7 +841,12 @@
     "prompt": "What happened at the Constitutional Convention?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "The Declaration of Independence was written.",
+      "The Bill of Rights was written.",
+      "The Articles of Confederation were signed."
+    ],
+    "correctAnswers": [
       "The Constitution was written.",
       "The Founding Fathers wrote the Constitution."
     ]
@@ -609,14 +856,20 @@
     "prompt": "When was the Constitution written?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["1787"]
+    "incorrectAnswers": ["1776", "1800", "1791"],
+    "correctAnswers": ["1787"]
   },
   {
     "questionNumber": 67,
     "prompt": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "(Thomas) Jefferson",
+      "(George) Washington",
+      "(Benjamin) Franklin"
+    ],
+    "correctAnswers": [
       "(James) Madison",
       "(Alexander) Hamilton",
       "(John) Jay",
@@ -628,7 +881,12 @@
     "prompt": "What is one thing Benjamin Franklin is famous for?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "second President of the U.S.",
+      "wrote the Declaration of Independence",
+      "led the Continental Army"
+    ],
+    "correctAnswers": [
       "U.S. diplomat",
       "oldest member of the Constitutional Convention",
       "first Postmaster General of the United States",
@@ -641,28 +899,49 @@
     "prompt": "Who is the \"Father of Our Country\"?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["(George) Washington"]
+    "incorrectAnswers": [
+      "(Thomas) Jefferson",
+      "(James) Madison",
+      "(Benjamin) Franklin"
+    ],
+    "correctAnswers": ["(George) Washington"]
   },
   {
     "questionNumber": 70,
     "prompt": "Who was the first President?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["(George) Washington"]
+    "incorrectAnswers": [
+      "(Thomas) Jefferson",
+      "(John) Adams",
+      "(James) Madison"
+    ],
+    "correctAnswers": ["(George) Washington"]
   },
   {
     "questionNumber": 71,
     "prompt": "What territory did the United States buy from France in 1803?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the Louisiana Territory", "Louisiana"]
+    "incorrectAnswers": [
+      "the Oregon Territory",
+      "the Texas Territory",
+      "the Florida Territory"
+    ],
+    "correctAnswers": ["the Louisiana Territory", "Louisiana"]
   },
   {
     "questionNumber": 72,
     "prompt": "Name one war fought by the United States in the 1800s.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "World War I",
+      "World War II",
+      "the Korean War",
+      "the Vietnam War"
+    ],
+    "correctAnswers": [
       "War of 1812",
       "Mexican-American War",
       "Civil War",
@@ -674,21 +953,36 @@
     "prompt": "Name the U.S. war between the North and the South.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["the Civil War", "the War Between the States"]
+    "incorrectAnswers": [
+      "the Revolutionary War",
+      "the War of 1812",
+      "the War of Independence"
+    ],
+    "correctAnswers": ["the Civil War", "the War Between the States"]
   },
   {
     "questionNumber": 74,
     "prompt": "Name one problem that led to the Civil War.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["slavery", "economic reasons", "states' rights"]
+    "incorrectAnswers": [
+      "the Great Depression",
+      "the Dust Bowl",
+      "freedom of religion"
+    ],
+    "correctAnswers": ["slavery", "economic reasons", "states' rights"]
   },
   {
     "questionNumber": 75,
     "prompt": "What was one important thing that Abraham Lincoln did?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "discovered America",
+      "wrote the Constitution",
+      "became the first President"
+    ],
+    "correctAnswers": [
       "freed the slaves (Emancipation Proclamation)",
       "saved (or preserved) the Union",
       "led the United States during the Civil War"
@@ -699,7 +993,12 @@
     "prompt": "What did the Emancipation Proclamation do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "gave women the right to vote",
+      "ended World War I",
+      "created the Constitution"
+    ],
+    "correctAnswers": [
       "freed the slaves",
       "freed slaves in the Confederacy",
       "freed slaves in the Confederate states",
@@ -711,14 +1010,24 @@
     "prompt": "What did Susan B. Anthony do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["fought for women's rights", "fought for civil rights"]
+    "incorrectAnswers": [
+      "led the American Revolution",
+      "became the first female President",
+      "discovered electricity"
+    ],
+    "correctAnswers": ["fought for women's rights", "fought for civil rights"]
   },
   {
     "questionNumber": 78,
     "prompt": "Name one war fought by the United States in the 1900s.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "Spanish-American War",
+      "Mexican-American War",
+      "Civil War"
+    ],
+    "correctAnswers": [
       "World War I",
       "World War II",
       "Korean War",
@@ -731,49 +1040,76 @@
     "prompt": "Who was President during World War I?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["(Woodrow) Wilson"]
+    "incorrectAnswers": [
+      "(Franklin) Roosevelt",
+      "(Harry) Truman",
+      "(Herbert) Hoover"
+    ],
+    "correctAnswers": ["(Woodrow) Wilson"]
   },
   {
     "questionNumber": 80,
     "prompt": "Who was President during the Great Depression and World War II?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["(Franklin) Roosevelt"]
+    "incorrectAnswers": [
+      "(Woodrow) Wilson",
+      "(Theodore) Roosevelt",
+      "(John F.) Kennedy"
+    ],
+    "correctAnswers": ["(Franklin) Roosevelt"]
   },
   {
     "questionNumber": 81,
     "prompt": "Who did the United States fight in World War II?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["Japan, Germany, and Italy"]
+    "incorrectAnswers": [
+      "Russia, China, and Cuba",
+      "Spain, France, and Mexico",
+      "Canada, Britain, and Japan"
+    ],
+    "correctAnswers": ["Japan, Germany, and Italy"]
   },
   {
     "questionNumber": 82,
     "prompt": "Before he was President, Eisenhower was a general. What war was he in?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["World War II"]
+    "incorrectAnswers": ["World War I", "Korean War", "Vietnam War"],
+    "correctAnswers": ["World War II"]
   },
   {
     "questionNumber": 83,
     "prompt": "During the Cold War, what was the main concern of the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["Communism"]
+    "incorrectAnswers": ["Democracy", "Capitalism", "Imperialism"],
+    "correctAnswers": ["Communism"]
   },
   {
     "questionNumber": 84,
     "prompt": "What movement tried to end racial discrimination?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["civil rights (movement)"]
+    "incorrectAnswers": [
+      "Women's Suffrage Movement",
+      "Abolitionist Movement",
+      "Industrial Revolution"
+    ],
+    "correctAnswers": ["civil rights (movement)"]
   },
   {
     "questionNumber": 85,
     "prompt": "What did Martin Luther King, Jr. do?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "wrote the Constitution",
+      "signed the Declaration of Independence",
+      "served as President"
+    ],
+    "correctAnswers": [
       "fought for civil rights",
       "worked for equality for all Americans"
     ]
@@ -783,14 +1119,20 @@
     "prompt": "What major event happened on September 11,2001, in the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["Terrorists attacked the United State"]
+    "incorrectAnswers": [
+      "hurricane hit New Orleans",
+      "Wall Street crashed",
+      "the U.S. declared war on Iraq"
+    ],
+    "correctAnswers": ["Terrorists attacked the United State"]
   },
   {
     "questionNumber": 87,
     "prompt": "Name one American Indian tribe in the United States.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": ["Vikings", "Pilgrims", "Colonists"],
+    "correctAnswers": [
       "Cherokee",
       "Navajo",
       "Sioux",
@@ -821,28 +1163,32 @@
     "prompt": "Name one of the two longest rivers in the United States.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["Missouri (River)", "Mississippi (River)"]
+    "incorrectAnswers": ["Colorado River", "Rio Grande", "Hudson River"],
+    "correctAnswers": ["Missouri (River)", "Mississippi (River)"]
   },
   {
     "questionNumber": 89,
     "prompt": "What ocean is on the West Coast of the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["Pacific (Ocean)"]
+    "incorrectAnswers": ["Atlantic Ocean", "Gulf of Mexico", "Arctic Ocean"],
+    "correctAnswers": ["Pacific (Ocean)"]
   },
   {
     "questionNumber": 90,
     "prompt": "What ocean is on the East Coast of the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["Atlantic (Ocean)"]
+    "incorrectAnswers": ["Pacific Ocean", "Indian Ocean", "Arctic Ocean"],
+    "correctAnswers": ["Atlantic (Ocean)"]
   },
   {
     "questionNumber": 91,
     "prompt": "Name one U.S. territory.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": ["Hawaii", "Alaska", "Florida"],
+    "correctAnswers": [
       "Puerto Rico",
       "U.S. Virgin Islands",
       "American Samoa",
@@ -855,7 +1201,8 @@
     "prompt": "Name one state that borders Canada.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": ["California", "Texas", "Florida", "Hawaii", "Alaska"],
+    "correctAnswers": [
       "Maine",
       "New Hampshire",
       "Vermont",
@@ -876,21 +1223,34 @@
     "prompt": "Name one state that borders Mexico.",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["California", "Arizona", "New Mexico", "Texas"]
+    "incorrectAnswers": ["Florida", "Texas", "California"],
+    "correctAnswers": ["California", "Arizona", "New Mexico", "Texas"]
   },
   {
     "questionNumber": 94,
     "prompt": "What is the capital of the United States?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["Washington, D.C."]
+    "incorrectAnswers": [
+      "New York City",
+      "Los Angeles",
+      "Chicago",
+      "Philadelphia"
+    ],
+    "correctAnswers": ["Washington, D.C."]
   },
   {
     "questionNumber": 95,
     "prompt": "Where is the Statue of Liberty?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "New York City",
+      "Washington, D.C.",
+      "Boston",
+      "Philadelphia"
+    ],
+    "correctAnswers": [
       "New York (Harbor)",
       "Liberty Island [Also acceptable are New Jersey, near New York City, and on the Hudson (River).]"
     ]
@@ -900,7 +1260,12 @@
     "prompt": "Why does the flag have 13 stripes?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "to represent the states in Congress",
+      "to honor the Founding Fathers",
+      "to symbolize freedom"
+    ],
+    "correctAnswers": [
       "because there were 13 original colonies",
       "because the stripes represent the original colonies"
     ]
@@ -910,7 +1275,12 @@
     "prompt": "Why does the flag have 50 stars?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "for the original 13 colonies",
+      "for the 13 amendments",
+      "for the founding fathers"
+    ],
+    "correctAnswers": [
       "because there is one star for each state",
       "because each star represents a state",
       "because there are 50 states"
@@ -921,21 +1291,40 @@
     "prompt": "What is the name of the national anthem?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["The Star-Spangled Banner"]
+    "incorrectAnswers": [
+      "America the Beautiful",
+      "God Bless America",
+      "My Country 'Tis of Thee"
+    ],
+    "correctAnswers": ["The Star-Spangled Banner"]
   },
   {
     "questionNumber": 99,
     "prompt": "When do we celebrate Independence Day?",
     "expectedNumAnswers": 1,
     "language": "en",
-    "answers": ["July 4"]
+    "incorrectAnswers": [
+      "January 1",
+      "February 14",
+      "December 25",
+      "July 1",
+      "July 14"
+    ],
+    "correctAnswers": ["July 4"]
   },
   {
     "questionNumber": 100,
     "prompt": "Name two national U.S. holidays.",
     "expectedNumAnswers": 2,
     "language": "en",
-    "answers": [
+    "incorrectAnswers": [
+      "Halloween",
+      "Valentine's Day",
+      "Thanksgiving",
+      "Labor Day",
+      "New Year's Eve"
+    ],
+    "correctAnswers": [
       "New Year's Day",
       "Martin Luther King, Jr. Day",
       "Presidents' Day",

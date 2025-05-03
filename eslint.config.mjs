@@ -25,8 +25,8 @@ const eslintConfig = [
         "error",
         {
           groups: [
-            ["^next"],
             ["^react$"],
+            ["^next"],
             ["^@?\\w"],
             [
               ["^@ui", "^@components/(.*)$", "^@/(.*)$"],

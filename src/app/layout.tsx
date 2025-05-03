@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
 
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
+import classNames from "classnames";
 
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { ThemeProvider } from "@/components/theme-provider";
 import { TRPCReactProvider } from "@/trpc/react";
-import { SyncUser } from "./_components/SyncUser";
 
 import "./globals.css";
 
@@ -39,34 +34,25 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <TRPCReactProvider>
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
           <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            className={classNames(
+              "flex min-h-screen flex-col",
+              `${geistSans.variable} ${geistMono.variable} antialiased`
+            )}
           >
-            <header className="flex h-16 items-center justify-end gap-4 p-4">
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                <nav className="flex w-full justify-between">
-                  <SyncUser />
-                  <Link href="/">Stats</Link>
-                  <ul className="flex items-center">
-                    <li>
-                      <Link href="dashboard">Dashboard</Link>
-                    </li>
-                    <li>
-                      <Link href="connect">Connect</Link>
-                    </li>
-                    <li>
-                      <UserButton />
-                    </li>
-                  </ul>
-                </nav>
-              </SignedIn>
-            </header>
-            {children}
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Header />
+              <div className="container mx-auto max-w-6xl flex-1 flex-col px-4 py-8 md:py-12">
+                {children}
+              </div>
+              <Footer />
+            </ThemeProvider>
           </body>
         </html>
       </TRPCReactProvider>

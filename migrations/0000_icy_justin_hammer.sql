@@ -2,6 +2,7 @@ CREATE TABLE "easy_civics_answers" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"questionId" uuid NOT NULL,
 	"text" text NOT NULL,
+	"isCorrect" boolean DEFAULT false NOT NULL,
 	"language" text DEFAULT 'en' NOT NULL
 );
 --> statement-breakpoint
