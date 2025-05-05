@@ -1,15 +1,11 @@
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { AnswerRow, QuestionRow } from "@/server/db/schema";
-import { filterAndRandomizeAnswers } from "@/utils/filterAndRandomizeAnswers";
+import { filterAndRandomizeAnswers } from "@/utils/filter-and-randomize-answers";
 import { pickUniqueRandomNumbers } from "@/utils/random-numbers";
 import { tryCatch } from "@/utils/try-catch";
 
 export const qaRouter = createTRPCRouter({
   get10: publicProcedure.query(async ({ ctx }) => {
-    // TODO:: I need to be able to pass an array with unavailable questions
-    // some questions are either state specifi or time specific, and
-    // I am not sure how to handle this without doing a ton of work
-    // the quesitons can be added to the constants
     const randomNumbers = pickUniqueRandomNumbers(10, 1, 100);
     const { data: queshData, error: queshError } = await tryCatch(
       ctx.db.query.question.findMany({
