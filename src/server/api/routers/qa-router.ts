@@ -28,19 +28,9 @@ export const qaRouter = createTRPCRouter({
       })
     );
 
-    if (queshError) {
-      return { error: queshError, data: null };
-    }
-
-    if (!queshData) {
-      return { error: "No data found", data: null };
-    }
-
-    console.log(
-      "answers",
-      queshData[0]?.expectedNumAnswers,
-      queshData[0].answers
-    );
+    if (queshError) return { error: queshError, data: null };
+    if (!queshData) return { error: "No data found", data: null };
+    
     return { data: filterAndRandomizeAnswers(queshData), error: null };
   }),
 });
