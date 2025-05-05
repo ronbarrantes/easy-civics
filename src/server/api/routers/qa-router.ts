@@ -1,6 +1,6 @@
-import { inferProcedureOutput } from "@trpc/server";
-
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
+import { AnswerRow, QuestionRow } from "@/server/db/schema";
+import { filterAndRandomizeAnswers } from "@/utils/filter-and-randomize-answers";
 import { pickUniqueRandomNumbers } from "@/utils/random-numbers";
 import { tryCatch } from "@/utils/try-catch";
 
@@ -28,24 +28,24 @@ export const qaRouter = createTRPCRouter({
       })
     );
 
-    console.log("queshData", queshData);
-
-    if (queshError) {
-      return { error: queshError, data: null };
-    }
-
-    if (!queshData) {
-      return { error: "No data found", data: null };
-    }
-
-    return { data: queshData, error: null };
+    if (queshError) return { error: queshError, data: null };
+    if (!queshData) return { error: "No data found", data: null };
+    
+    return { data: filterAndRandomizeAnswers(queshData), error: null };
   }),
 });
 
-export type QuestionWithAnswers = Exclude<
-  inferProcedureOutput<(typeof qaRouter)["get10"]>["data"],
-  null
->[0];
+export type QuestionWithAnswers = Pick<
+  QuestionRow,
+  "id" | "prompt" | "questionNumber" | "expectedNumAnswers" | "explanation"
+> & {
+  answers: AnswerRow[];
+};
+
+// export type QuestionWithAnswers = Exclude<
+//   inferProcedureOutput<(typeof qaRouter)["get10"]>["data"],
+//   null
+// >[0];
 
 // export type QuestionWithAnswers = <
 //   inferProcedureOutput<(typeof qaRouter)["get10"]>

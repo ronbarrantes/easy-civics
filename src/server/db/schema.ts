@@ -1,4 +1,4 @@
-import { relations, sql } from "drizzle-orm";
+import { InferSelectModel, relations, sql } from "drizzle-orm";
 import { index, pgTableCreator, unique } from "drizzle-orm/pg-core";
 
 /**
@@ -156,6 +156,9 @@ export const resource = createTable("resources", (d) => {
       .notNull(),
   };
 });
+
+export type QuestionRow = InferSelectModel<typeof question>;
+export type AnswerRow = InferSelectModel<typeof answer>;
 
 // export const attempt = createTable("attempts", (d) => ({
 //   id: d.uuid().defaultRandom().primaryKey(),
