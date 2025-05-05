@@ -1,6 +1,6 @@
-import { inferProcedureOutput } from "@trpc/server";
-
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
+import { AnswerRow, QuestionRow } from "@/server/db/schema";
+import { filterAndRandomizeAnswers } from "@/utils/filterAndRandomizeAnswers";
 import { pickUniqueRandomNumbers } from "@/utils/random-numbers";
 import { tryCatch } from "@/utils/try-catch";
 
@@ -40,21 +40,26 @@ export const qaRouter = createTRPCRouter({
       return { error: "No data found", data: null };
     }
 
-    console.log("answers", queshData[0].answers);
-
-    // TODO:I need to get the answers and the expected number of answers
-    // according to how many expected answers, I need to have at most that many correct
-    // answers and the rest being incorrect answers
-    // (maybe minus all the correct answers to add to no more than 5 answers total)
-
-    return { data: queshData, error: null };
+    console.log(
+      "answers",
+      queshData[0]?.expectedNumAnswers,
+      queshData[0].answers
+    );
+    return { data: filterAndRandomizeAnswers(queshData), error: null };
   }),
 });
 
-export type QuestionWithAnswers = Exclude<
-  inferProcedureOutput<(typeof qaRouter)["get10"]>["data"],
-  null
->[0];
+export type QuestionWithAnswers = Pick<
+  QuestionRow,
+  "id" | "prompt" | "questionNumber" | "expectedNumAnswers" | "explanation"
+> & {
+  answers: AnswerRow[];
+};
+
+// export type QuestionWithAnswers = Exclude<
+//   inferProcedureOutput<(typeof qaRouter)["get10"]>["data"],
+//   null
+// >[0];
 
 // export type QuestionWithAnswers = <
 //   inferProcedureOutput<(typeof qaRouter)["get10"]>
