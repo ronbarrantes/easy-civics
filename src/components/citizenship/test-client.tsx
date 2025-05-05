@@ -17,7 +17,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useIsComplete, useTestStore } from "@/hooks/use-test";
+import { useTestStore } from "@/hooks/use-test";
 import { Question } from "@/lib/types";
 import { formatTime } from "@/utils/time";
 
@@ -38,8 +38,6 @@ export default function TestClientPage({
     startTest,
     stopTest,
   } = useTestStore();
-
-  const isComplete = useIsComplete();
 
   const [timeElapsed, setTimeElapsed] = useState(0);
 
@@ -132,7 +130,6 @@ export default function TestClientPage({
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-12">
-      <div>{`${isComplete}`}</div>
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-2xl font-bold">Practice Test</h1>
         <div className="flex items-center">
