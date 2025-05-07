@@ -17,6 +17,7 @@ import { Label } from "@/components/ui/label";
 import { useTestStore } from "@/hooks/use-test";
 import { AnsweredQuestion } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 
 interface QuestionCardProps {
   onAnswerAction: (answers: Set<string>) => void;
@@ -146,7 +147,7 @@ export function QuestionCard({
                     htmlFor={answer.id}
                     className="flex-1 cursor-pointer px-0 py-4"
                   >
-                    {answer.text}
+                    {capitalizeFirstLetter(answer.text)} hello
                   </Label>
                   {
                     // isSubmitted &&
