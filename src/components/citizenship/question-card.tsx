@@ -18,12 +18,14 @@ import { useTestStore } from "@/hooks/use-test";
 import { cn } from "@/lib/utils";
 
 interface QuestionCardProps {
-  onAnswer: (answers: Set<string>) => void;
+  onAnswerAction: (answers: Set<string>) => void;
   showFeedback?: boolean;
 }
 
+// TODO: all answers should be capitalize on the first letter, do this with css
+
 export function QuestionCard({
-  onAnswer,
+  onAnswerAction,
   showFeedback = false,
 }: QuestionCardProps) {
   const {
@@ -84,7 +86,7 @@ export function QuestionCard({
       return;
     }
 
-    onAnswer(selectedAnswers);
+    onAnswerAction(selectedAnswers);
   };
 
   return (
@@ -187,7 +189,10 @@ export function QuestionCard({
             <p className="mb-2 font-medium">
               {isCorrect
                 ? "Correct answer!"
-                : `Incorrect. The correct answers are: ${question.answers.filter((answer) => answer.isCorrect).join(", ")}`}
+                : `Incorrect. The correct answers are: ${question.answers
+                    .filter((answer) => answer.isCorrect)
+                    .map((answer) => answer.text)
+                    .join(", ")}`}
             </p>
             {question.explanation && (
               <p className="text-sm">{question.explanation}</p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useRouter } from "next/navigation";
 
@@ -15,42 +15,32 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { TestResults } from "@/lib/types";
+import { useIsComplete, useTestStore } from "@/hooks/use-test";
+import { calculateResults } from "@/utils/calculate-results";
 
 type SelectValueType = "all" | "correct" | "incorrect";
 
 export default function ReviewPage() {
   const router = useRouter();
-  const [results, setResults] = useState<TestResults | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [filter, setFilter] = useState<"all" | "correct" | "incorrect">("all");
 
-  useEffect(() => {
-    try {
-      const storedResults = localStorage.getItem("testResults");
-      if (storedResults) {
-        const parsedResults = JSON.parse(storedResults);
-        setResults(parsedResults);
-      } else {
-        // No results found, redirect to test page
-        router.push("/test");
-      }
-    } catch (error) {
-      console.error("Error loading test results:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [router]);
+  const { timeEnded, timeStarted, questions, userAnswers } = useTestStore();
 
-  if (isLoading || !results) {
+  const results = calculateResults({
+    timeEnded,
+    timeStarted,
+    questions,
+    userAnswers,
+  });
+
+  const isComplete = useIsComplete();
+  console.log("ISCOMPLETE", isComplete);
+
+  if (!isComplete) {
     return (
       <div className="container mx-auto max-w-md px-4 py-12 text-center">
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <p>No results found. Please take a test first.</p>
-        )}
+        <p>No results found. Please take a test first.</p>
       </div>
     );
   }
@@ -61,6 +51,8 @@ export default function ReviewPage() {
     if (filter === "incorrect") return !q.isCorrect;
     return true;
   });
+
+  console.log("FILTERED QUESTIONS", filteredQuestions);
 
   if (filteredQuestions.length === 0) {
     return (
@@ -128,7 +120,7 @@ export default function ReviewPage() {
         </span>
       </div>
 
-      <QuestionCard onAnswer={() => {}} showFeedback={true} />
+      <QuestionCard onAnswerAction={() => {}} showFeedback={true} />
 
       <div className="mt-8 flex justify-between">
         <Button

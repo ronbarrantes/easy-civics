@@ -1,8 +1,5 @@
 import { create } from "zustand";
-import {
-  devtools,
-  // persist
-} from "zustand/middleware";
+import { devtools } from "zustand/middleware";
 
 import { Answer, Question } from "@/lib/types";
 
@@ -22,6 +19,7 @@ type TestActions = {
   setQuestions: (questions: Question[]) => void;
   setUserAnswer: (userAnswer: Set<string>) => void;
   increaseQuestionIndex: () => void; // maybe remove
+  decreaseQuestionIndex: () => void; // maybe remove
   startTest: () => void;
   stopTest: () => void;
   toggleAnswer: (selectedAnswer: string) => void;
@@ -34,7 +32,8 @@ export type TestStore = TestActions & TestState;
 
 export const useTestStore = create<TestStore>()(
   devtools(
-    // persist(
+    // persist
+
     (set) => ({
       isStarted: false,
       timeStarted: new Date(),
@@ -73,9 +72,20 @@ export const useTestStore = create<TestStore>()(
           return { questions };
         }),
       increaseQuestionIndex: () =>
-        set((state) => ({
-          currentQuestionIndex: state.currentQuestionIndex + 1,
-        })),
+        set((state) => {
+          if (state.currentQuestionIndex >= state.questions.length - 1)
+            return state;
+          return {
+            currentQuestionIndex: state.currentQuestionIndex + 1,
+          };
+        }),
+      decreaseQuestionIndex: () =>
+        set((state) => {
+          if (state.currentQuestionIndex <= 0) return state;
+          return {
+            currentQuestionIndex: state.currentQuestionIndex - 1,
+          };
+        }),
       startTest: () =>
         set({
           isStarted: true,
