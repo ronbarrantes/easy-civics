@@ -15,19 +15,21 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useTestStore } from "@/hooks/use-test";
+import { AnsweredQuestion } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 interface QuestionCardProps {
   onAnswerAction: (answers: Set<string>) => void;
   showFeedback?: boolean;
   isCorrect?: boolean;
+  userAnsweredQuestion?: AnsweredQuestion;
 }
 
 // TODO: all answers should be capitalize on the first letter, do this with css
 
 export function QuestionCard({
   onAnswerAction,
-  isCorrect,
+  userAnsweredQuestion,
   showFeedback = false,
 }: QuestionCardProps) {
   const {
@@ -43,11 +45,8 @@ export function QuestionCard({
   const question = questions[currentQuestionIndex];
   const isLast = questions.length === userAnswers.length - 1;
 
-  //TODO: Figure out what is a correct answer
-  // because this is not correct
-  //
-  // how do we find the correc answers
-  //
+  const isCorrect = userAnsweredQuestion?.isCorrect;
+
   const handleCheckboxChange = (value: string) => {
     if (question.expectedNumAnswers < selectedAnswers.size)
       setError(
@@ -100,7 +99,9 @@ export function QuestionCard({
         <div className="space-y-3">
           {question.answers.map((answer) => {
             const isOptionCorrect = answer.isCorrect;
-            const isOptionSelected = selectedAnswers.has(answer.id);
+            const isOptionSelected = userAnsweredQuestion?.userAnswers.has(
+              answer.id
+            );
 
             let optionClassName =
               "border-2 px-4 py-0 rounded-md transition-all";

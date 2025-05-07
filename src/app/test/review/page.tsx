@@ -60,7 +60,7 @@ export default function ReviewPage() {
     return true;
   });
 
-  console.log("FILTERED QUESTIONS", filteredQuestions);
+  console.log("FILTERED QUESTION", filteredQuestions);
 
   if (filteredQuestions.length === 0) {
     return (
@@ -129,9 +129,17 @@ export default function ReviewPage() {
       </div>
 
       <QuestionCard
+        //TODO: Figure out what is a correct answer
+        // because this is not correct
+        //
+        // how do we find the correc answers
+        // there can be multiple correct answers
+
+        // TODO::  Show the incorrect answer if it was selected
+        // show user's incorrect answer
         onAnswerAction={() => {}}
         showFeedback={true}
-        isCorrect={currentQuestion.isCorrect}
+        userAnsweredQuestion={currentQuestion}
       />
 
       <div className="mt-8 flex justify-between">
