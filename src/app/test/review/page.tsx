@@ -128,7 +128,11 @@ export default function ReviewPage() {
         </span>
       </div>
 
-      <QuestionCard onAnswerAction={() => {}} showFeedback={true} />
+      <QuestionCard
+        onAnswerAction={() => {}}
+        showFeedback={true}
+        isCorrect={currentQuestion.isCorrect}
+      />
 
       <div className="mt-8 flex justify-between">
         <Button

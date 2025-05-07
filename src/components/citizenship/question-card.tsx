@@ -20,12 +20,14 @@ import { cn } from "@/lib/utils";
 interface QuestionCardProps {
   onAnswerAction: (answers: Set<string>) => void;
   showFeedback?: boolean;
+  isCorrect?: boolean;
 }
 
 // TODO: all answers should be capitalize on the first letter, do this with css
 
 export function QuestionCard({
   onAnswerAction,
+  isCorrect,
   showFeedback = false,
 }: QuestionCardProps) {
   const {
@@ -41,22 +43,11 @@ export function QuestionCard({
   const question = questions[currentQuestionIndex];
   const isLast = questions.length === userAnswers.length - 1;
 
-  const correctAnswers = question.answers.filter((a) => a.isCorrect);
-
-  const allCorrectAnswersSelected = correctAnswers.every((a) =>
-    selectedAnswers.has(a.id)
-  );
-
-  const noIncorrectAnswersSelected = Array.from(selectedAnswers).every((id) =>
-    correctAnswers.some((a) => a.id === id)
-  );
-
-  const isCorrect =
-    showFeedback &&
-    selectedAnswers.size === correctAnswers.length &&
-    allCorrectAnswersSelected &&
-    noIncorrectAnswersSelected;
-
+  //TODO: Figure out what is a correct answer
+  // because this is not correct
+  //
+  // how do we find the correc answers
+  //
   const handleCheckboxChange = (value: string) => {
     if (question.expectedNumAnswers < selectedAnswers.size)
       setError(
