@@ -11,16 +11,7 @@ import { calculateResults } from "@/utils/calculate-results";
 
 export default function ResultsPage() {
   const router = useRouter();
-  // const [results, setResults] = useState<TestResults | null>(null);
-  // const [isLoading, setIsLoading] = useState(false);
-  const {
-    timeEnded,
-    timeStarted,
-    questions,
-    userAnswers,
-    increaseQuestionIndex,
-    decreaseQuestionIndex,
-  } = useTestStore();
+  const { timeEnded, timeStarted, questions, userAnswers } = useTestStore();
 
   const results = calculateResults({
     timeEnded,

@@ -22,10 +22,18 @@ type SelectValueType = "all" | "correct" | "incorrect";
 
 export default function ReviewPage() {
   const router = useRouter();
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [filter, setFilter] = useState<"all" | "correct" | "incorrect">("all");
 
-  const { timeEnded, timeStarted, questions, userAnswers } = useTestStore();
+  const {
+    timeEnded,
+    timeStarted,
+    questions,
+    userAnswers,
+    currentQuestionIndex: currentIndex,
+    increaseQuestionIndex,
+    decreaseQuestionIndex,
+    resetQuestionIndex,
+  } = useTestStore();
 
   const results = calculateResults({
     timeEnded,
@@ -91,7 +99,7 @@ export default function ReviewPage() {
           value={filter}
           onValueChange={(value) => {
             setFilter(value as SelectValueType);
-            setCurrentIndex(0);
+            resetQuestionIndex();
           }}
         >
           <SelectTrigger className="w-40">
@@ -125,7 +133,8 @@ export default function ReviewPage() {
       <div className="mt-8 flex justify-between">
         <Button
           variant="outline"
-          onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
+          // work here
+          onClick={() => decreaseQuestionIndex()}
           disabled={currentIndex === 0}
         >
           <ChevronLeft className="mr-2 h-4 w-4" /> Previous
@@ -137,11 +146,7 @@ export default function ReviewPage() {
 
         <Button
           variant="outline"
-          onClick={() =>
-            setCurrentIndex((prev) =>
-              Math.min(filteredQuestions.length - 1, prev + 1)
-            )
-          }
+          onClick={() => increaseQuestionIndex()}
           disabled={currentIndex === filteredQuestions.length - 1}
         >
           Next <ChevronRight className="ml-2 h-4 w-4" />

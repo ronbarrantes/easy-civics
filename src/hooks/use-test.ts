@@ -26,6 +26,7 @@ type TestActions = {
   singleChoiceAnswer: (selectedAnswer: string) => void;
   setTimeStarted: (timeStarted: Date) => void;
   setTimeEnded: (timeEnded: Date) => void;
+  resetQuestionIndex: () => void;
 };
 
 export type TestStore = TestActions & TestState;
@@ -86,6 +87,7 @@ export const useTestStore = create<TestStore>()(
             currentQuestionIndex: state.currentQuestionIndex - 1,
           };
         }),
+      resetQuestionIndex: () => set({ currentQuestionIndex: 0 }),
       startTest: () =>
         set({
           isStarted: true,
@@ -95,11 +97,7 @@ export const useTestStore = create<TestStore>()(
           timeStarted: new Date(),
           selectedAnswers: new Set(),
         }),
-      stopTest: () =>
-        set({
-          isStarted: false,
-          timeEnded: new Date(),
-        }),
+      stopTest: () => set({ isStarted: false, timeEnded: new Date() }),
     }),
     { name: "TEST_STORE" }
   )
