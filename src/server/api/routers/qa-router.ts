@@ -12,7 +12,7 @@ export const qaRouter = createTRPCRouter({
         limit: 10,
         where: (quesh, { inArray, eq, and }) =>
           and(
-            eq(quesh.language, "es"),
+            eq(quesh.language, "en"),
             inArray(quesh.questionNumber, randomNumbers)
           ),
         columns: {
@@ -30,7 +30,7 @@ export const qaRouter = createTRPCRouter({
 
     if (queshError) return { error: queshError, data: null };
     if (!queshData) return { error: "No data found", data: null };
-    
+
     return { data: filterAndRandomizeAnswers(queshData), error: null };
   }),
 });
@@ -41,11 +41,3 @@ export type QuestionWithAnswers = Pick<
 > & {
   answers: AnswerRow[];
 };
-
-// export type QuestionWithAnswers = Exclude<
-//   inferProcedureOutput<(typeof qaRouter)["get10"]>["data"],
-//   null
-// >[0];
-
-// export type QuestionWithAnswers = <
-//   inferProcedureOutput<(typeof qaRouter)["get10"]>
