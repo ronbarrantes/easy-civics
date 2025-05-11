@@ -147,7 +147,7 @@ export function QuestionCard({
                     htmlFor={answer.id}
                     className="flex-1 cursor-pointer px-0 py-4"
                   >
-                    {capitalizeFirstLetter(answer.text)} hello
+                    {capitalizeFirstLetter(answer.text)}
                   </Label>
                   {
                     // isSubmitted &&
