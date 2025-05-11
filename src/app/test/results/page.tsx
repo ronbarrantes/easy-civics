@@ -6,7 +6,7 @@ import { Home } from "lucide-react";
 
 import { ResultsSummary } from "@/components/citizenship/results-summary";
 import { Button } from "@/components/ui/button";
-import { useIsComplete, useTestStore } from "@/hooks/use-test";
+import { useTestStore } from "@/hooks/use-test";
 import { calculateResults } from "@/utils/calculate-results";
 
 export default function ResultsPage() {
@@ -19,9 +19,6 @@ export default function ResultsPage() {
     questions,
     userAnswers,
   });
-
-  const isComplete = useIsComplete();
-  console.log("ISCOMPLETE", isComplete);
 
   // TODO: add a check for when a test hasn't beend done
   // maybe if all the answers have not been completed

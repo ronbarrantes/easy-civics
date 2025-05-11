@@ -43,7 +43,6 @@ export default function ReviewPage() {
   });
 
   const isComplete = useIsComplete();
-  console.log("ISCOMPLETE", isComplete);
 
   if (!isComplete) {
     return (
@@ -59,8 +58,6 @@ export default function ReviewPage() {
     if (filter === "incorrect") return !q.isCorrect;
     return true;
   });
-
-  console.log("FILTERED QUESTION", filteredQuestions);
 
   if (filteredQuestions.length === 0) {
     return (
