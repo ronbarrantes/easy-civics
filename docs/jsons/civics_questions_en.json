@@ -126,9 +126,9 @@
     "expectedNumAnswers": 1,
     "language": "en",
     "incorrectAnswers": [
-      "You can practice any religion, or not practice a religion.",
       "You can only practice Christianity.",
-      "You can only practice one religion."
+      "You can only practice one religion.",
+      "You must practice a religion."
     ],
     "correctAnswers": [
       "You can practice any religion, or not practice a religion."
