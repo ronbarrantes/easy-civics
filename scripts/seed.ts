@@ -24,7 +24,7 @@ async function loadJson<T>(filename: string): Promise<T> {
 
 async function seed() {
   try {
-    console.log("🚀 Starting seeding...");
+    console.info("🚀 Starting seeding...");
 
     const qEn = await loadJson<QuestionSeed[]>("civics_questions_en.json");
     const qEs = await loadJson<QuestionSeed[]>("civics_questions_es.json");
