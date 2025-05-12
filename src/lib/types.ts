@@ -23,17 +23,19 @@ export type Category =
   | "Integrated Civics"
   | "Rights and Responsibilities";
 
+export interface AnsweredQuestion {
+  question: Question;
+  userAnswers: Set<string>;
+  isCorrect: boolean;
+}
+
 export interface TestResults {
   totalQuestions: number;
   correctAnswers: number;
   incorrectAnswers: number;
   passThreshold: number;
   passed: boolean;
-  questionsWithAnswers: {
-    question: Question;
-    userAnswers: Set<string>;
-    isCorrect: boolean;
-  }[];
+  questionsWithAnswers: AnsweredQuestion[];
   timeStarted: Date;
   timeEnded?: Date;
 }

@@ -15,15 +15,22 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useTestStore } from "@/hooks/use-test";
+import { AnsweredQuestion } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 
 interface QuestionCardProps {
-  onAnswer: (answers: Set<string>) => void;
+  onAnswerAction: (answers: Set<string>) => void;
   showFeedback?: boolean;
+  isCorrect?: boolean;
+  userAnsweredQuestion?: AnsweredQuestion;
 }
 
+// TODO: all answers should be capitalize on the first letter, do this with css
+
 export function QuestionCard({
-  onAnswer,
+  onAnswerAction,
+  userAnsweredQuestion,
   showFeedback = false,
 }: QuestionCardProps) {
   const {
@@ -39,21 +46,7 @@ export function QuestionCard({
   const question = questions[currentQuestionIndex];
   const isLast = questions.length === userAnswers.length - 1;
 
-  const correctAnswers = question.answers.filter((a) => a.isCorrect);
-
-  const allCorrectAnswersSelected = correctAnswers.every((a) =>
-    selectedAnswers.has(a.id)
-  );
-
-  const noIncorrectAnswersSelected = Array.from(selectedAnswers).every((id) =>
-    correctAnswers.some((a) => a.id === id)
-  );
-
-  const isCorrect =
-    showFeedback &&
-    selectedAnswers.size === correctAnswers.length &&
-    allCorrectAnswersSelected &&
-    noIncorrectAnswersSelected;
+  const isCorrect = userAnsweredQuestion?.isCorrect;
 
   const handleCheckboxChange = (value: string) => {
     if (question.expectedNumAnswers < selectedAnswers.size)
@@ -84,7 +77,7 @@ export function QuestionCard({
       return;
     }
 
-    onAnswer(selectedAnswers);
+    onAnswerAction(selectedAnswers);
   };
 
   return (
@@ -107,7 +100,9 @@ export function QuestionCard({
         <div className="space-y-3">
           {question.answers.map((answer) => {
             const isOptionCorrect = answer.isCorrect;
-            const isOptionSelected = selectedAnswers.has(answer.id);
+            const isOptionSelected = userAnsweredQuestion?.userAnswers.has(
+              answer.id
+            );
 
             let optionClassName =
               "border-2 px-4 py-0 rounded-md transition-all";
@@ -152,7 +147,7 @@ export function QuestionCard({
                     htmlFor={answer.id}
                     className="flex-1 cursor-pointer px-0 py-4"
                   >
-                    {answer.text}
+                    {capitalizeFirstLetter(answer.text)}
                   </Label>
                   {
                     // isSubmitted &&
@@ -187,7 +182,10 @@ export function QuestionCard({
             <p className="mb-2 font-medium">
               {isCorrect
                 ? "Correct answer!"
-                : `Incorrect. The correct answers are: ${question.answers.filter((answer) => answer.isCorrect).join(", ")}`}
+                : `Incorrect. The correct answers are: ${question.answers
+                    .filter((answer) => answer.isCorrect)
+                    .map((answer) => answer.text)
+                    .join(", ")}`}
             </p>
             {question.explanation && (
               <p className="text-sm">{question.explanation}</p>
