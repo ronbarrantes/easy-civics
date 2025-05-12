@@ -1,7 +1,8 @@
 export const capitalizeFirstLetter = (s: string): string => {
-  const hasParenAtBeginnin = s[0] === "("; // s.indexOf("(");
+  // Optionally guard empty string: if (s.length === 0) return s;
+  const hasParenAtBeginning = s[0] === "(";
 
-  if (hasParenAtBeginnin) {
+  if (hasParenAtBeginning) {
     const firstLetter = s.charAt(1).toUpperCase();
     return s.charAt(0) + firstLetter + s.slice(2);
   }
