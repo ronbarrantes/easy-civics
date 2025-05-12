@@ -143,7 +143,7 @@ export default function TestClientPage({
         totalQuestions={questions.length}
       />
 
-      {userAnswers.length + 1 && <QuestionCard onAnswer={handleAnswer} />}
+      {userAnswers.length + 1 && <QuestionCard onAnswerAction={handleAnswer} />}
     </div>
   );
 }

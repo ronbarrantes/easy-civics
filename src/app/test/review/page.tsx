@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useRouter } from "next/navigation";
 
@@ -15,42 +15,39 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { TestResults } from "@/lib/types";
+import { useIsComplete, useTestStore } from "@/hooks/use-test";
+import { calculateResults } from "@/utils/calculate-results";
 
 type SelectValueType = "all" | "correct" | "incorrect";
 
 export default function ReviewPage() {
   const router = useRouter();
-  const [results, setResults] = useState<TestResults | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [filter, setFilter] = useState<"all" | "correct" | "incorrect">("all");
 
-  useEffect(() => {
-    try {
-      const storedResults = localStorage.getItem("testResults");
-      if (storedResults) {
-        const parsedResults = JSON.parse(storedResults);
-        setResults(parsedResults);
-      } else {
-        // No results found, redirect to test page
-        router.push("/test");
-      }
-    } catch (error) {
-      console.error("Error loading test results:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [router]);
+  const {
+    timeEnded,
+    timeStarted,
+    questions,
+    userAnswers,
+    currentQuestionIndex: currentIndex,
+    increaseQuestionIndex,
+    decreaseQuestionIndex,
+    resetQuestionIndex,
+  } = useTestStore();
 
-  if (isLoading || !results) {
+  const results = calculateResults({
+    timeEnded,
+    timeStarted,
+    questions,
+    userAnswers,
+  });
+
+  const isComplete = useIsComplete();
+
+  if (!isComplete) {
     return (
       <div className="container mx-auto max-w-md px-4 py-12 text-center">
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <p>No results found. Please take a test first.</p>
-        )}
+        <p>No results found. Please take a test first.</p>
       </div>
     );
   }
@@ -99,7 +96,7 @@ export default function ReviewPage() {
           value={filter}
           onValueChange={(value) => {
             setFilter(value as SelectValueType);
-            setCurrentIndex(0);
+            resetQuestionIndex();
           }}
         >
           <SelectTrigger className="w-40">
@@ -128,12 +125,25 @@ export default function ReviewPage() {
         </span>
       </div>
 
-      <QuestionCard onAnswer={() => {}} showFeedback={true} />
+      <QuestionCard
+        //TODO: Figure out what is a correct answer
+        // because this is not correct
+        //
+        // how do we find the correc answers
+        // there can be multiple correct answers
+
+        // TODO::  Show the incorrect answer if it was selected
+        // show user's incorrect answer
+        onAnswerAction={() => {}}
+        showFeedback={true}
+        userAnsweredQuestion={currentQuestion}
+      />
 
       <div className="mt-8 flex justify-between">
         <Button
           variant="outline"
-          onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
+          // work here
+          onClick={() => decreaseQuestionIndex()}
           disabled={currentIndex === 0}
         >
           <ChevronLeft className="mr-2 h-4 w-4" /> Previous
@@ -145,11 +155,7 @@ export default function ReviewPage() {
 
         <Button
           variant="outline"
-          onClick={() =>
-            setCurrentIndex((prev) =>
-              Math.min(filteredQuestions.length - 1, prev + 1)
-            )
-          }
+          onClick={() => increaseQuestionIndex()}
           disabled={currentIndex === filteredQuestions.length - 1}
         >
           Next <ChevronRight className="ml-2 h-4 w-4" />

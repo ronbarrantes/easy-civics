@@ -15,12 +15,12 @@ async function wipeTables() {
   rl.close();
 
   if (confirmation.toLowerCase() !== "yes") {
-    console.log("❌ Aborting truncate. No changes made.");
+    console.info("❌ Aborting truncate. No changes made.");
     process.exit(0);
   }
 
   try {
-    console.log("🚀 Truncating tables...");
+    console.info("🚀 Truncating tables...");
 
     await db.execute(sql`
       TRUNCATE TABLE
@@ -29,7 +29,7 @@ async function wipeTables() {
       RESTART IDENTITY CASCADE
     `);
 
-    console.log("✅ Successfully truncated and reset tables!");
+    console.info("✅ Successfully truncated and reset tables!");
     process.exit(0);
   } catch (error) {
     console.error("\n❌ Truncate failed:", error);

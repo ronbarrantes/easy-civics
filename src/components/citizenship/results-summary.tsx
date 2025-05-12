@@ -21,7 +21,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTestStore } from "@/hooks/use-test";
 import { TestResults } from "@/lib/types";
+import { formatTimeHumanReadable } from "@/utils/time";
 
 interface ResultsSummaryProps {
   results: TestResults;
@@ -29,6 +31,8 @@ interface ResultsSummaryProps {
 
 export function ResultsSummary({ results }: ResultsSummaryProps) {
   const router = useRouter();
+  const { resetQuestionIndex } = useTestStore();
+
   const passingPercentage =
     (results.passThreshold / results.totalQuestions) * 100;
   const userPercentage =
@@ -108,7 +112,7 @@ export function ResultsSummary({ results }: ResultsSummaryProps) {
               </span>
               <span className="font-medium">
                 {results.timeEnded && results.timeStarted
-                  ? formatTime(
+                  ? formatTimeHumanReadable(
                       (new Date(results.timeEnded).getTime() -
                         new Date(results.timeStarted).getTime()) /
                         1000
@@ -122,7 +126,10 @@ export function ResultsSummary({ results }: ResultsSummaryProps) {
           <Button
             variant="default"
             className="w-full transition-none sm:w-5/12"
-            onClick={() => router.push("/test/review")}
+            onClick={() => {
+              resetQuestionIndex();
+              router.push("/test/review");
+            }}
           >
             Review Answer
           </Button>
@@ -161,10 +168,4 @@ export function ResultsSummary({ results }: ResultsSummaryProps) {
       </div>
     </div>
   );
-}
-
-function formatTime(seconds: number): string {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = Math.floor(seconds % 60);
-  return `${minutes}m ${remainingSeconds}s`;
 }
