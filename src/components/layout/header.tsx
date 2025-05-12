@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
+"use server";
 
 import Link from "next/link";
 
@@ -8,31 +6,34 @@ import { SignedIn, UserButton } from "@clerk/nextjs";
 import { Flag } from "lucide-react";
 
 import { SyncUser } from "@/app/_components/SyncUser";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { defaultSettings } from "@/config/settings";
 import { Language } from "@/lib/types";
+import { APP_DEFAULTS } from "@/utils/constants";
+import { getCookie, setCookie } from "@/utils/cookies";
+import { LanguageToggle } from "./LanguageToggle";
 import { ModeToggle } from "./ModeToggle";
 
-export function Header() {
-  const [language, setLanguage] = useState<Language>("en");
+const getLanguage = () => {};
 
-  useEffect(() => {
-    const storedLanguage = localStorage.getItem("language") as Language;
-    if (storedLanguage) {
-      setLanguage(storedLanguage);
-    }
-  }, []);
+const setLanguage = () => {};
 
-  const handleLanguageChange = (newLanguage: Language) => {
-    setLanguage(newLanguage);
-    localStorage.setItem("language", newLanguage);
+export async function Header() {
+  const handleLanguageAction = async (language: Language) => {
+    // setLanguage(newLanguage);
+    // localStorage.setItem("language", newLanguage);
+
+    //     const updatedDefaultSettings = {
+    //       ...defaultSettings,
+    //       // ...currentSettigns,
+    //       language,
+    //     };
+
+    // await setCookie(APP_DEFAULTS, JSON.stringify(updatedDefaultSettings));
+
     // Reload the page to update all content
-    window.location.reload();
+    // window.location.reload();
+    //
+    console.log("Language", language);
   };
 
   return (
@@ -43,19 +44,9 @@ export function Header() {
           <span>US Citizenship Test</span>
         </Link>
         <nav className="flex items-center gap-4">
-          <Select
-            value={language}
-            onValueChange={(value) => handleLanguageChange(value as Language)}
-          >
-            <SelectTrigger className="w-[120px]">
-              <SelectValue placeholder="Language" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="en">English</SelectItem>
-              {/* <SelectItem value="es">Español</SelectItem> */}
-              {/* <SelectItem value="fr">Français</SelectItem> */}
-            </SelectContent>
-          </Select>
+          <LanguageToggle
+            handleLanguageAction={(language) => handleLanguageAction(language)}
+          />
           <ModeToggle />
           <SignedIn>
             <SyncUser />
