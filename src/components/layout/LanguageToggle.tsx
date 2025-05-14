@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 
-import { setLanguageServerAction } from "@/app/actions/language";
+import {
+  getLanguageServerAction,
+  setLanguageServerAction,
+} from "@/app/actions/language";
 import {
   Select,
   SelectContent,
@@ -21,8 +24,11 @@ export const LanguageToggle = () => {
     // Call the server action
     await setLanguageServerAction(newLanguage);
 
+    const theCookie = await getLanguageServerAction();
+    console.log("THE COOKIE", theCookie);
+
     // Optionally reload to reflect updated settings
-    window.location.reload();
+    // window.location.reload();
   };
 
   return (
