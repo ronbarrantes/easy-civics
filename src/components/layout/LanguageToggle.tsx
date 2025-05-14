@@ -1,6 +1,8 @@
 "use client";
+
 import { useState } from "react";
 
+import { setLanguageServerAction } from "@/app/actions/language";
 import {
   Select,
   SelectContent,
@@ -10,24 +12,18 @@ import {
 } from "@/components/ui/select";
 import { Language } from "@/lib/types";
 
-export const LanguageToggle = ({
-  handleLanguageAction,
-}: {
-  handleLanguageAction: (language: Language) => void;
-}) => {
+export const LanguageToggle = () => {
   const [language, setLanguage] = useState<Language>("en");
 
-  const handleLanguageChange = (newLanguage: Language) => {
+  const handleLanguageChange = async (newLanguage: Language) => {
     setLanguage(newLanguage);
-    handleLanguageAction(language);
-  };
 
-  // useEffect(() => {
-  //   const storedLanguage = localStorage.getItem("language") as Language;
-  //   if (storedLanguage) {
-  //     setLanguage(storedLanguage);
-  //   }
-  // }, []);
+    // Call the server action
+    await setLanguageServerAction(newLanguage);
+
+    // Optionally reload to reflect updated settings
+    window.location.reload();
+  };
 
   return (
     <Select
