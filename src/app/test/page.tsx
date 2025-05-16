@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 
 import TestClientPage from "@/components/citizenship/test-client";
+import { InitialScreen } from "@/components/citizenship/test-client-initial-screen";
 import { api } from "@/trpc/server";
 
 export default async function TestPage() {
@@ -14,7 +15,7 @@ export default async function TestPage() {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<InitialScreen disabled />}>
       <TestClientPage questions={questionsData} />
     </Suspense>
   );
