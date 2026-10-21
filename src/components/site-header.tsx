@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -12,6 +12,7 @@ import {
   Languages,
   Moon,
   Palette,
+  Settings2,
   Star,
   Sun,
 } from "lucide-react";
@@ -31,6 +32,8 @@ export function SiteHeader({ language }: { language: Language }) {
   const pathname = usePathname();
   const [textSize, setTextSize] = useState<TextSize>("large");
   const [theme, setTheme] = useState<Theme>("light");
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const settingsButton = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (document.documentElement.dataset.textSize === "larger") {
@@ -78,46 +81,95 @@ export function SiteHeader({ language }: { language: Language }) {
 
   return (
     <header className="border-t-flag border-b-rule border-t-4 border-b-2">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-8 gap-y-4 px-4 py-4">
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
-          <Link
-            href="/"
-            className="font-display inline-flex items-center gap-2 text-xl font-extrabold tracking-tight [font-stretch:115%] no-underline"
+      <div
+        onKeyDown={(event) => {
+          if (event.key === "Escape" && settingsOpen) {
+            setSettingsOpen(false);
+            settingsButton.current?.focus();
+          }
+        }}
+        className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2 lg:gap-x-8 lg:py-4"
+      >
+        <Link
+          href="/"
+          className="font-display mr-auto inline-flex min-h-[2.75rem] items-center gap-2 text-lg font-extrabold tracking-tight [font-stretch:115%] no-underline sm:text-xl lg:mr-0"
+        >
+          <Star aria-hidden className="text-flag size-6 fill-current" />
+          {copy.appName}
+        </Link>
+
+        {/* Phones get a short language switch; the other settings fold into a panel */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            type="button"
+            onClick={switchLanguage}
+            lang={language === "en" ? "es" : "en"}
+            className="border-ink hover:bg-wash inline-flex min-h-[2.75rem] items-center gap-1.5 border-2 px-2.5 font-bold"
           >
-            <Star aria-hidden className="text-flag size-6 fill-current" />
-            {copy.appName}
-          </Link>
-          <nav aria-label={copy.nav.label}>
-            <ul className="flex flex-wrap gap-x-6 gap-y-1">
-              {navItems.map((item) => {
-                const current = pathname.startsWith(item.href);
-                return (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      aria-current={current ? "page" : undefined}
-                      className={cn(
-                        "inline-flex items-center gap-2 py-2 font-bold underline-offset-[0.35em] hover:underline",
-                        current && "decoration-flag underline decoration-4"
-                      )}
-                    >
-                      <item.Icon aria-hidden className="text-accent size-5" />
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+            <Languages aria-hidden className="size-5" />
+            {copy.settings.switchLanguageShort}
+            <span className="sr-only">
+              {" "}
+              {copy.settings.switchLanguageLabel}
+            </span>
+          </button>
+          <button
+            ref={settingsButton}
+            type="button"
+            aria-expanded={settingsOpen}
+            aria-controls="site-settings"
+            aria-label={copy.settings.label}
+            onClick={() => setSettingsOpen((open) => !open)}
+            className={cn(
+              "inline-flex min-h-[2.75rem] min-w-[2.75rem] items-center justify-center border-2",
+              settingsOpen
+                ? "border-accent bg-accent text-accent-ink"
+                : "border-ink hover:bg-wash"
+            )}
+          >
+            <Settings2 aria-hidden className="size-6" />
+          </button>
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <nav aria-label={copy.nav.label} className="w-full lg:w-auto">
+          <ul className="flex flex-wrap gap-x-5 gap-y-1 sm:gap-x-6">
+            {navItems.map((item) => {
+              const current = pathname.startsWith(item.href);
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={current ? "page" : undefined}
+                    className={cn(
+                      "inline-flex min-h-[2.75rem] items-center gap-2 font-bold underline-offset-[0.35em] hover:underline",
+                      current && "decoration-flag underline decoration-4"
+                    )}
+                  >
+                    <item.Icon
+                      aria-hidden
+                      className="text-accent hidden size-5 sm:block"
+                    />
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        <div
+          id="site-settings"
+          className={cn(
+            "border-rule w-full flex-col gap-3 border-t-2 pt-3 pb-1 lg:ml-auto lg:flex lg:w-auto lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-6 lg:border-0 lg:p-0",
+            settingsOpen ? "flex" : "hidden"
+          )}
+        >
           <button
             type="button"
             onClick={switchLanguage}
             lang={language === "en" ? "es" : "en"}
             aria-label={copy.settings.switchLanguageLabel}
-            className="border-ink hover:bg-wash inline-flex min-h-[2.5rem] items-center gap-2 border-2 px-3 font-bold"
+            className="border-ink hover:bg-wash hidden min-h-[2.5rem] items-center gap-2 border-2 px-3 font-bold lg:inline-flex"
           >
             <Languages aria-hidden className="size-5" />
             {copy.settings.switchLanguage}
@@ -125,7 +177,7 @@ export function SiteHeader({ language }: { language: Language }) {
           <div
             role="group"
             aria-label={copy.settings.textSize}
-            className="flex items-center gap-3"
+            className="flex flex-col items-start gap-1 lg:flex-row lg:items-center lg:gap-3"
           >
             <span
               className="text-quiet inline-flex items-center gap-2"
@@ -158,7 +210,7 @@ export function SiteHeader({ language }: { language: Language }) {
           <div
             role="group"
             aria-label={copy.settings.theme}
-            className="flex items-center gap-3"
+            className="flex flex-col items-start gap-1 lg:flex-row lg:items-center lg:gap-3"
           >
             <span
               className="text-quiet inline-flex items-center gap-2"
