@@ -1,0 +1,1868 @@
+[
+  {
+    "questionNumber": 1,
+    "prompt": "¿Cuál es la forma de gobierno de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Monarquía", "Dictadura", "Estado comunista"],
+    "correctAnswers": [
+      "República",
+      "República federal basada en la Constitución",
+      "Democracia representativa"
+    ]
+  },
+  {
+    "questionNumber": 2,
+    "prompt": "¿Cuál es la ley suprema de la nación?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Carta de Derechos",
+      "La Declaración de Independencia",
+      "La Proclamación de Emancipación"
+    ],
+    "correctAnswers": ["La Constitución de los Estados Unidos"]
+  },
+  {
+    "questionNumber": 3,
+    "prompt": "Mencione una cosa que hace la Constitución de los Estados Unidos.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Declara la guerra a Gran Bretaña",
+      "Elige al Presidente",
+      "Fija el precio de los productos"
+    ],
+    "correctAnswers": [
+      "Forma el gobierno",
+      "Define los poderes del gobierno",
+      "Define las partes del gobierno",
+      "Protege los derechos del pueblo"
+    ]
+  },
+  {
+    "questionNumber": 4,
+    "prompt": "La Constitución de los Estados Unidos comienza con las palabras “Nosotros el Pueblo”. ¿Qué significa “Nosotros el Pueblo”?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El rey gobierna al pueblo",
+      "Solo los legisladores tienen poder",
+      "Los militares controlan el gobierno"
+    ],
+    "correctAnswers": [
+      "Autogobierno",
+      "Soberanía popular",
+      "Consentimiento de los gobernados",
+      "El pueblo debe gobernarse a sí mismo",
+      "Ejemplo de contrato social"
+    ]
+  },
+  {
+    "questionNumber": 5,
+    "prompt": "¿Cómo se hacen cambios a la Constitución de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Órdenes ejecutivas",
+      "Fallos de la Corte Suprema",
+      "Decretos presidenciales"
+    ],
+    "correctAnswers": ["Enmiendas", "El proceso de enmienda"]
+  },
+  {
+    "questionNumber": 6,
+    "prompt": "¿Qué protege la Carta de Derechos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Los poderes del Presidente",
+      "El derecho de los estados a separarse de la Unión",
+      "El poder de los militares"
+    ],
+    "correctAnswers": [
+      "Los derechos básicos de los estadounidenses",
+      "Los derechos básicos de las personas que viven en los Estados Unidos"
+    ]
+  },
+  {
+    "questionNumber": 7,
+    "prompt": "¿Cuántas enmiendas tiene la Constitución de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Diez (10)", "Veintiuna (21)", "Treinta y tres (33)"],
+    "correctAnswers": ["Veintisiete (27)"]
+  },
+  {
+    "questionNumber": 8,
+    "prompt": "¿Por qué es importante la Declaración de Independencia?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Creó la Corte Suprema",
+      "Terminó la Guerra Civil",
+      "Estableció el sistema federal de impuestos"
+    ],
+    "correctAnswers": [
+      "Dice que Estados Unidos es libre del control británico",
+      "Dice que todas las personas son creadas iguales",
+      "Identifica derechos inherentes",
+      "Identifica libertades individuales"
+    ]
+  },
+  {
+    "questionNumber": 9,
+    "prompt": "¿Qué documento fundador dijo que las colonias americanas eran libres de Gran Bretaña?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Constitución de los Estados Unidos",
+      "Los Artículos de la Confederación",
+      "La Carta de Derechos"
+    ],
+    "correctAnswers": ["La Declaración de Independencia"]
+  },
+  {
+    "questionNumber": 10,
+    "prompt": "Mencione dos ideas importantes de la Declaración de Independencia y de la Constitución de los Estados Unidos.",
+    "expectedNumAnswers": 2,
+    "language": "es",
+    "incorrectAnswers": [
+      "Gobierno de un rey",
+      "Gobierno ilimitado",
+      "Religión oficial del estado"
+    ],
+    "correctAnswers": [
+      "Igualdad",
+      "Libertad",
+      "Contrato social",
+      "Derechos naturales",
+      "Gobierno limitado",
+      "Autogobierno"
+    ]
+  },
+  {
+    "questionNumber": 11,
+    "prompt": "Las palabras “Vida, Libertad y la búsqueda de la Felicidad” ¿en qué documento fundador están?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Constitución de los Estados Unidos",
+      "La Carta de Derechos",
+      "Los Documentos Federalistas"
+    ],
+    "correctAnswers": ["La Declaración de Independencia"]
+  },
+  {
+    "questionNumber": 12,
+    "prompt": "¿Cuál es el sistema económico de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Comunismo", "Socialismo", "Feudalismo"],
+    "correctAnswers": ["Capitalismo", "Economía de libre mercado"]
+  },
+  {
+    "questionNumber": 13,
+    "prompt": "¿Qué es el estado de derecho?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El Presidente está por encima de la ley",
+      "Solo los ciudadanos deben obedecer la ley",
+      "Las leyes solo se aplican a los estados"
+    ],
+    "correctAnswers": [
+      "Todos deben obedecer la ley",
+      "Los líderes deben obedecer la ley",
+      "El gobierno debe obedecer la ley",
+      "Nadie está por encima de la ley"
+    ]
+  },
+  {
+    "questionNumber": 14,
+    "prompt": "Muchos documentos influyeron en la Constitución de los Estados Unidos. Mencione uno.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Proclamación de Emancipación",
+      "El Discurso de Gettysburg",
+      "La Doctrina Monroe"
+    ],
+    "correctAnswers": [
+      "La Declaración de Independencia",
+      "Los Artículos de la Confederación",
+      "Los Documentos Federalistas",
+      "Los Documentos Antifederalistas",
+      "La Declaración de Derechos de Virginia",
+      "Las Órdenes Fundamentales de Connecticut",
+      "El Pacto del Mayflower",
+      "La Gran Ley de la Paz de los iroqueses"
+    ]
+  },
+  {
+    "questionNumber": 15,
+    "prompt": "Hay tres poderes del gobierno. ¿Por qué?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Para que el Presidente tome todas las decisiones",
+      "Para aprobar leyes más rápido",
+      "Porque hay tres partidos políticos"
+    ],
+    "correctAnswers": [
+      "Para que ninguna parte se vuelva demasiado poderosa",
+      "Pesos y contrapesos",
+      "Separación de poderes"
+    ]
+  },
+  {
+    "questionNumber": 16,
+    "prompt": "Mencione los tres poderes del gobierno.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Federal, estatal y local",
+      "Ejército, Marina y Fuerza Aérea",
+      "Senado, Cámara y Gabinete"
+    ],
+    "correctAnswers": [
+      "Legislativo, ejecutivo y judicial",
+      "El Congreso, el presidente y los tribunales"
+    ]
+  },
+  {
+    "questionNumber": 17,
+    "prompt": "¿De qué poder del gobierno está a cargo el Presidente de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El poder legislativo",
+      "El poder judicial",
+      "El poder estatal"
+    ],
+    "correctAnswers": ["El poder ejecutivo"]
+  },
+  {
+    "questionNumber": 18,
+    "prompt": "¿Qué parte del gobierno federal redacta las leyes?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["El Presidente", "La Corte Suprema", "El Gabinete"],
+    "correctAnswers": [
+      "El Congreso de los Estados Unidos",
+      "La legislatura nacional",
+      "El poder legislativo"
+    ]
+  },
+  {
+    "questionNumber": 19,
+    "prompt": "¿Cuáles son las dos partes del Congreso de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El Presidente y el Vicepresidente",
+      "La Corte Suprema y los tribunales federales",
+      "Los demócratas y los republicanos"
+    ],
+    "correctAnswers": ["El Senado y la Cámara de Representantes"]
+  },
+  {
+    "questionNumber": 20,
+    "prompt": "Mencione un poder del Congreso de los Estados Unidos.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Veta proyectos de ley",
+      "Nombra a los jueces de la Corte Suprema",
+      "Dirige a las fuerzas armadas"
+    ],
+    "correctAnswers": [
+      "Redacta las leyes",
+      "Declara la guerra",
+      "Hace el presupuesto federal"
+    ]
+  },
+  {
+    "questionNumber": 21,
+    "prompt": "¿Cuántos senadores de los Estados Unidos hay?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Cincuenta (50)",
+      "Cuatrocientos treinta y cinco (435)",
+      "Doscientos (200)"
+    ],
+    "correctAnswers": ["Cien (100)"]
+  },
+  {
+    "questionNumber": 22,
+    "prompt": "¿De cuántos años es el período de un senador de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Dos (2) años", "Cuatro (4) años", "De por vida"],
+    "correctAnswers": ["Seis (6) años"]
+  },
+  {
+    "questionNumber": 23,
+    "prompt": "¿Quién es uno de los senadores actuales de su estado? (Carolina del Norte)",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "explanation": "Los senadores de Carolina del Norte son Thom Tillis y Ted Budd. Tillis no se postula para la reelección en 2026, así que su escaño cambia en enero de 2027. Verifique en senate.gov antes de la entrevista.",
+    "incorrectAnswers": [
+      "Lindsey Graham",
+      "Tim Scott",
+      "Tim Kaine",
+      "Roy Cooper"
+    ],
+    "correctAnswers": ["Thom Tillis", "Ted Budd"]
+  },
+  {
+    "questionNumber": 24,
+    "prompt": "¿Cuántos miembros con derecho a voto tiene la Cámara de Representantes?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Cien (100)", "Cincuenta (50)", "Quinientos (500)"],
+    "correctAnswers": ["Cuatrocientos treinta y cinco (435)"]
+  },
+  {
+    "questionNumber": 25,
+    "prompt": "¿De cuántos años es el período de un miembro de la Cámara de Representantes?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Cuatro (4) años", "Seis (6) años", "Ocho (8) años"],
+    "correctAnswers": ["Dos (2) años"]
+  },
+  {
+    "questionNumber": 26,
+    "prompt": "¿Por qué los representantes de los Estados Unidos tienen períodos más cortos que los senadores?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Porque tienen menos trabajo",
+      "Porque el Presidente los elige",
+      "Para ahorrar dinero en salarios"
+    ],
+    "correctAnswers": ["Para seguir más de cerca la opinión pública"]
+  },
+  {
+    "questionNumber": 27,
+    "prompt": "¿Cuántos senadores tiene cada estado?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Uno (1)",
+      "Cuatro (4)",
+      "Depende de la población del estado"
+    ],
+    "correctAnswers": ["Dos (2)"]
+  },
+  {
+    "questionNumber": 28,
+    "prompt": "¿Por qué cada estado tiene dos senadores?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Por la población de cada estado",
+      "Porque hay dos partidos políticos",
+      "El Presidente lo decide"
+    ],
+    "correctAnswers": [
+      "Representación igual (para los estados pequeños)",
+      "El Gran Compromiso (Compromiso de Connecticut)"
+    ]
+  },
+  {
+    "questionNumber": 29,
+    "prompt": "Mencione a su representante en el Congreso de los Estados Unidos. (Carolina del Norte)",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "explanation": "Su representante depende de su distrito congresional. Aquí aparecen los 14 representantes de Carolina del Norte, pero solo uno es el suyo. Busque su dirección en house.gov/representatives/find-your-representative y apréndase ese nombre.",
+    "incorrectAnswers": [
+      "Nancy Pelosi",
+      "Hakeem Jeffries",
+      "Jim Jordan",
+      "Alexandria Ocasio-Cortez"
+    ],
+    "correctAnswers": [
+      "Don Davis (NC-1)",
+      "Deborah Ross (NC-2)",
+      "Greg Murphy (NC-3)",
+      "Valerie Foushee (NC-4)",
+      "Virginia Foxx (NC-5)",
+      "Addison McDowell (NC-6)",
+      "David Rouzer (NC-7)",
+      "Mark Harris (NC-8)",
+      "Richard Hudson (NC-9)",
+      "Pat Harrigan (NC-10)",
+      "Chuck Edwards (NC-11)",
+      "Alma Adams (NC-12)",
+      "Brad Knott (NC-13)",
+      "Tim Moore (NC-14)"
+    ]
+  },
+  {
+    "questionNumber": 30,
+    "prompt": "¿Cómo se llama el actual Presidente de la Cámara de Representantes?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "explanation": "Esta respuesta puede cambiar. Verifique en uscis.gov/citizenship/testupdates antes de la entrevista.",
+    "incorrectAnswers": ["Hakeem Jeffries", "Nancy Pelosi", "Kevin McCarthy"],
+    "correctAnswers": ["Mike Johnson"]
+  },
+  {
+    "questionNumber": 31,
+    "prompt": "¿A quién representa un senador de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Solo a quienes votaron por él",
+      "Al Presidente",
+      "A su partido político"
+    ],
+    "correctAnswers": [
+      "A los ciudadanos de su estado",
+      "A las personas de su estado"
+    ]
+  },
+  {
+    "questionNumber": 32,
+    "prompt": "¿Quién elige a los senadores de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El Presidente",
+      "El gobernador del estado",
+      "La Cámara de Representantes"
+    ],
+    "correctAnswers": ["Los ciudadanos de su estado"]
+  },
+  {
+    "questionNumber": 33,
+    "prompt": "¿A quién representa un miembro de la Cámara de Representantes?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "A todo el país",
+      "Al Presidente",
+      "Solo al gobernador del estado"
+    ],
+    "correctAnswers": [
+      "A los ciudadanos de su distrito congresional",
+      "A las personas de su distrito"
+    ]
+  },
+  {
+    "questionNumber": 34,
+    "prompt": "¿Quién elige a los miembros de la Cámara de Representantes?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["El Senado", "El Presidente", "La Corte Suprema"],
+    "correctAnswers": ["Los ciudadanos de su distrito congresional"]
+  },
+  {
+    "questionNumber": 35,
+    "prompt": "Algunos estados tienen más representantes que otros. ¿Por qué?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Porque tienen más territorio",
+      "Porque se unieron primero a la Unión",
+      "Porque pagan más impuestos"
+    ],
+    "correctAnswers": ["Por la población del estado", "Porque tienen más gente"]
+  },
+  {
+    "questionNumber": 36,
+    "prompt": "¿Por cuántos años se elige al Presidente de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Dos (2) años", "Seis (6) años", "Ocho (8) años"],
+    "correctAnswers": ["Cuatro (4) años"]
+  },
+  {
+    "questionNumber": 37,
+    "prompt": "El Presidente de los Estados Unidos solo puede servir dos períodos. ¿Por qué?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Por la Primera Enmienda",
+      "Porque la Corte Suprema lo decidió",
+      "Porque los presidentes envejecen"
+    ],
+    "correctAnswers": [
+      "Por la Enmienda 22",
+      "Para evitar que el presidente se vuelva demasiado poderoso"
+    ]
+  },
+  {
+    "questionNumber": 38,
+    "prompt": "¿Cómo se llama el actual Presidente de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "explanation": "Esta respuesta puede cambiar. Verifique en uscis.gov/citizenship/testupdates antes de la entrevista.",
+    "incorrectAnswers": ["Joe Biden", "Barack Obama", "JD Vance"],
+    "correctAnswers": ["Donald J. Trump"]
+  },
+  {
+    "questionNumber": 39,
+    "prompt": "¿Cómo se llama el actual Vicepresidente de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "explanation": "Esta respuesta puede cambiar. Verifique en uscis.gov/citizenship/testupdates antes de la entrevista.",
+    "incorrectAnswers": ["Kamala Harris", "Mike Pence", "Marco Rubio"],
+    "correctAnswers": ["JD Vance"]
+  },
+  {
+    "questionNumber": 40,
+    "prompt": "Si el presidente ya no puede servir, ¿quién se convierte en presidente?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El Presidente de la Cámara de Representantes",
+      "El Presidente de la Corte Suprema",
+      "El Secretario de Estado"
+    ],
+    "correctAnswers": ["El Vicepresidente de los Estados Unidos"]
+  },
+  {
+    "questionNumber": 41,
+    "prompt": "Mencione un poder del presidente.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Redacta las leyes",
+      "Declara la guerra",
+      "Decide si las leyes son constitucionales"
+    ],
+    "correctAnswers": [
+      "Firma proyectos de ley para convertirlos en ley",
+      "Veta proyectos de ley",
+      "Hace cumplir las leyes",
+      "Comandante en jefe de las fuerzas armadas",
+      "Diplomático principal",
+      "Nombra a los jueces federales"
+    ]
+  },
+  {
+    "questionNumber": 42,
+    "prompt": "¿Quién es el Comandante en Jefe de las fuerzas armadas de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El Secretario de Guerra (Defensa)",
+      "El Vicepresidente",
+      "El Presidente de la Cámara de Representantes"
+    ],
+    "correctAnswers": ["El Presidente de los Estados Unidos"]
+  },
+  {
+    "questionNumber": 43,
+    "prompt": "¿Quién firma los proyectos de ley para convertirlos en ley?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El Presidente de la Corte Suprema",
+      "El Presidente de la Cámara de Representantes",
+      "El Secretario de Estado"
+    ],
+    "correctAnswers": ["El Presidente de los Estados Unidos"]
+  },
+  {
+    "questionNumber": 44,
+    "prompt": "¿Quién veta los proyectos de ley?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["El Senado", "La Corte Suprema", "El Vicepresidente"],
+    "correctAnswers": ["El Presidente de los Estados Unidos"]
+  },
+  {
+    "questionNumber": 45,
+    "prompt": "¿Quién nombra a los jueces federales?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El pueblo, por votación",
+      "El Presidente de la Cámara de Representantes",
+      "Los gobernadores de los estados"
+    ],
+    "correctAnswers": ["El Presidente de los Estados Unidos"]
+  },
+  {
+    "questionNumber": 46,
+    "prompt": "El poder ejecutivo tiene muchas partes. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Corte Suprema",
+      "El Senado",
+      "La Cámara de Representantes"
+    ],
+    "correctAnswers": [
+      "El Presidente de los Estados Unidos",
+      "El Gabinete",
+      "Los departamentos y agencias federales"
+    ]
+  },
+  {
+    "questionNumber": 47,
+    "prompt": "¿Qué hace el Gabinete del Presidente?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Redacta las leyes federales",
+      "Decide los casos de la Corte Suprema",
+      "Elige al Presidente"
+    ],
+    "correctAnswers": ["Asesora al Presidente de los Estados Unidos"]
+  },
+  {
+    "questionNumber": 48,
+    "prompt": "¿Cuáles son dos cargos a nivel de Gabinete?",
+    "expectedNumAnswers": 2,
+    "language": "es",
+    "incorrectAnswers": [
+      "Presidente de la Corte Suprema",
+      "Presidente de la Cámara de Representantes",
+      "Líder de la mayoría del Senado",
+      "Gobernador de un estado"
+    ],
+    "correctAnswers": [
+      "Procurador General (Secretario de Justicia)",
+      "Secretario de Agricultura",
+      "Secretario de Comercio",
+      "Secretario de Educación",
+      "Secretario de Energía",
+      "Secretario de Salud y Servicios Humanos",
+      "Secretario de Seguridad Nacional",
+      "Secretario de Vivienda y Desarrollo Urbano",
+      "Secretario del Interior",
+      "Secretario de Trabajo",
+      "Secretario de Estado",
+      "Secretario de Transporte",
+      "Secretario del Tesoro",
+      "Secretario de Asuntos de Veteranos",
+      "Secretario de Guerra (Defensa)",
+      "Vicepresidente",
+      "Administrador de la Agencia de Protección Ambiental",
+      "Administrador de la Administración de Pequeñas Empresas",
+      "Director de la Agencia Central de Inteligencia",
+      "Director de la Oficina de Administración y Presupuesto",
+      "Director de Inteligencia Nacional",
+      "Representante Comercial de los Estados Unidos"
+    ]
+  },
+  {
+    "questionNumber": 49,
+    "prompt": "¿Por qué es importante el Colegio Electoral?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Elige a los jueces de la Corte Suprema",
+      "Redacta el presupuesto federal",
+      "Aprueba nuevas enmiendas"
+    ],
+    "correctAnswers": [
+      "Decide quién es elegido presidente",
+      "Ofrece un compromiso entre la elección popular del presidente y la selección por el Congreso"
+    ]
+  },
+  {
+    "questionNumber": 50,
+    "prompt": "¿Cuál es una parte del poder judicial?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El Gabinete",
+      "El Senado",
+      "El Departamento de Justicia"
+    ],
+    "correctAnswers": ["La Corte Suprema", "Los tribunales federales"]
+  },
+  {
+    "questionNumber": 51,
+    "prompt": "¿Qué hace el poder judicial?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Redacta las leyes",
+      "Firma los proyectos de ley",
+      "Cobra los impuestos"
+    ],
+    "correctAnswers": [
+      "Revisa las leyes",
+      "Explica las leyes",
+      "Resuelve disputas (desacuerdos) sobre la ley",
+      "Decide si una ley va en contra de la Constitución"
+    ]
+  },
+  {
+    "questionNumber": 52,
+    "prompt": "¿Cuál es el tribunal más alto de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Corte Federal de Apelaciones",
+      "La Corte Suprema estatal",
+      "El Tribunal de Distrito"
+    ],
+    "correctAnswers": ["La Corte Suprema"]
+  },
+  {
+    "questionNumber": 53,
+    "prompt": "¿Cuántos puestos hay en la Corte Suprema?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Siete (7)", "Doce (12)", "Quince (15)"],
+    "correctAnswers": ["Nueve (9)"]
+  },
+  {
+    "questionNumber": 54,
+    "prompt": "¿Cuántos jueces de la Corte Suprema normalmente se necesitan para decidir un caso?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Tres (3)", "Siete (7)", "Nueve (9)"],
+    "correctAnswers": ["Cinco (5)"]
+  },
+  {
+    "questionNumber": 55,
+    "prompt": "¿Por cuánto tiempo sirven los jueces de la Corte Suprema?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Cuatro (4) años",
+      "Diez (10) años",
+      "Hasta que se elija al próximo Presidente"
+    ],
+    "correctAnswers": [
+      "De por vida",
+      "Nombramiento vitalicio",
+      "Hasta que se jubilen"
+    ]
+  },
+  {
+    "questionNumber": 56,
+    "prompt": "Los jueces de la Corte Suprema sirven de por vida. ¿Por qué?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Para que puedan postularse a Presidente",
+      "Porque no hay suficientes jueces",
+      "Para que el Presidente los controle"
+    ],
+    "correctAnswers": [
+      "Para ser independientes de la política",
+      "Para limitar la influencia (política) externa"
+    ]
+  },
+  {
+    "questionNumber": 57,
+    "prompt": "¿Quién es el actual Presidente de la Corte Suprema de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "explanation": "Esta respuesta puede cambiar. Verifique en uscis.gov/citizenship/testupdates antes de la entrevista.",
+    "incorrectAnswers": [
+      "Clarence Thomas",
+      "Sonia Sotomayor",
+      "Amy Coney Barrett"
+    ],
+    "correctAnswers": ["John Roberts"]
+  },
+  {
+    "questionNumber": 58,
+    "prompt": "Mencione un poder que solo tiene el gobierno federal.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Expedir licencias de conducir",
+      "Proveer escuelas y educación",
+      "Aprobar la zonificación y el uso de la tierra"
+    ],
+    "correctAnswers": [
+      "Imprimir dinero",
+      "Acuñar monedas",
+      "Declarar la guerra",
+      "Crear un ejército",
+      "Hacer tratados",
+      "Establecer la política exterior"
+    ]
+  },
+  {
+    "questionNumber": 59,
+    "prompt": "Mencione un poder que solo tienen los estados.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Imprimir dinero",
+      "Declarar la guerra",
+      "Hacer tratados"
+    ],
+    "correctAnswers": [
+      "Proveer escuelas y educación",
+      "Proveer protección (policía)",
+      "Proveer seguridad (departamentos de bomberos)",
+      "Expedir licencias de conducir",
+      "Aprobar la zonificación y el uso de la tierra"
+    ]
+  },
+  {
+    "questionNumber": 60,
+    "prompt": "¿Cuál es el propósito de la Décima Enmienda?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Da el derecho a portar armas",
+      "Pone fin a la esclavitud",
+      "Da a las mujeres el derecho al voto"
+    ],
+    "correctAnswers": [
+      "Los poderes que no se le dan al gobierno federal pertenecen a los estados o al pueblo"
+    ]
+  },
+  {
+    "questionNumber": 61,
+    "prompt": "¿Quién es el gobernador actual de su estado? (Carolina del Norte)",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "explanation": "Josh Stein es gobernador de Carolina del Norte desde enero de 2025. Roy Cooper fue el gobernador anterior.",
+    "incorrectAnswers": ["Roy Cooper", "Pat McCrory", "Henry McMaster"],
+    "correctAnswers": ["Josh Stein"]
+  },
+  {
+    "questionNumber": 62,
+    "prompt": "¿Cuál es la capital de su estado? (Carolina del Norte)",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "explanation": "Raleigh es la capital de Carolina del Norte. Charlotte es la ciudad más grande, pero no es la capital.",
+    "incorrectAnswers": ["Charlotte", "Greensboro", "Durham"],
+    "correctAnswers": ["Raleigh"]
+  },
+  {
+    "questionNumber": 63,
+    "prompt": "Hay cuatro enmiendas a la Constitución sobre quién puede votar. Describa una de ellas.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Solo los dueños de propiedades pueden votar",
+      "Los ciudadanos deben pasar un examen de lectura para votar",
+      "Solo las personas nacidas en EE. UU. pueden votar"
+    ],
+    "correctAnswers": [
+      "Los ciudadanos de dieciocho (18) años en adelante pueden votar",
+      "No se exige pagar un impuesto para votar",
+      "Cualquier ciudadano puede votar (mujeres y hombres pueden votar)",
+      "Un ciudadano varón de cualquier raza puede votar"
+    ]
+  },
+  {
+    "questionNumber": 64,
+    "prompt": "¿Quién puede votar en las elecciones federales, postularse para un cargo federal y servir en un jurado en los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Los residentes permanentes",
+      "Cualquier persona que viva en los Estados Unidos",
+      "Cualquier persona mayor de 16 años"
+    ],
+    "correctAnswers": ["Los ciudadanos de los Estados Unidos"]
+  },
+  {
+    "questionNumber": 65,
+    "prompt": "¿Cuáles son tres derechos de todas las personas que viven en los Estados Unidos?",
+    "expectedNumAnswers": 3,
+    "language": "es",
+    "incorrectAnswers": [
+      "El derecho a votar en elecciones federales",
+      "El derecho a postularse para un cargo federal",
+      "El derecho a servir en un jurado"
+    ],
+    "correctAnswers": [
+      "Libertad de expresión",
+      "Libertad de palabra",
+      "Libertad de reunión",
+      "Libertad de pedir al gobierno (peticiones)",
+      "Libertad de religión",
+      "El derecho a portar armas"
+    ]
+  },
+  {
+    "questionNumber": 66,
+    "prompt": "¿A qué le demostramos lealtad cuando decimos el Juramento de Lealtad (Pledge of Allegiance)?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Al Presidente",
+      "Al gobernador del estado",
+      "A nuestro partido político"
+    ],
+    "correctAnswers": ["A los Estados Unidos", "A la bandera"]
+  },
+  {
+    "questionNumber": 67,
+    "prompt": "Mencione dos promesas que hacen los nuevos ciudadanos en el Juramento de Lealtad.",
+    "expectedNumAnswers": 2,
+    "language": "es",
+    "incorrectAnswers": [
+      "Votar en todas las elecciones",
+      "Afiliarse a un partido político",
+      "Nunca salir de los Estados Unidos"
+    ],
+    "correctAnswers": [
+      "Renunciar a la lealtad a otros países",
+      "Defender la Constitución de los Estados Unidos",
+      "Obedecer las leyes de los Estados Unidos",
+      "Servir en las fuerzas armadas (si es necesario)",
+      "Servir (ayudar, hacer trabajo importante para) la nación (si es necesario)",
+      "Ser leal a los Estados Unidos"
+    ]
+  },
+  {
+    "questionNumber": 68,
+    "prompt": "¿Cómo pueden las personas convertirse en ciudadanos de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Vivir en EE. UU. por un año",
+      "Comprar una casa en EE. UU.",
+      "Obtener una licencia de conducir de EE. UU."
+    ],
+    "correctAnswers": [
+      "Nacer en los Estados Unidos, según las condiciones de la Enmienda 14",
+      "Naturalizarse",
+      "Derivar la ciudadanía (según las condiciones que fija el Congreso)"
+    ]
+  },
+  {
+    "questionNumber": 69,
+    "prompt": "¿Cuáles son dos ejemplos de participación cívica en los Estados Unidos?",
+    "expectedNumAnswers": 2,
+    "language": "es",
+    "incorrectAnswers": [
+      "Ignorar el servicio de jurado",
+      "Quedarse en casa el día de las elecciones",
+      "Evitar pagar impuestos"
+    ],
+    "correctAnswers": [
+      "Votar",
+      "Postularse para un cargo",
+      "Afiliarse a un partido político",
+      "Ayudar en una campaña",
+      "Unirse a un grupo cívico",
+      "Unirse a un grupo comunitario",
+      "Dar su opinión sobre un tema a un funcionario electo",
+      "Comunicarse con los funcionarios electos",
+      "Apoyar u oponerse a un tema o política",
+      "Escribir a un periódico"
+    ]
+  },
+  {
+    "questionNumber": 70,
+    "prompt": "¿Cuál es una forma en que los estadounidenses pueden servir a su país?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Faltar al servicio de jurado",
+      "Ignorar la ley",
+      "Evitar pagar impuestos"
+    ],
+    "correctAnswers": [
+      "Votar",
+      "Pagar impuestos",
+      "Obedecer la ley",
+      "Servir en las fuerzas armadas",
+      "Postularse para un cargo",
+      "Trabajar para el gobierno local, estatal o federal"
+    ]
+  },
+  {
+    "questionNumber": 71,
+    "prompt": "¿Por qué es importante pagar impuestos federales?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Solo para pagar el salario personal del Presidente",
+      "Para financiar a los partidos políticos",
+      "Es opcional"
+    ],
+    "correctAnswers": [
+      "Lo exige la ley",
+      "Todas las personas pagan para financiar el gobierno federal",
+      "Lo exige la Constitución (Enmienda 16)",
+      "Es un deber cívico"
+    ]
+  },
+  {
+    "questionNumber": 72,
+    "prompt": "Es importante que todos los hombres de 18 a 25 años se inscriban en el Servicio Selectivo. Mencione una razón.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Para obtener una licencia de conducir",
+      "Para votar en elecciones locales",
+      "Para obtener un pasaporte"
+    ],
+    "correctAnswers": [
+      "Lo exige la ley",
+      "Es un deber cívico",
+      "Hace que el reclutamiento sea justo, si es necesario"
+    ]
+  },
+  {
+    "questionNumber": 73,
+    "prompt": "Los colonos vinieron a América por muchas razones. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Para unirse al ejército británico",
+      "Para buscar un rey",
+      "Para pagar más impuestos"
+    ],
+    "correctAnswers": [
+      "Libertad",
+      "Libertad política",
+      "Libertad religiosa",
+      "Oportunidad económica",
+      "Escapar de la persecución"
+    ]
+  },
+  {
+    "questionNumber": 74,
+    "prompt": "¿Quiénes vivían en América antes de que llegaran los europeos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Los británicos", "Los españoles", "Los holandeses"],
+    "correctAnswers": ["Los indígenas americanos", "Los nativos americanos"]
+  },
+  {
+    "questionNumber": 75,
+    "prompt": "¿Qué grupo de personas fue llevado y vendido como esclavos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Los europeos",
+      "Los nativos americanos",
+      "Los australianos"
+    ],
+    "correctAnswers": ["Los africanos", "Las personas de África"]
+  },
+  {
+    "questionNumber": 76,
+    "prompt": "¿Qué guerra pelearon los estadounidenses para ganar la independencia de Gran Bretaña?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Guerra Civil",
+      "La Guerra de 1812",
+      "La Primera Guerra Mundial"
+    ],
+    "correctAnswers": [
+      "La Revolución Estadounidense",
+      "La Guerra Revolucionaria",
+      "La Guerra de Independencia de los Estados Unidos"
+    ]
+  },
+  {
+    "questionNumber": 77,
+    "prompt": "Mencione una razón por la que los estadounidenses declararon su independencia de Gran Bretaña.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Querían tener su propio rey",
+      "Gran Bretaña liberó a los esclavos",
+      "Querían unirse a Francia"
+    ],
+    "correctAnswers": [
+      "Impuestos altos",
+      "Impuestos sin representación",
+      "Los soldados británicos se alojaban en las casas de los estadounidenses",
+      "No tenían autogobierno",
+      "La Masacre de Boston",
+      "El Motín del Té de Boston (Ley del Té)",
+      "La Ley del Timbre",
+      "La Ley del Azúcar",
+      "Las Leyes Townshend",
+      "Las Leyes Intolerables (Coercitivas)"
+    ]
+  },
+  {
+    "questionNumber": 78,
+    "prompt": "¿Quién escribió la Declaración de Independencia?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "George Washington",
+      "Abraham Lincoln",
+      "Benjamin Franklin"
+    ],
+    "correctAnswers": ["Thomas Jefferson"]
+  },
+  {
+    "questionNumber": 79,
+    "prompt": "¿Cuándo se adoptó la Declaración de Independencia?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El 4 de julio de 1787",
+      "El 17 de septiembre de 1787",
+      "El 25 de diciembre de 1776"
+    ],
+    "correctAnswers": ["El 4 de julio de 1776"]
+  },
+  {
+    "questionNumber": 80,
+    "prompt": "La Revolución Estadounidense tuvo muchos eventos importantes. Mencione uno.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Batalla de Gettysburg",
+      "El ataque a Pearl Harbor",
+      "La Compra de Luisiana"
+    ],
+    "correctAnswers": [
+      "La Batalla de Bunker Hill",
+      "La Declaración de Independencia",
+      "Washington cruza el río Delaware (Batalla de Trenton)",
+      "La Batalla de Saratoga",
+      "El campamento de Valley Forge",
+      "La Batalla de Yorktown (rendición británica en Yorktown)"
+    ]
+  },
+  {
+    "questionNumber": 81,
+    "prompt": "Había 13 estados originales. Mencione cinco.",
+    "expectedNumAnswers": 5,
+    "language": "es",
+    "incorrectAnswers": ["Florida", "Ohio", "Vermont", "Maine", "Tennessee"],
+    "correctAnswers": [
+      "Nueva Hampshire",
+      "Massachusetts",
+      "Rhode Island",
+      "Connecticut",
+      "Nueva York",
+      "Nueva Jersey",
+      "Pensilvania",
+      "Delaware",
+      "Maryland",
+      "Virginia",
+      "Carolina del Norte",
+      "Carolina del Sur",
+      "Georgia"
+    ]
+  },
+  {
+    "questionNumber": 82,
+    "prompt": "¿Qué documento fundador se escribió en 1787?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Declaración de Independencia",
+      "Los Artículos de la Confederación",
+      "La Carta de Derechos"
+    ],
+    "correctAnswers": ["La Constitución de los Estados Unidos"]
+  },
+  {
+    "questionNumber": 83,
+    "prompt": "Los Documentos Federalistas apoyaron la aprobación de la Constitución. Mencione a uno de sus autores.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Thomas Jefferson",
+      "George Washington",
+      "Benjamin Franklin"
+    ],
+    "correctAnswers": [
+      "James Madison",
+      "Alexander Hamilton",
+      "John Jay",
+      "Publius"
+    ]
+  },
+  {
+    "questionNumber": 84,
+    "prompt": "¿Por qué fueron importantes los Documentos Federalistas?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Declararon la independencia de Gran Bretaña",
+      "Pusieron fin a la esclavitud",
+      "Crearon la Carta de Derechos"
+    ],
+    "correctAnswers": [
+      "Ayudaron a la gente a entender la Constitución",
+      "Apoyaron la aprobación de la Constitución"
+    ]
+  },
+  {
+    "questionNumber": 85,
+    "prompt": "Benjamin Franklin es famoso por muchas cosas. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Primer Presidente de los Estados Unidos",
+      "Escribió la Proclamación de Emancipación",
+      "General del Ejército de la Unión"
+    ],
+    "correctAnswers": [
+      "Fundó las primeras bibliotecas públicas gratuitas",
+      "Primer Director General de Correos de los Estados Unidos",
+      "Ayudó a escribir la Declaración de Independencia",
+      "Inventor",
+      "Diplomático de los Estados Unidos"
+    ]
+  },
+  {
+    "questionNumber": 86,
+    "prompt": "George Washington es famoso por muchas cosas. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Escribió la Declaración de Independencia",
+      "Liberó a los esclavos",
+      "Compró el Territorio de Luisiana"
+    ],
+    "correctAnswers": [
+      "“Padre de Nuestra Patria”",
+      "Primer presidente de los Estados Unidos",
+      "General del Ejército Continental",
+      "Presidente de la Convención Constitucional"
+    ]
+  },
+  {
+    "questionNumber": 87,
+    "prompt": "Thomas Jefferson es famoso por muchas cosas. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Primer presidente de los Estados Unidos",
+      "Presidente durante la Guerra Civil",
+      "Inventó la bombilla"
+    ],
+    "correctAnswers": [
+      "Autor de la Declaración de Independencia",
+      "Tercer presidente de los Estados Unidos",
+      "Duplicó el tamaño de los Estados Unidos (Compra de Luisiana)",
+      "Primer Secretario de Estado",
+      "Fundó la Universidad de Virginia",
+      "Autor del Estatuto de Virginia sobre la Libertad Religiosa"
+    ]
+  },
+  {
+    "questionNumber": 88,
+    "prompt": "James Madison es famoso por muchas cosas. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Primer Secretario del Tesoro",
+      "Escribió la Declaración de Independencia",
+      "Presidente durante la Primera Guerra Mundial"
+    ],
+    "correctAnswers": [
+      "“Padre de la Constitución”",
+      "Cuarto presidente de los Estados Unidos",
+      "Presidente durante la Guerra de 1812",
+      "Uno de los autores de los Documentos Federalistas"
+    ]
+  },
+  {
+    "questionNumber": 89,
+    "prompt": "Alexander Hamilton es famoso por muchas cosas. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Segundo presidente de los Estados Unidos",
+      "Escribió la Declaración de Independencia",
+      "Fundó la Universidad de Virginia"
+    ],
+    "correctAnswers": [
+      "Primer Secretario del Tesoro",
+      "Uno de los autores de los Documentos Federalistas",
+      "Ayudó a establecer el Primer Banco de los Estados Unidos",
+      "Ayudante del General George Washington",
+      "Miembro del Congreso Continental"
+    ]
+  },
+  {
+    "questionNumber": 90,
+    "prompt": "¿Qué territorio compró Estados Unidos a Francia en 1803?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Alaska", "Florida", "Texas"],
+    "correctAnswers": ["El Territorio de Luisiana", "Luisiana"]
+  },
+  {
+    "questionNumber": 91,
+    "prompt": "Mencione una guerra en la que peleó Estados Unidos en el siglo XIX (los años 1800).",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Primera Guerra Mundial",
+      "La Guerra de Corea",
+      "La Guerra de Vietnam"
+    ],
+    "correctAnswers": [
+      "La Guerra de 1812",
+      "La Guerra entre México y Estados Unidos",
+      "La Guerra Civil",
+      "La Guerra Hispano-Estadounidense"
+    ]
+  },
+  {
+    "questionNumber": 92,
+    "prompt": "Mencione la guerra de los Estados Unidos entre el Norte y el Sur.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Guerra Revolucionaria",
+      "La Guerra de 1812",
+      "La Guerra entre México y Estados Unidos"
+    ],
+    "correctAnswers": ["La Guerra Civil"]
+  },
+  {
+    "questionNumber": 93,
+    "prompt": "La Guerra Civil tuvo muchos eventos importantes. Mencione uno.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "El Motín del Té de Boston",
+      "La Batalla de Yorktown",
+      "El ataque a Pearl Harbor"
+    ],
+    "correctAnswers": [
+      "La Batalla de Fort Sumter",
+      "La Proclamación de Emancipación",
+      "La Batalla de Vicksburg",
+      "La Batalla de Gettysburg",
+      "La Marcha de Sherman",
+      "La rendición en Appomattox",
+      "La Batalla de Antietam/Sharpsburg",
+      "El asesinato de Lincoln"
+    ]
+  },
+  {
+    "questionNumber": 94,
+    "prompt": "Abraham Lincoln es famoso por muchas cosas. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Primer presidente de los Estados Unidos",
+      "Escribió la Declaración de Independencia",
+      "Compró el Territorio de Luisiana"
+    ],
+    "correctAnswers": [
+      "Liberó a los esclavos (Proclamación de Emancipación)",
+      "Salvó (o preservó) la Unión",
+      "Dirigió a los Estados Unidos durante la Guerra Civil",
+      "Decimosexto (16) presidente de los Estados Unidos",
+      "Pronunció el Discurso de Gettysburg"
+    ]
+  },
+  {
+    "questionNumber": 95,
+    "prompt": "¿Qué hizo la Proclamación de Emancipación?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Dio a las mujeres el derecho al voto",
+      "Declaró la independencia de Gran Bretaña",
+      "Terminó la Gran Depresión"
+    ],
+    "correctAnswers": [
+      "Liberó a los esclavos",
+      "Liberó a los esclavos de la Confederación",
+      "Liberó a los esclavos de los estados confederados",
+      "Liberó a los esclavos de la mayoría de los estados del Sur"
+    ]
+  },
+  {
+    "questionNumber": 96,
+    "prompt": "¿Qué guerra de los Estados Unidos puso fin a la esclavitud?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Guerra Revolucionaria",
+      "La Primera Guerra Mundial",
+      "La Guerra de 1812"
+    ],
+    "correctAnswers": ["La Guerra Civil"]
+  },
+  {
+    "questionNumber": 97,
+    "prompt": "¿Qué enmienda dice que todas las personas nacidas o naturalizadas en los Estados Unidos, y sujetas a su jurisdicción, son ciudadanos de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Primera Enmienda",
+      "La Enmienda 19",
+      "La Enmienda 22"
+    ],
+    "correctAnswers": ["La Enmienda 14"]
+  },
+  {
+    "questionNumber": 98,
+    "prompt": "¿Cuándo obtuvieron todos los hombres el derecho al voto?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "1776",
+      "1920",
+      "Después de la Segunda Guerra Mundial"
+    ],
+    "correctAnswers": [
+      "Después de la Guerra Civil",
+      "Durante la Reconstrucción",
+      "Con la Enmienda 15",
+      "1870"
+    ]
+  },
+  {
+    "questionNumber": 99,
+    "prompt": "Mencione a una líder del movimiento por los derechos de la mujer en el siglo XIX (los años 1800).",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Eleanor Roosevelt", "Rosa Parks", "Betsy Ross"],
+    "correctAnswers": [
+      "Susan B. Anthony",
+      "Elizabeth Cady Stanton",
+      "Sojourner Truth",
+      "Harriet Tubman",
+      "Lucretia Mott",
+      "Lucy Stone"
+    ]
+  },
+  {
+    "questionNumber": 100,
+    "prompt": "Mencione una guerra en la que peleó Estados Unidos en el siglo XX (los años 1900).",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Guerra Civil",
+      "La Guerra de 1812",
+      "La Guerra Revolucionaria"
+    ],
+    "correctAnswers": [
+      "La Primera Guerra Mundial",
+      "La Segunda Guerra Mundial",
+      "La Guerra de Corea",
+      "La Guerra de Vietnam",
+      "La Guerra del Golfo Pérsico"
+    ]
+  },
+  {
+    "questionNumber": 101,
+    "prompt": "¿Por qué entró Estados Unidos en la Primera Guerra Mundial?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Porque Japón atacó Pearl Harbor",
+      "Para detener la expansión del comunismo",
+      "Para sacar a Irak de Kuwait"
+    ],
+    "correctAnswers": [
+      "Porque Alemania atacó barcos (civiles) de Estados Unidos",
+      "Para apoyar a las Potencias Aliadas (Inglaterra, Francia, Italia y Rusia)",
+      "Para oponerse a las Potencias Centrales (Alemania, Austria-Hungría, el Imperio Otomano y Bulgaria)"
+    ]
+  },
+  {
+    "questionNumber": 102,
+    "prompt": "¿Cuándo obtuvieron todas las mujeres el derecho al voto?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "1776",
+      "1865",
+      "Después de la Segunda Guerra Mundial"
+    ],
+    "correctAnswers": [
+      "1920",
+      "Después de la Primera Guerra Mundial",
+      "Con la Enmienda 19"
+    ]
+  },
+  {
+    "questionNumber": 103,
+    "prompt": "¿Qué fue la Gran Depresión?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Una guerra entre el Norte y el Sur",
+      "Un largo período de mal tiempo",
+      "Una época de gran crecimiento económico"
+    ],
+    "correctAnswers": ["La recesión económica más larga de la historia moderna"]
+  },
+  {
+    "questionNumber": 104,
+    "prompt": "¿Cuándo comenzó la Gran Depresión?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Después de la Guerra Civil (1865)",
+      "El ataque a Pearl Harbor (1941)",
+      "El fin de la Segunda Guerra Mundial (1945)"
+    ],
+    "correctAnswers": [
+      "La Gran Caída (1929)",
+      "La caída de la bolsa de valores de 1929"
+    ]
+  },
+  {
+    "questionNumber": 105,
+    "prompt": "¿Quién era presidente durante la Gran Depresión y la Segunda Guerra Mundial?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Woodrow Wilson", "Harry Truman", "Dwight Eisenhower"],
+    "correctAnswers": ["Franklin Roosevelt"]
+  },
+  {
+    "questionNumber": 106,
+    "prompt": "¿Por qué entró Estados Unidos en la Segunda Guerra Mundial?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Porque Alemania atacó barcos de EE. UU. en 1917",
+      "Para detener el comunismo en Corea",
+      "Para sacar a Irak de Kuwait"
+    ],
+    "correctAnswers": [
+      "El bombardeo de Pearl Harbor",
+      "Japón atacó Pearl Harbor",
+      "Para apoyar a las Potencias Aliadas (Inglaterra, Francia y Rusia)",
+      "Para oponerse a las Potencias del Eje (Alemania, Italia y Japón)"
+    ]
+  },
+  {
+    "questionNumber": 107,
+    "prompt": "Dwight Eisenhower es famoso por muchas cosas. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Presidente durante la Gran Depresión",
+      "Escribió los Documentos Federalistas",
+      "Primer hombre en la luna"
+    ],
+    "correctAnswers": [
+      "General durante la Segunda Guerra Mundial",
+      "Presidente al final de (durante) la Guerra de Corea",
+      "Trigésimo cuarto (34) presidente de los Estados Unidos",
+      "Firmó la Ley Federal de Ayuda para Autopistas de 1956 (creó el sistema interestatal)"
+    ]
+  },
+  {
+    "questionNumber": 108,
+    "prompt": "¿Quién fue el principal rival de Estados Unidos durante la Guerra Fría?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Alemania", "Japón", "México"],
+    "correctAnswers": ["La Unión Soviética", "La URSS", "Rusia"]
+  },
+  {
+    "questionNumber": 109,
+    "prompt": "Durante la Guerra Fría, ¿cuál fue una de las principales preocupaciones de Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La esclavitud",
+      "La Gran Depresión",
+      "Los impuestos británicos"
+    ],
+    "correctAnswers": ["El comunismo", "La guerra nuclear"]
+  },
+  {
+    "questionNumber": 110,
+    "prompt": "¿Por qué entró Estados Unidos en la Guerra de Corea?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Porque Japón atacó Pearl Harbor",
+      "Para ganar la independencia de Gran Bretaña",
+      "Para sacar a Irak de Kuwait"
+    ],
+    "correctAnswers": ["Para detener la expansión del comunismo"]
+  },
+  {
+    "questionNumber": 111,
+    "prompt": "¿Por qué entró Estados Unidos en la Guerra de Vietnam?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Porque Alemania atacó barcos de EE. UU.",
+      "Para comprar nuevo territorio",
+      "Para poner fin a la esclavitud"
+    ],
+    "correctAnswers": ["Para detener la expansión del comunismo"]
+  },
+  {
+    "questionNumber": 112,
+    "prompt": "¿Qué hizo el movimiento de derechos civiles?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Luchó por la independencia de Gran Bretaña",
+      "Terminó la Gran Depresión",
+      "Ganó la Guerra Fría"
+    ],
+    "correctAnswers": ["Luchó para acabar con la discriminación racial"]
+  },
+  {
+    "questionNumber": 113,
+    "prompt": "Martin Luther King, Jr. es famoso por muchas cosas. Mencione una.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Fue presidente de los Estados Unidos",
+      "Escribió la Constitución",
+      "Dirigió al Ejército de la Unión en la Guerra Civil"
+    ],
+    "correctAnswers": [
+      "Luchó por los derechos civiles",
+      "Trabajó por la igualdad de todos los estadounidenses",
+      "Trabajó para que las personas “no fueran juzgadas por el color de su piel, sino por su carácter”"
+    ]
+  },
+  {
+    "questionNumber": 114,
+    "prompt": "¿Por qué entró Estados Unidos en la Guerra del Golfo Pérsico?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Para detener el comunismo en Corea",
+      "Porque Japón atacó Pearl Harbor",
+      "Para ganar la independencia de Gran Bretaña"
+    ],
+    "correctAnswers": ["Para sacar al ejército iraquí de Kuwait"]
+  },
+  {
+    "questionNumber": 115,
+    "prompt": "¿Qué evento importante ocurrió el 11 de septiembre de 2001 en los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La bolsa de valores se desplomó",
+      "Japón atacó Pearl Harbor",
+      "Terminó la Guerra Fría"
+    ],
+    "correctAnswers": [
+      "Terroristas atacaron a los Estados Unidos",
+      "Terroristas secuestraron dos aviones y los estrellaron contra el World Trade Center en Nueva York",
+      "Terroristas secuestraron un avión y lo estrellaron contra el Pentágono en Arlington, Virginia",
+      "Terroristas secuestraron un avión dirigido a Washington, D.C., que se estrelló en un campo de Pensilvania"
+    ]
+  },
+  {
+    "questionNumber": 116,
+    "prompt": "Mencione un conflicto militar de Estados Unidos después de los ataques del 11 de septiembre de 2001.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "La Guerra de Vietnam",
+      "La Guerra de Corea",
+      "La Guerra del Golfo Pérsico"
+    ],
+    "correctAnswers": [
+      "La Guerra Global contra el Terrorismo",
+      "La Guerra en Afganistán",
+      "La Guerra en Irak"
+    ]
+  },
+  {
+    "questionNumber": 117,
+    "prompt": "Mencione una tribu de indígenas americanos de los Estados Unidos.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Azteca", "Inca", "Maya"],
+    "correctAnswers": [
+      "Apache",
+      "Blackfeet",
+      "Cayuga",
+      "Cherokee",
+      "Cheyenne",
+      "Chippewa",
+      "Choctaw",
+      "Creek",
+      "Crow",
+      "Hopi",
+      "Hurón",
+      "Inupiat",
+      "Lakota",
+      "Mohawk",
+      "Mohegan",
+      "Navajo",
+      "Oneida",
+      "Onondaga",
+      "Pueblo",
+      "Seminola",
+      "Seneca",
+      "Shawnee",
+      "Sioux",
+      "Teton",
+      "Tuscarora"
+    ]
+  },
+  {
+    "questionNumber": 118,
+    "prompt": "Mencione un ejemplo de una innovación estadounidense.",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["La imprenta", "La pólvora", "La brújula"],
+    "correctAnswers": [
+      "La bombilla",
+      "El automóvil (carros, motor de combustión interna)",
+      "Los rascacielos",
+      "El avión",
+      "La línea de ensamblaje",
+      "La llegada a la luna",
+      "El circuito integrado (CI)"
+    ]
+  },
+  {
+    "questionNumber": 119,
+    "prompt": "¿Cuál es la capital de los Estados Unidos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": ["Nueva York", "Filadelfia", "Los Ángeles"],
+    "correctAnswers": ["Washington, D.C."]
+  },
+  {
+    "questionNumber": 120,
+    "prompt": "¿Dónde está la Estatua de la Libertad?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "En Washington, D.C.",
+      "En Boston",
+      "En San Francisco"
+    ],
+    "correctAnswers": [
+      "En el puerto de Nueva York",
+      "En la Isla de la Libertad (Liberty Island)"
+    ]
+  },
+  {
+    "questionNumber": 121,
+    "prompt": "¿Por qué tiene 13 franjas la bandera?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Porque hay 13 enmiendas",
+      "Porque hubo 13 presidentes",
+      "Por los 13 padres fundadores"
+    ],
+    "correctAnswers": [
+      "Porque había 13 colonias originales",
+      "Porque las franjas representan las colonias originales"
+    ]
+  },
+  {
+    "questionNumber": 122,
+    "prompt": "¿Por qué tiene 50 estrellas la bandera?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Porque había 50 colonias originales",
+      "Porque hay 50 senadores",
+      "Por 50 años de independencia"
+    ],
+    "correctAnswers": [
+      "Porque hay una estrella por cada estado",
+      "Porque cada estrella representa un estado",
+      "Porque hay 50 estados"
+    ]
+  },
+  {
+    "questionNumber": 123,
+    "prompt": "¿Cómo se llama el himno nacional?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "America the Beautiful",
+      "God Bless America",
+      "My Country, ’Tis of Thee"
+    ],
+    "correctAnswers": [
+      "The Star-Spangled Banner (La bandera adornada de estrellas)"
+    ]
+  },
+  {
+    "questionNumber": 124,
+    "prompt": "El primer lema de la nación fue “E Pluribus Unum”. ¿Qué significa?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "En Dios confiamos",
+      "Libertad y justicia para todos",
+      "Tierra de los libres"
+    ],
+    "correctAnswers": ["De muchos, uno", "Todos nos convertimos en uno"]
+  },
+  {
+    "questionNumber": 125,
+    "prompt": "¿Qué es el Día de la Independencia?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Un día feriado para honrar a los soldados que murieron",
+      "Un día feriado para honrar a los trabajadores",
+      "El día en que se firmó la Constitución"
+    ],
+    "correctAnswers": [
+      "Un día feriado para celebrar la independencia de EE. UU. (de Gran Bretaña)",
+      "El cumpleaños del país"
+    ]
+  },
+  {
+    "questionNumber": 126,
+    "prompt": "Mencione tres días feriados nacionales de los Estados Unidos.",
+    "expectedNumAnswers": 3,
+    "language": "es",
+    "incorrectAnswers": [
+      "Día de San Valentín",
+      "Halloween",
+      "Día de San Patricio",
+      "Día de las Madres"
+    ],
+    "correctAnswers": [
+      "Día de Año Nuevo",
+      "Día de Martin Luther King, Jr.",
+      "Día de los Presidentes (Natalicio de Washington)",
+      "Día de los Caídos (Memorial Day)",
+      "Juneteenth",
+      "Día de la Independencia",
+      "Día del Trabajo",
+      "Día de Colón",
+      "Día de los Veteranos",
+      "Día de Acción de Gracias",
+      "Día de Navidad"
+    ]
+  },
+  {
+    "questionNumber": 127,
+    "prompt": "¿Qué es el Día de los Caídos (Memorial Day)?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Un día feriado para celebrar la independencia",
+      "Un día feriado para honrar a los trabajadores",
+      "Un día feriado para honrar a todos los veteranos vivos"
+    ],
+    "correctAnswers": [
+      "Un día feriado para honrar a los soldados que murieron en el servicio militar"
+    ]
+  },
+  {
+    "questionNumber": 128,
+    "prompt": "¿Qué es el Día de los Veteranos?",
+    "expectedNumAnswers": 1,
+    "language": "es",
+    "incorrectAnswers": [
+      "Un día feriado para celebrar la independencia",
+      "Un día feriado para honrar a los trabajadores",
+      "Un día feriado para honrar a los presidentes"
+    ],
+    "correctAnswers": [
+      "Un día feriado para honrar a las personas en las fuerzas armadas de EE. UU.",
+      "Un día feriado para honrar a las personas que han servido en las fuerzas armadas de EE. UU."
+    ]
+  }
+]
