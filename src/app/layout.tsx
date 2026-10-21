@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { getLanguage } from "@/lib/language";
 import { cn } from "@/lib/utils";
-import { TEXT_SIZE_STORAGE_KEY } from "@/utils/constants";
+import { TEXT_SIZE_STORAGE_KEY, THEME_STORAGE_KEY } from "@/utils/constants";
 
 import "./globals.css";
 
@@ -28,10 +28,12 @@ export const metadata: Metadata = {
     "Practice the 128 questions of the 2025 U.S. citizenship civics test, in English and Spanish.",
 };
 
-// Applies the saved text size before the first paint
-const textSizeScript = `try{if(localStorage.getItem(${JSON.stringify(
+// Applies the saved text size and colors before the first paint
+const preferencesScript = `try{var d=document.documentElement;if(localStorage.getItem(${JSON.stringify(
   TEXT_SIZE_STORAGE_KEY
-)})==="larger")document.documentElement.dataset.textSize="larger"}catch(e){}`;
+)})==="larger")d.dataset.textSize="larger";var t=localStorage.getItem(${JSON.stringify(
+  THEME_STORAGE_KEY
+)});if(t==="light"||t==="dark")d.dataset.theme=t}catch(e){}`;
 
 export default async function RootLayout({
   children,
@@ -47,7 +49,7 @@ export default async function RootLayout({
       className={cn(text.variable, display.variable)}
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: textSizeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: preferencesScript }} />
       </head>
       <body className="flex min-h-screen flex-col antialiased">
         <SiteHeader language={language} />

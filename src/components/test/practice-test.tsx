@@ -2,7 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { Check, X } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  BookOpen,
+  Check,
+  Flag,
+  Play,
+  RotateCcw,
+  Target,
+  X,
+} from "lucide-react";
 
 import { Button, ButtonLink } from "@/components/button";
 import { ReadAloud } from "@/components/read-aloud";
@@ -159,7 +169,10 @@ export function PracticeTest({
             <li key={tip}>{tip}</li>
           ))}
         </ul>
-        <Button onClick={start}>{copy.test.start}</Button>
+        <Button onClick={start}>
+          <Play aria-hidden className="size-6 shrink-0" />
+          {copy.test.start}
+        </Button>
       </div>
     );
   }
@@ -180,8 +193,13 @@ export function PracticeTest({
           <h1
             ref={resultsHeading}
             tabIndex={-1}
-            className="font-display text-[2.8rem] leading-none font-extrabold [font-stretch:112%] focus:outline-none"
+            className="font-display flex items-center gap-3 text-[2.8rem] leading-none font-extrabold [font-stretch:112%] focus:outline-none"
           >
+            {passed ? (
+              <Award aria-hidden className="text-ok size-12 shrink-0" />
+            ) : (
+              <Target aria-hidden className="text-bad size-12 shrink-0" />
+            )}
             {passed ? copy.test.passed : copy.test.notYet}
           </h1>
           <p className="mt-3 text-[1.3rem] font-bold">
@@ -191,9 +209,13 @@ export function PracticeTest({
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <Button onClick={start}>{copy.test.again}</Button>
+          <Button onClick={start}>
+            <RotateCcw aria-hidden className="size-6 shrink-0" />
+            {copy.test.again}
+          </Button>
           {missed > 0 && (
             <ButtonLink href="/study?list=learning" variant="secondary">
+              <BookOpen aria-hidden className="size-6 shrink-0" />
               {copy.test.studyMissed}
             </ButtonLink>
           )}
@@ -281,7 +303,7 @@ export function PracticeTest({
                     ? "bg-ok"
                     : "bg-bad"
                   : i === index
-                    ? "bg-ink"
+                    ? "bg-accent"
                     : "bg-wash"
               )}
             />
@@ -373,12 +395,18 @@ export function PracticeTest({
         {checked ? (
           <Button ref={nextButton} onClick={next}>
             {index === questions.length - 1 ? copy.test.finish : copy.test.next}
+            {index === questions.length - 1 ? (
+              <Flag aria-hidden className="size-6 shrink-0" />
+            ) : (
+              <ArrowRight aria-hidden className="size-6 shrink-0" />
+            )}
           </Button>
         ) : (
           <Button
             onClick={check}
             disabled={selected.size !== question.expectedNumAnswers}
           >
+            <Check aria-hidden className="size-6 shrink-0" />
             {copy.test.check}
           </Button>
         )}

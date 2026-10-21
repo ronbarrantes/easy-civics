@@ -1,5 +1,6 @@
 export const LANGUAGE_COOKIE = "language";
 export const TEXT_SIZE_STORAGE_KEY = "easy-civics:text-size";
+export const THEME_STORAGE_KEY = "easy-civics:theme";
 export const STUDY_STORAGE_KEY = "easy-civics:study";
 
 export const TOTAL_QUESTIONS = 128;
