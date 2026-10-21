@@ -1,22 +1,20 @@
-import { Suspense } from "react";
+import type { Metadata } from "next";
 
-import { cookies } from "next/headers";
+import { PracticeTest } from "@/components/test/practice-test";
+import { getLanguage } from "@/lib/language";
+import { getAllQuestions } from "@/lib/questions";
 
-import TestClientPage from "@/components/citizenship/test-client";
-import { getRandomQuestions } from "@/lib/questions";
-import { Language } from "@/lib/types";
-import { LANGUAGE_COOKIE, NUMBER_OF_QUESTIONS } from "@/utils/constants";
+export const metadata: Metadata = { title: "Practice test | Easy Civics" };
 
 export default async function TestPage() {
-  const cookieStore = await cookies();
-  const language: Language =
-    cookieStore.get(LANGUAGE_COOKIE)?.value === "es" ? "es" : "en";
-
-  const questions = getRandomQuestions(language, NUMBER_OF_QUESTIONS);
+  const language = await getLanguage();
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <TestClientPage questions={questions} />
-    </Suspense>
+    <PracticeTest
+      // Restart the test when the language changes
+      key={language}
+      language={language}
+      questions={getAllQuestions(language)}
+    />
   );
 }
