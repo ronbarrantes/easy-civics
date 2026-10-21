@@ -9,7 +9,7 @@ export default async function NotFound() {
 
   return (
     <div className="max-w-[40rem] space-y-4">
-      <h1 className="font-display flex items-center gap-3 text-[2.2rem] font-extrabold [font-stretch:112%]">
+      <h1 className="font-display flex items-center gap-3 text-[1.8rem] font-extrabold [font-stretch:112%] sm:text-[2.2rem]">
         <Compass aria-hidden className="text-accent size-10 shrink-0" />
         {copy.notFound.title}
       </h1>
