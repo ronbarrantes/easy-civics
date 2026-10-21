@@ -108,7 +108,7 @@ export function StudyDeck({
 
   return (
     <div className="max-w-[44rem]">
-      <h1 className="font-display text-[2.2rem] leading-tight font-extrabold [font-stretch:112%]">
+      <h1 className="font-display text-[1.8rem] leading-tight font-extrabold [font-stretch:112%] sm:text-[2.2rem]">
         {copy.study.title}
       </h1>
 
@@ -116,7 +116,7 @@ export function StudyDeck({
         <p className="font-bold">
           {copy.study.progress(known, questions.length)}
         </p>
-        <div aria-hidden className="bg-wash mt-2 h-3">
+        <div aria-hidden className="bg-wash mt-2 h-4">
           <div
             className="bg-ok h-full"
             style={{ width: `${(known / questions.length) * 100}%` }}
@@ -180,7 +180,7 @@ export function StudyDeck({
           <h2
             ref={heading}
             tabIndex={-1}
-            className="font-display mt-4 text-[2rem] leading-[1.15] font-extrabold tracking-tight [font-stretch:110%] focus:outline-none sm:text-[2.4rem]"
+            className="font-display mt-4 text-[1.6rem] leading-[1.15] font-extrabold tracking-tight [font-stretch:110%] focus:outline-none sm:text-[2.4rem]"
           >
             <span className="text-quiet">{question.questionNumber}.</span>{" "}
             {question.prompt}

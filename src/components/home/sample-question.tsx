@@ -32,7 +32,7 @@ export function SampleQuestion({
       </p>
       <h2
         id="sample-question"
-        className="font-display mt-2 max-w-[22ch] text-[2.2rem] leading-[1.1] font-extrabold tracking-tight [font-stretch:112%] sm:text-[2.8rem]"
+        className="font-display mt-2 max-w-[22ch] text-[1.75rem] leading-[1.1] font-extrabold tracking-tight [font-stretch:112%] sm:text-[2.8rem]"
       >
         {prompt}
       </h2>

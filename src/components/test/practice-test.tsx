@@ -58,6 +58,7 @@ export function PracticeTest({
   const [results, setResults] = useState<Result[]>([]);
   const [finished, setFinished] = useState(false);
   const nextButton = useRef<HTMLButtonElement>(null);
+  const feedback = useRef<HTMLDivElement>(null);
   const questionHeading = useRef<HTMLHeadingElement>(null);
   const resultsHeading = useRef<HTMLHeadingElement>(null);
 
@@ -65,7 +66,10 @@ export function PracticeTest({
   const question = questions[index];
 
   useEffect(() => {
-    if (checked) nextButton.current?.focus();
+    if (!checked) return;
+    // Show the right/wrong message above the pinned Next button
+    feedback.current?.scrollIntoView({ block: "nearest" });
+    nextButton.current?.focus({ preventScroll: true });
   }, [checked]);
 
   useEffect(() => {
@@ -139,7 +143,7 @@ export function PracticeTest({
   if (!questions.length) {
     return (
       <div className="max-w-[40rem] space-y-8">
-        <h1 className="font-display text-[2.2rem] leading-tight font-extrabold [font-stretch:112%]">
+        <h1 className="font-display text-[1.8rem] leading-tight font-extrabold [font-stretch:112%] sm:text-[2.2rem]">
           {copy.test.title}
         </h1>
         <fieldset className="space-y-3">
@@ -193,7 +197,7 @@ export function PracticeTest({
           <h1
             ref={resultsHeading}
             tabIndex={-1}
-            className="font-display flex items-center gap-3 text-[2.8rem] leading-none font-extrabold [font-stretch:112%] focus:outline-none"
+            className="font-display flex items-center gap-3 text-[2.2rem] leading-none font-extrabold [font-stretch:112%] focus:outline-none sm:text-[2.8rem]"
           >
             {passed ? (
               <Award aria-hidden className="text-ok size-12 shrink-0" />
@@ -297,7 +301,7 @@ export function PracticeTest({
             <li
               key={q.id}
               className={cn(
-                "h-3",
+                "h-4",
                 i < results.length
                   ? results[i].isCorrect
                     ? "bg-ok"
@@ -314,7 +318,7 @@ export function PracticeTest({
       <h1
         ref={questionHeading}
         tabIndex={-1}
-        className="font-display text-[2rem] leading-[1.15] font-extrabold tracking-tight [font-stretch:110%] focus:outline-none sm:text-[2.4rem]"
+        className="font-display text-[1.6rem] leading-[1.15] font-extrabold tracking-tight [font-stretch:110%] focus:outline-none sm:text-[2.4rem]"
       >
         {question.prompt}
       </h1>
@@ -371,7 +375,7 @@ export function PracticeTest({
         {limitHint && copy.test.limitReached(question.expectedNumAnswers)}
       </p>
 
-      <div aria-live="polite">
+      <div aria-live="polite" ref={feedback} className="scroll-mb-32">
         {lastResult && (
           <div
             className={cn(
@@ -391,9 +395,10 @@ export function PracticeTest({
         )}
       </div>
 
-      <div className="mt-6">
+      {/* Pinned to the bottom of the screen so the next step is always in reach */}
+      <div className="border-rule bg-paper sticky bottom-0 -mx-4 mt-6 border-t-2 px-4 py-3">
         {checked ? (
-          <Button ref={nextButton} onClick={next}>
+          <Button ref={nextButton} onClick={next} className="w-full sm:w-auto">
             {index === questions.length - 1 ? copy.test.finish : copy.test.next}
             {index === questions.length - 1 ? (
               <Flag aria-hidden className="size-6 shrink-0" />
@@ -405,6 +410,7 @@ export function PracticeTest({
           <Button
             onClick={check}
             disabled={selected.size !== question.expectedNumAnswers}
+            className="w-full sm:w-auto"
           >
             <Check aria-hidden className="size-6 shrink-0" />
             {copy.test.check}

@@ -25,17 +25,11 @@ export default async function Home() {
   return (
     <div className="space-y-14">
       <div className="max-w-[40rem] space-y-4">
-        <h1 className="font-display text-[2rem] leading-tight font-extrabold tracking-tight [font-stretch:112%]">
+        <h1 className="font-display text-[1.75rem] leading-tight font-extrabold tracking-tight [font-stretch:112%] sm:text-[2rem]">
           {copy.home.title}
         </h1>
         <p className="text-quiet text-[1.15rem]">{copy.home.intro}</p>
       </div>
-
-      <SampleQuestion
-        language={language}
-        prompt={sample.prompt}
-        answer={sampleAnswer}
-      />
 
       <div className="grid gap-10 md:grid-cols-2">
         <section className="border-accent flex flex-col items-start border-t-[6px] pt-5">
@@ -66,6 +60,12 @@ export default async function Home() {
           </ButtonLink>
         </section>
       </div>
+
+      <SampleQuestion
+        language={language}
+        prompt={sample.prompt}
+        answer={sampleAnswer}
+      />
 
       <section className="max-w-[40rem] space-y-4">
         <h2 className="font-display text-[1.6rem] font-extrabold [font-stretch:112%]">
