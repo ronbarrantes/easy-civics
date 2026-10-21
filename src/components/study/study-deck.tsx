@@ -33,12 +33,16 @@ export function StudyDeck({
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
+  const card = useRef<HTMLElement>(null);
   const moved = useRef(false);
 
   useEffect(() => setMounted(true), []);
 
   useEffect(() => {
-    if (moved.current) heading.current?.focus();
+    if (!moved.current) return;
+    // Start the next question at the top instead of where the last answer ended
+    card.current?.scrollIntoView({ block: "start" });
+    heading.current?.focus({ preventScroll: true });
   }, [current]);
 
   const lists: Record<StudyList, Question[]> = {
@@ -153,7 +157,10 @@ export function StudyDeck({
           </Button>
         </div>
       ) : (
-        <article className="border-ink mt-10 border-t-[6px] pt-5">
+        <article
+          ref={card}
+          className="border-ink mt-10 scroll-mt-4 border-t-[6px] pt-5"
+        >
           <p className="text-quiet font-bold">
             {copy.questionOf(position + 1, items.length)}
           </p>
@@ -236,7 +243,8 @@ export function StudyDeck({
             {status === "learning" && copy.study.markedLearning}
           </p>
 
-          <nav className="border-rule mt-8 flex justify-between gap-3 border-t-2 pt-6">
+          {/* Pinned to the bottom of the screen so revealing an answer never moves it */}
+          <nav className="border-rule bg-paper sticky bottom-0 -mx-4 mt-8 flex justify-between gap-3 border-t-2 px-4 py-3">
             <Button
               variant="secondary"
               disabled={position === 0}
