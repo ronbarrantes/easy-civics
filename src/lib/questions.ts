@@ -1,8 +1,6 @@
 import questionsEn from "@/data/civics_questions_en.json";
 import questionsEs from "@/data/civics_questions_es.json";
 import { Language, Question } from "@/lib/types";
-import { filterAndRandomizeAnswers } from "@/utils/filter-and-randomize-answers";
-import { randomizeArray } from "@/utils/randomize-array";
 
 type QuestionJson = {
   questionNumber: number;
@@ -42,10 +40,5 @@ const questionsByLanguage: Record<Language, Question[]> = {
   es: (questionsEs as QuestionJson[]).map(toQuestion),
 };
 
-export const getRandomQuestions = (
-  language: Language,
-  count: number
-): Question[] =>
-  filterAndRandomizeAnswers(
-    randomizeArray(questionsByLanguage[language]).slice(0, count)
-  );
+export const getAllQuestions = (language: Language): Question[] =>
+  questionsByLanguage[language];
