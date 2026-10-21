@@ -7,7 +7,6 @@ import Link from "next/link";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import { Flag } from "lucide-react";
 
-import { SyncUser } from "@/app/_components/SyncUser";
 import {
   Select,
   SelectContent,
@@ -16,6 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Language } from "@/lib/types";
+import { LANGUAGE_COOKIE } from "@/utils/constants";
 import { ModeToggle } from "./ModeToggle";
 
 export function Header() {
@@ -31,6 +31,8 @@ export function Header() {
   const handleLanguageChange = (newLanguage: Language) => {
     setLanguage(newLanguage);
     localStorage.setItem("language", newLanguage);
+    // The test page reads this cookie on the server to pick the question set
+    document.cookie = `${LANGUAGE_COOKIE}=${newLanguage}; path=/; max-age=31536000`;
     // Reload the page to update all content
     window.location.reload();
   };
@@ -52,13 +54,12 @@ export function Header() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="en">English</SelectItem>
-              {/* <SelectItem value="es">Español</SelectItem> */}
+              <SelectItem value="es">Español</SelectItem>
               {/* <SelectItem value="fr">Français</SelectItem> */}
             </SelectContent>
           </Select>
           <ModeToggle />
           <SignedIn>
-            <SyncUser />
             <Link href="/">Stats</Link>
             <ul className="flex items-center">
               <li>

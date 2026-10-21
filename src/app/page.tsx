@@ -16,12 +16,6 @@ import {} from // Card,
 // CardHeader,
 // CardTitle,
 "@/components/ui/card";
-import {} from // getAllCategories,
-// getQuestionsByCategory,
-"@/lib/sample-questions";
-import {} from // api,
-// HydrateClient,
-"@/trpc/server";
 
 // import { useTranslation } from "@/app/i18n/client";
 

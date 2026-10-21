@@ -1,21 +1,22 @@
 import { Suspense } from "react";
 
+import { cookies } from "next/headers";
+
 import TestClientPage from "@/components/citizenship/test-client";
-import { api } from "@/trpc/server";
+import { getRandomQuestions } from "@/lib/questions";
+import { Language } from "@/lib/types";
+import { LANGUAGE_COOKIE, NUMBER_OF_QUESTIONS } from "@/utils/constants";
 
 export default async function TestPage() {
-  const { data: questionsData, error: questionsError } =
-    await api.questionAnswer.get10();
+  const cookieStore = await cookies();
+  const language: Language =
+    cookieStore.get(LANGUAGE_COOKIE)?.value === "es" ? "es" : "en";
 
-  if (questionsError) console.error("THERE HAS BEEN AN ERROR", questionsError);
-
-  if (!questionsData) {
-    return <div>There was an error loading the questions</div>;
-  }
+  const questions = getRandomQuestions(language, NUMBER_OF_QUESTIONS);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <TestClientPage questions={questionsData} />
+      <TestClientPage questions={questions} />
     </Suspense>
   );
 }

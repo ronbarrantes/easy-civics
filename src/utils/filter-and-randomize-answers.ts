@@ -1,12 +1,13 @@
-import { QuestionWithAnswers } from "@/server/api/routers/qa-router";
-import { MAX_NUMBER_OF_ANSWERS } from "@/utils/constants";
+import { Question } from "@/lib/types";
+import {
+  MAX_NUMBER_OF_ANSWERS,
+  MIN_NUMBER_OF_INCORRECT_ANSWERS,
+} from "@/utils/constants";
 import { randomizeArray } from "@/utils/randomize-array";
 
-const getQuestionReady = (
-  question: QuestionWithAnswers
-): QuestionWithAnswers => {
-  const correctAnswers: QuestionWithAnswers["answers"] = [];
-  const incorrectAnswers: QuestionWithAnswers["answers"] = [];
+const getQuestionReady = (question: Question): Question => {
+  const correctAnswers: Question["answers"] = [];
+  const incorrectAnswers: Question["answers"] = [];
 
   // Split answers into correct and incorrect
   question.answers.forEach((answer) => {
@@ -15,8 +16,12 @@ const getQuestionReady = (
   });
 
   const correctAnswerCount = question.expectedNumAnswers;
+  // "Name five" style questions would otherwise leave no wrong options
   const incorrectAnswerCount = Math.min(
-    MAX_NUMBER_OF_ANSWERS - correctAnswerCount,
+    Math.max(
+      MAX_NUMBER_OF_ANSWERS - correctAnswerCount,
+      MIN_NUMBER_OF_INCORRECT_ANSWERS
+    ),
     incorrectAnswers.length
   );
 
@@ -39,7 +44,5 @@ const getQuestionReady = (
   return { ...question, answers: randomizeArray(answersToRandomize) };
 };
 
-export const filterAndRandomizeAnswers = (
-  questions: QuestionWithAnswers[]
-): QuestionWithAnswers[] =>
+export const filterAndRandomizeAnswers = (questions: Question[]): Question[] =>
   questions.map((question) => getQuestionReady(question));

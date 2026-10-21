@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/card";
 import { useTestStore } from "@/hooks/use-test";
 import { Question } from "@/lib/types";
+import { NUMBER_OF_QUESTIONS, PASS_THRESHOLD } from "@/utils/constants";
 import { formatTime } from "@/utils/time";
 
 export default function TestClientPage({
@@ -92,14 +93,15 @@ export default function TestClientPage({
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
                   <span>
-                    This practice test contains 10 questions from the official
-                    USCIS test.
+                    This practice test contains {NUMBER_OF_QUESTIONS} questions
+                    from the official USCIS 2025 civics test.
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
                   <span>
-                    You need to answer 6 out of 10 questions correctly to pass.
+                    You need to answer {PASS_THRESHOLD} out of{" "}
+                    {NUMBER_OF_QUESTIONS} questions correctly to pass.
                   </span>
                 </li>
                 <li className="flex items-start">

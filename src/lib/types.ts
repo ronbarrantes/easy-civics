@@ -9,10 +9,20 @@
 //   language?: Language;
 // }
 
-import { QuestionWithAnswers } from "@/server/api/routers/qa-router";
+export interface Answer {
+  id: string;
+  text: string;
+  isCorrect: boolean;
+}
 
-export type Question = QuestionWithAnswers;
-export type Answer = QuestionWithAnswers["answers"][0];
+export interface Question {
+  id: string;
+  questionNumber: number;
+  prompt: string;
+  expectedNumAnswers: number;
+  explanation: string | null;
+  answers: Answer[];
+}
 
 export type Language = "en" | "es";
 

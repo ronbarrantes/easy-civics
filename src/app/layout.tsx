@@ -7,7 +7,6 @@ import classNames from "classnames";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { TRPCReactProvider } from "@/trpc/react";
 
 import "./globals.css";
 
@@ -33,29 +32,27 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <TRPCReactProvider>
-        <html lang="en" suppressHydrationWarning>
-          <body
-            className={classNames(
-              "flex min-h-screen flex-col",
-              `${geistSans.variable} ${geistMono.variable} antialiased`
-            )}
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={classNames(
+            "flex min-h-screen flex-col",
+            `${geistSans.variable} ${geistMono.variable} antialiased`
+          )}
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
           >
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <Header />
-              <div className="container mx-auto max-w-6xl flex-1 flex-col px-4 py-8 md:py-12">
-                {children}
-              </div>
-              <Footer />
-            </ThemeProvider>
-          </body>
-        </html>
-      </TRPCReactProvider>
+            <Header />
+            <div className="container mx-auto max-w-6xl flex-1 flex-col px-4 py-8 md:py-12">
+              {children}
+            </div>
+            <Footer />
+          </ThemeProvider>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
