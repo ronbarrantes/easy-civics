@@ -8,7 +8,9 @@ const en = {
     study: "Study",
   },
   settings: {
+    label: "Settings",
     switchLanguage: "Español",
+    switchLanguageShort: "ES",
     switchLanguageLabel: "Cambiar a español",
     textSize: "Text size",
     large: "Large",
@@ -142,7 +144,9 @@ const es: Copy = {
     study: "Estudiar",
   },
   settings: {
+    label: "Ajustes",
     switchLanguage: "English",
+    switchLanguageShort: "EN",
     switchLanguageLabel: "Switch to English",
     textSize: "Tamaño del texto",
     large: "Grande",
