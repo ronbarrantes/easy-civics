@@ -12,6 +12,8 @@
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
   --color-accent-wash: var(--accent-wash);
+  --color-flag: var(--flag);
+  --color-flag-wash: var(--flag-wash);
   --color-ok: var(--ok);
   --color-ok-wash: var(--ok-wash);
   --color-bad: var(--bad);
@@ -20,16 +22,20 @@
   --radius-*: initial;
 }
 
+/* Old Glory navy and red, softened for long reading. The red is only for
+   accents (stripes, stars, current page) so it never competes with wrong-answer red */
 :root {
   color-scheme: light;
-  --paper: #ffffff;
-  --wash: #eef0f5;
-  --ink: #0f172b;
-  --quiet: #3a4357;
-  --rule: #0f172b;
-  --accent: #4527c4;
+  --paper: #fbfaf6;
+  --wash: #ebf0f7;
+  --ink: #0b1d36;
+  --quiet: #3f4b62;
+  --rule: #0b1d36;
+  --accent: #0a3161;
   --accent-ink: #ffffff;
-  --accent-wash: #ebe7fb;
+  --accent-wash: #dfe8f5;
+  --flag: #b31942;
+  --flag-wash: #f9e5ea;
   --ok: #146534;
   --ok-wash: #e1f2e7;
   --bad: #a11d1d;
@@ -37,21 +43,42 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --paper: #141927;
-    --wash: #1f2638;
-    --ink: #f3f4f8;
-    --quiet: #c5cbda;
-    --rule: #f3f4f8;
-    --accent: #b9adff;
-    --accent-ink: #141927;
-    --accent-wash: #2b2752;
+    --paper: #0c1628;
+    --wash: #16233b;
+    --ink: #f5f2ea;
+    --quiet: #c3cbda;
+    --rule: #f5f2ea;
+    --accent: #a9c4f5;
+    --accent-ink: #0c1628;
+    --accent-wash: #1b2f55;
+    --flag: #ff8f9f;
+    --flag-wash: #3d1a26;
     --ok: #7fdca2;
-    --ok-wash: #163626;
+    --ok-wash: #11301f;
     --bad: #ffa59b;
-    --bad-wash: #42201f;
+    --bad-wash: #3d1d22;
   }
+}
+
+/* Same values as above, for when the reader picks dark in the header */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0c1628;
+  --wash: #16233b;
+  --ink: #f5f2ea;
+  --quiet: #c3cbda;
+  --rule: #f5f2ea;
+  --accent: #a9c4f5;
+  --accent-ink: #0c1628;
+  --accent-wash: #1b2f55;
+  --flag: #ff8f9f;
+  --flag-wash: #3d1a26;
+  --ok: #7fdca2;
+  --ok-wash: #11301f;
+  --bad: #ffa59b;
+  --bad-wash: #3d1d22;
 }
 
 /* Base size for older eyes; "Larger" is set from the header */

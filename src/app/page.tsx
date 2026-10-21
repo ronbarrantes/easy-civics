@@ -1,3 +1,11 @@
+import {
+  ArrowRight,
+  BookOpen,
+  ClipboardCheck,
+  ExternalLink,
+  Star,
+} from "lucide-react";
+
 import { ButtonLink } from "@/components/button";
 import { SampleQuestion } from "@/components/home/sample-question";
 import { getCopy, LINKS } from "@/lib/copy";
@@ -30,21 +38,32 @@ export default async function Home() {
       />
 
       <div className="grid gap-10 md:grid-cols-2">
-        <section className="border-ink flex flex-col items-start border-t-[6px] pt-5">
-          <h2 className="font-display text-[1.6rem] font-extrabold [font-stretch:112%]">
+        <section className="border-accent flex flex-col items-start border-t-[6px] pt-5">
+          <h2 className="font-display flex items-center gap-3 text-[1.6rem] font-extrabold [font-stretch:112%]">
+            <ClipboardCheck
+              aria-hidden
+              className="text-accent size-8 shrink-0"
+            />
             {copy.home.testTitle}
           </h2>
           <p className="mt-2 mb-6 max-w-[30rem] flex-1">{copy.home.testBody}</p>
-          <ButtonLink href="/test">{copy.home.testButton}</ButtonLink>
+          <ButtonLink href="/test">
+            {copy.home.testButton}
+            <ArrowRight aria-hidden className="size-6 shrink-0" />
+          </ButtonLink>
         </section>
-        <section className="border-ink flex flex-col items-start border-t-[6px] pt-5">
-          <h2 className="font-display text-[1.6rem] font-extrabold [font-stretch:112%]">
+        <section className="border-flag flex flex-col items-start border-t-[6px] pt-5">
+          <h2 className="font-display flex items-center gap-3 text-[1.6rem] font-extrabold [font-stretch:112%]">
+            <BookOpen aria-hidden className="text-flag size-8 shrink-0" />
             {copy.home.studyTitle}
           </h2>
           <p className="mt-2 mb-6 max-w-[30rem] flex-1">
             {copy.home.studyBody}
           </p>
-          <ButtonLink href="/study">{copy.home.studyButton}</ButtonLink>
+          <ButtonLink href="/study">
+            {copy.home.studyButton}
+            <ArrowRight aria-hidden className="size-6 shrink-0" />
+          </ButtonLink>
         </section>
       </div>
 
@@ -59,7 +78,11 @@ export default async function Home() {
             href={LINKS.testUpdates}
             className="text-accent font-bold underline"
           >
-            {copy.home.aboutChangesLink}
+            {copy.home.aboutChangesLink}{" "}
+            <ExternalLink
+              aria-hidden
+              className="inline size-[1em] align-[-0.1em]"
+            />
           </a>
         </p>
         <p>
@@ -68,7 +91,11 @@ export default async function Home() {
             href={LINKS.findRepresentative}
             className="text-accent font-bold underline"
           >
-            {copy.home.aboutStateLink}
+            {copy.home.aboutStateLink}{" "}
+            <ExternalLink
+              aria-hidden
+              className="inline size-[1em] align-[-0.1em]"
+            />
           </a>
         </p>
         <p>
@@ -76,13 +103,23 @@ export default async function Home() {
             href={LINKS.officialList}
             className="text-accent font-bold underline"
           >
-            {copy.home.officialLink}
+            {copy.home.officialLink}{" "}
+            <ExternalLink
+              aria-hidden
+              className="inline size-[1em] align-[-0.1em]"
+            />
           </a>
         </p>
       </section>
 
-      <section className="border-ink max-w-[40rem] border-2 p-5">
-        <h2 className="text-[1.3rem] font-bold">{copy.home.seniorTitle}</h2>
+      <section className="border-accent bg-accent-wash max-w-[40rem] border-l-[6px] p-5">
+        <h2 className="flex items-center gap-2 text-[1.3rem] font-bold">
+          <Star
+            aria-hidden
+            className="text-flag size-6 shrink-0 fill-current"
+          />
+          {copy.home.seniorTitle}
+        </h2>
         <p className="mt-2 mb-5">{copy.home.seniorBody}</p>
         <ButtonLink href="/study?list=senior" variant="secondary">
           {copy.home.seniorLink}

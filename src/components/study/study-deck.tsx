@@ -2,6 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import {
+  ChevronLeft,
+  ChevronRight,
+  Eye,
+  EyeOff,
+  RotateCcw,
+  ThumbsUp,
+} from "lucide-react";
+
 import { Button } from "@/components/button";
 import { ReadAloud } from "@/components/read-aloud";
 import { getCopy } from "@/lib/copy";
@@ -130,7 +139,7 @@ export function StudyDeck({
               className={cn(
                 "min-h-[2.75rem] cursor-pointer border-2 px-4 py-2 font-bold has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-3 has-[:focus-visible]:outline-[var(--accent)]",
                 list === value
-                  ? "border-ink bg-ink text-paper"
+                  ? "border-accent bg-accent text-accent-ink"
                   : "border-ink hover:bg-wash"
               )}
             >
@@ -159,7 +168,7 @@ export function StudyDeck({
       ) : (
         <article
           ref={card}
-          className="border-ink mt-10 scroll-mt-4 border-t-[6px] pt-5"
+          className="border-accent mt-10 scroll-mt-4 border-t-[6px] pt-5"
         >
           <p className="text-quiet font-bold">
             {copy.questionOf(position + 1, items.length)}
@@ -183,6 +192,11 @@ export function StudyDeck({
               aria-expanded={open}
               aria-controls="study-answer"
             >
+              {open ? (
+                <EyeOff aria-hidden className="size-6 shrink-0" />
+              ) : (
+                <Eye aria-hidden className="size-6 shrink-0" />
+              )}
               {open ? copy.hideAnswer : copy.showAnswer}
             </Button>
             <ReadAloud
@@ -198,7 +212,7 @@ export function StudyDeck({
           <div
             id="study-answer"
             hidden={!open}
-            className="border-accent mt-6 border-l-[6px] pl-5"
+            className="border-flag mt-6 border-l-[6px] pl-5"
           >
             <p className="text-quiet font-bold">
               {correct.length > 1 ? copy.answers : copy.answer}
@@ -227,6 +241,7 @@ export function StudyDeck({
               aria-pressed={status === "known"}
               className={cn(status === "known" && "border-ok bg-ok-wash")}
             >
+              <ThumbsUp aria-hidden className="size-6 shrink-0" />
               {copy.study.knewIt}
             </Button>
             <Button
@@ -235,6 +250,7 @@ export function StudyDeck({
               aria-pressed={status === "learning"}
               className={cn(status === "learning" && "border-bad bg-bad-wash")}
             >
+              <RotateCcw aria-hidden className="size-6 shrink-0" />
               {copy.study.stillLearning}
             </Button>
           </div>
@@ -250,6 +266,7 @@ export function StudyDeck({
               disabled={position === 0}
               onClick={() => goTo(items[position - 1].questionNumber)}
             >
+              <ChevronLeft aria-hidden className="size-6 shrink-0" />
               {copy.study.previous}
             </Button>
             <Button
@@ -258,6 +275,7 @@ export function StudyDeck({
               onClick={() => goTo(items[position + 1].questionNumber)}
             >
               {copy.study.next}
+              <ChevronRight aria-hidden className="size-6 shrink-0" />
             </Button>
           </nav>
         </article>

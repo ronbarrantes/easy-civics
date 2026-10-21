@@ -16,3 +16,5 @@ export interface Question {
 export type Language = "en" | "es";
 
 export type TextSize = "large" | "larger";
+
+export type Theme = "light" | "dark";
